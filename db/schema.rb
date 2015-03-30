@@ -11,24 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150328194959) do
+ActiveRecord::Schema.define(version: 20150329222354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "dogs", force: :cascade do |t|
-    t.string  "name",    null: false
-    t.integer "age",     null: false
-    t.string  "breed",   null: false
-    t.string  "size",    null: false
-    t.boolean "fixed",   null: false
-    t.integer "user_id", null: false
+    t.string   "name",             null: false
+    t.integer  "age",              null: false
+    t.string   "breed",            null: false
+    t.string   "size",             null: false
+    t.boolean  "fixed",            null: false
+    t.boolean  "health_condition", null: false
+    t.integer  "owner_id",         null: false
+    t.integer  "sitter_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "owners", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating",     null: false
     t.text     "body",       null: false
-    t.integer  "user_id"
+    t.integer  "sitter_id"
+    t.integer  "dog_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sitters", force: :cascade do |t|
+    t.integer  "user_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -44,11 +61,24 @@ ActiveRecord::Schema.define(version: 20150328194959) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "first_name",                          null: false
     t.string   "last_name",                           null: false
-    t.boolean  "sitter",                              null: false
+    t.string   "phone_number",                        null: false
+    t.string   "address1",                            null: false
+    t.string   "address2"
+    t.string   "city",                                null: false
+    t.string   "state",                               null: false
+    t.string   "zipcode",                             null: false
+    t.text     "headline",                            null: false
+    t.text     "description",                         null: false
+    t.boolean  "have_dogs",                           null: false
+    t.boolean  "have_children",                       null: false
+    t.string   "property_type",                       null: false
+    t.string   "yard_type",                           null: false
+    t.integer  "price",                               null: false
+    t.string   "availability",                        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

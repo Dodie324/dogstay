@@ -60,7 +60,7 @@ fieldset {
   right:0px;
 /*  background: url("http://ppcdn.500px.org/23046103/06f0170689650fedee44f3fe960de4f2c9a1e0f9/4.jpg") no-repeat center center fixed;*/
   background: url("https://prcdn.500px.org/watermark/75393703/14/position%3Dnorthwest_opacity%3D80_watermark%3Dprime_attachment%3Dtrue_filename%3Dstock-photo-stairway-of-dreams-75393703/a0b2529e2cd265440101035f5f1f2aa921bbf33e") no-repeat center center fixed;
-  background-size:   cover !important;
+  background-size: cover !important;
   opacity: 0.7;
 }
 

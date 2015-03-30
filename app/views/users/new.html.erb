@@ -1,0 +1,44 @@
+<div class="title_header">
+  Let's add a fantastic restaurant, shall we?
+</div>
+
+<fieldset>
+  <%= form_for @restaurant do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div>
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+  </div>
+
+  <div>
+    <%= f.label :zipcode %>
+    <%= f.text_field :zipcode %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+  </div>
+
+    <%= f.submit "Bon Apetit!" %>
+  <% end %>
+</fieldset>
