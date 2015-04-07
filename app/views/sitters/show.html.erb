@@ -1,0 +1,23 @@
+<div id="map-canvas">
+</div>
+
+<div class="sitter-profile panel">
+  <div class="profile-header">
+    <%= "#{@user.first_name} - #{@user.headline}" %>
+  </div>
+  <div class="profile-location">
+    <%= "#{@user.city}, #{@user.state}  #{@user.zipcode}" %>
+  </div>
+  <div class="profile-description">
+    <%= @user.description %>
+  </div>
+  <div class="profile-property-type">
+    <%= @user.property_type %>
+  </div>
+  <div class="profile-yard-type">
+    <%= @user.yard_type %>
+  </div>
+  <div class="profile-children">
+    <%= t @user.have_children.class %>
+  </div>
+</div>

@@ -7,8 +7,7 @@ class CreateDogs < ActiveRecord::Migration
       t.string  :size, null: false
       t.boolean :fixed, null: false
       t.boolean :health_condition, null: false
-      t.integer :owner_id, null: false
-      t.integer :sitter_id
+      t.integer :user_id
 
       t.timestamps
     end

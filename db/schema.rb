@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329222354) do
+ActiveRecord::Schema.define(version: 20150328194959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,14 +23,7 @@ ActiveRecord::Schema.define(version: 20150329222354) do
     t.string   "size",             null: false
     t.boolean  "fixed",            null: false
     t.boolean  "health_condition", null: false
-    t.integer  "owner_id",         null: false
-    t.integer  "sitter_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "owners", force: :cascade do |t|
-    t.integer  "user_id",    null: false
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,12 +33,6 @@ ActiveRecord::Schema.define(version: 20150329222354) do
     t.text     "body",       null: false
     t.integer  "sitter_id"
     t.integer  "dog_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sitters", force: :cascade do |t|
-    t.integer  "user_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -71,17 +58,17 @@ ActiveRecord::Schema.define(version: 20150329222354) do
     t.string   "zipcode",                             null: false
     t.text     "headline",                            null: false
     t.text     "description",                         null: false
+    t.boolean  "sitter",                              null: false
     t.boolean  "have_dogs",                           null: false
     t.boolean  "have_children",                       null: false
     t.string   "property_type",                       null: false
     t.string   "yard_type",                           null: false
-    t.integer  "price",                               null: false
-    t.string   "availability",                        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["phone_number"], name: "index_users_on_phone_number", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

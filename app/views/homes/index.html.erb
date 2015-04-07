@@ -3,14 +3,19 @@
     <h1>Find your sitter</h1>
   </div>
 
-  <form>
+
     <fieldset>
-      <div class="small-10 columns">
-        <input type="text" placeholder="City or Zip Code">
-      </div>
-      <div class="small-2 columns">
-        <a href="/users" class="button postfix">Go</a>
+    <div id="myform">
+
+      <%= form_tag sitters_path, method: :get do %>
+        <%= text_field_tag(:address, nil, placeholder: "Enter your city", id: "address") %>
+        <%= submit_tag "Go" %>
+      <% end %>
       </div>
     </fieldset>
-  </form>
 </div>
+
+<!-- onclick="findLocation()" -->
+<!--       <div class="small-2 columns">
+        <a href="/sitters" class="button postfix">Go</a>
+      </div> -->

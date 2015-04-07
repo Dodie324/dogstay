@@ -1,5 +1,4 @@
-<h2>Sign up</h2>
-
+<fieldset>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -17,47 +16,83 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
   </div>
 
-  <div class="actions">
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address1 %>
+    <%= f.text_field :address1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address2 %>
+    <%= f.text_field :address2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zipcode %>
+    <%= f.text_field :zipcode %>
+  </div>
+
+  <div class="field">
+    <%= f.label :headline %>
+    <%= f.text_field :headline %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sitter, "Would you like to house a dog?" %>
+    <%= f.select :sitter, [["Yes", true], ["No", false]]  %>
+  </div>
+
+   <div class="field">
+    <%= f.label :have_dogs, "Do you have any dogs?" %>
+    <%= f.select :have_dogs, [["Yes", true], ["No", false]] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :have_children, "Do you have any children?" %>
+    <%= f.select :have_children, [["Yes", true], ["No", false]]  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :property_type, "Property type" %>
+    <%= f.select :property_type, User::PROPERTY %>
+  </div>
+
+  <div class="field">
+    <%= f.label :yard_type, "Type of yard" %>
+    <%= f.select :yard_type, User::YARD %>
+  </div>
+
+  <div class="button radius" >
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
-
-
-<fieldset>
-<form>
-  <div class="row">
-    <div class="large-5 columns">
-      <input type="text" name="users[first_name]" placeholder="First name" />
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-12 columns">
-      <input type="text" name="users[last_name]" placeholder="Last name" />
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-12 columns">
-      <input type="text" name="users[email]" placeholder="Email address" />
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-12 columns">
-      <% if @validatable %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %>
-      <input type="text" name="users[password]" placeholder="Password" />
-    </div>
-  </div>
-  <div class="row">
-    <div class="button radius">
-      <p><a href='/users'>Sign up</a></p>
-    </div>
-  </div>
-</form>
 </fieldset>
+

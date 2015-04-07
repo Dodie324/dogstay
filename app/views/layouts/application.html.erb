@@ -5,6 +5,9 @@
   <title>Dogstay</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8Yu5RmOzfLGJxdI7BhkMGTLUDblJt1qY"></script>
+  <script type="text/javascript" src="../assets/javascripts/gmaps.js"></script>
 </head>
 <body>
   <nav class="top-bar">
@@ -20,7 +23,6 @@
         <%- else -%>
           <li><%= link_to 'SIGN UP', new_user_registration_path %></li>
           <li><%= link_to 'LOG IN', new_user_session_path %></li>
-          <li><%= link_to 'HOUSE A DOG', new_sitter_registration_path %></li>
         <%- end -%>
       </ul>
   </nav>

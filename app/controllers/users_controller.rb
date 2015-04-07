@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @user = User.where(sitter: true)
+    @users = User.where(sitter: true)
   end
 
   def show
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def create
-
+    binding.pry
   end
 
   def update
