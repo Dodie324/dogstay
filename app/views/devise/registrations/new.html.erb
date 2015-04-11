@@ -3,15 +3,12 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <%= f.label :password, "Password (8 characters minimum)" %>
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
@@ -67,7 +64,7 @@
 
   <div class="field">
     <%= f.label :sitter, "Would you like to house a dog?" %>
-    <%= f.select :sitter, [["Yes", true], ["No", false]]  %>
+    <%= f.select :sitter, [["Yes", true], ["No", false]] %>
   </div>
 
    <div class="field">
@@ -91,7 +88,7 @@
   </div>
 
   <div class="button radius" >
-    <%= f.submit "Sign up" %>
+    <%= f.submit "SIGN UP" %>
   </div>
 <% end %>
 </fieldset>

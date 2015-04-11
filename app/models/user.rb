@@ -2,8 +2,6 @@ class User < ActiveRecord::Base
   PROPERTY = %w(Apartment Condo Townhouse House)
   YARD = %w(None Fenced Open)
 
-  has_many :owners
-  has_many :sitters
 
   devise :database_authenticatable,
          :registerable,
@@ -23,7 +21,7 @@ class User < ActiveRecord::Base
     }
 
   validates :have_children,
-  inclusion: {
+    inclusion: {
       in: [true, false]
     }
 
