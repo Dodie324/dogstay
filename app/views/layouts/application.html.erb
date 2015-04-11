@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dogstay</title>
+
+  <%= javascript_include_tag "vendor/modernizr" %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8Yu5RmOzfLGJxdI7BhkMGTLUDblJt1qY"></script>
-  <script type="text/javascript" src="../assets/javascripts/gmaps.js"></script>
 </head>
 <body>
   <nav class="top-bar">
@@ -35,7 +35,9 @@
 
   <%= yield %>
 
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
   <%= javascript_include_tag 'application' %>
+
   <%= content_for :extra_footer do %>
     <script type="text/javascript">
       var widget = new Something.Widget('foo');
