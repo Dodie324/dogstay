@@ -3,16 +3,19 @@
     <h1>Find your sitter</h1>
   </div>
 
-
-    <fieldset>
+  <fieldset>
     <div id="myform">
-
       <%= form_tag sitters_path, method: :get do %>
-        <%= text_field_tag(:address, nil, placeholder: "Enter your city", id: "address") %>
+        <%= text_field_tag(
+          :address,
+          nil,
+          placeholder: "Enter your city",
+          id: "address"
+        ) %>
         <%= submit_tag "Go" %>
       <% end %>
-      </div>
-    </fieldset>
+    </div>
+  </fieldset>
 </div>
 
 <!-- onclick="findLocation()" -->

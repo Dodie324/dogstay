@@ -7,7 +7,7 @@ FactoryGirl.define do
     password_confirmation 'password'
     first_name "John"
     last_name "Doe"
-    phone_number "5555555555"
+    sequence(:phone_number) {|n| "555#{n}#{n}#{n}#{n}222"}
     address1 "33 Harrison Ave"
     city "Boston"
     state "MA"
@@ -20,5 +20,4 @@ FactoryGirl.define do
     property_type "House"
     yard_type "Fenced"
   end
-
 end
