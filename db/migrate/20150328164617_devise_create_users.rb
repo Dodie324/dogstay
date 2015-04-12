@@ -21,19 +21,19 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.string  :first_name,                 null: false
       t.string  :last_name,                  null: false
-      t.string  :phone_number,               null: false
-      t.string  :address1,                   null: false
-      t.string  :address2
-      t.string  :city,                       null: false
-      t.string  :state,                      null: false
       t.string  :zipcode,                    null: false
-      t.text    :headline,                   null: false
-      t.text    :description,                null: false
       t.boolean :sitter,                     null: false
-      t.boolean :have_dogs,                  null: false
-      t.boolean :have_children,              null: false
-      t.string  :property_type,              null: false
-      t.string  :yard_type,                  null: false
+      t.text    :headline
+      t.text    :description
+      t.string  :address1
+      t.string  :address2
+      t.string  :city
+      t.string  :state
+      t.string  :phone_number
+      t.boolean :have_dogs
+      t.boolean :have_children
+      t.string  :property_type
+      t.string  :yard_type
 
 
       t.timestamps

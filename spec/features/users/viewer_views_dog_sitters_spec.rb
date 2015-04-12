@@ -1,5 +1,6 @@
 require "rails_helper"
 
+
 feature "visitor views a list of dog sitters", %(
   As a viewer
   I want to view a list of dog sitters in my city
@@ -22,6 +23,38 @@ feature "visitor views a list of dog sitters", %(
     expect(page).to have_content(sitter.city)
     expect(page).to have_content(sitter.state)
     expect(page).to have_content(sitter.zipcode)
+  end
+
+  scenario "visitor views sitter's details" do
+    sitter = FactoryGirl.create(:user, sitter: true)
+
+    visit root_path
+
+    within("#myform"){
+      fill_in "address", with: "Boston"
+    }
+
+    click_on "Go"
+
+    expect(page).to have_content(sitter.first_name)
+    expect(page).to have_content(sitter.headline)
+    expect(page).to have_content(sitter.city)
+    expect(page).to have_content(sitter.state)
+    expect(page).to have_content(sitter.zipcode)
+
+    click_on sitter.first_name
+
+    expect(page).to have_content(sitter.first_name)
+    expect(page).to have_content(sitter.headline)
+    expect(page).to have_content(sitter.city)
+    expect(page).to have_content(sitter.state)
+    expect(page).to have_content(sitter.zipcode)
+    expect(page).to have_content(sitter.headline)
+    expect(page).to have_content(sitter.description)
+    expect(page).to have_content(sitter.have_dogs)
+    expect(page).to have_content(sitter.have_children)
+    expect(page).to have_content(sitter.property_type)
+    expect(page).to have_content(sitter.yard_type)
   end
 
   # scenario "visitor doesn't provide a search location"

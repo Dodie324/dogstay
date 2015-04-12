@@ -1,23 +1,28 @@
-<div id="map-canvas">
-</div>
-
 <div class="sitter-profile panel">
   <div class="profile-header">
-    <%= "#{@user.first_name} - #{@user.headline}" %>
+    <%= @sitter.first_name %> - <%= @sitter.headline %>
   </div>
   <div class="profile-location">
-    <%= "#{@user.city}, #{@user.state}  #{@user.zipcode}" %>
+    <%= @sitter.city %>, <%= @sitter.state %>  <%= @sitter.zipcode %>
   </div>
   <div class="profile-description">
-    <%= @user.description %>
+    <%= @sitter.description %>
   </div>
   <div class="profile-property-type">
-    <%= @user.property_type %>
+    <%= @sitter.property_type %>
   </div>
   <div class="profile-yard-type">
-    <%= @user.yard_type %>
+    <%= @sitter.yard_type %>
   </div>
   <div class="profile-children">
-    <%= t @user.have_children.class %>
+    <%= t @sitter.have_dogs.class %>
   </div>
+  <div class="profile-children">
+    <%= t @sitter.have_children.class %>
+  </div>
+</div>
+
+<div class="small-12 columns" id="ratings_list">
+  <%= render "reviews/index" if @reviews %>
+  <%= render "/reviews/new" %>
 </div>

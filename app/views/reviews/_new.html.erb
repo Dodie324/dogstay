@@ -1,0 +1,15 @@
+<%= form_for new_sitter_review_path(@sitter, @review) do |f| %>
+  <%= f.label :rating %>
+  <%= f.select :rating, Review::RATING, include_blank: "Please Rate" %>
+
+  <%= f.label :body, "Review" %>
+  <%= f.text_area :body %>
+
+  <%= f.submit "Add Review", class: "button" %>
+<% end %>
+
+<!-- <%= content_for :extra_footer do %>
+  <script type="text/javascript">
+    $('#review_rating').remove();
+  </script>
+<% end %> -->

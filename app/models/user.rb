@@ -1,7 +1,21 @@
 class User < ActiveRecord::Base
-  PROPERTY = %w(Apartment Condo Townhouse House)
-  YARD = %w(None Fenced Open)
 
+  has_many :reviews
+
+  PROPERTY = [
+    "",
+    "Apartment",
+    "Condo",
+    "Townhouse",
+    "House"
+  ]
+
+  YARD = [
+    "",
+    "None",
+    "Fenced",
+    "Open"
+  ]
 
   devise :database_authenticatable,
          :registerable,
@@ -26,13 +40,11 @@ class User < ActiveRecord::Base
     }
 
   validates :property_type,
-    presence: true,
     inclusion: {
       in: PROPERTY
     }
 
   validates :yard_type,
-    presence: true,
     inclusion: {
       in: YARD
     }

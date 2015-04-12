@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 20150328194959) do
     t.integer  "age",              null: false
     t.string   "breed",            null: false
     t.string   "size",             null: false
+    t.string   "gender",           null: false
     t.boolean  "fixed",            null: false
     t.boolean  "health_condition", null: false
+    t.string   "image",            null: false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -31,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150328194959) do
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating",     null: false
     t.text     "body",       null: false
-    t.integer  "sitter_id"
+    t.integer  "user_id"
     t.integer  "dog_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -50,19 +52,19 @@ ActiveRecord::Schema.define(version: 20150328194959) do
     t.inet     "last_sign_in_ip"
     t.string   "first_name",                          null: false
     t.string   "last_name",                           null: false
-    t.string   "phone_number",                        null: false
-    t.string   "address1",                            null: false
-    t.string   "address2"
-    t.string   "city",                                null: false
-    t.string   "state",                               null: false
     t.string   "zipcode",                             null: false
-    t.text     "headline",                            null: false
-    t.text     "description",                         null: false
     t.boolean  "sitter",                              null: false
-    t.boolean  "have_dogs",                           null: false
-    t.boolean  "have_children",                       null: false
-    t.string   "property_type",                       null: false
-    t.string   "yard_type",                           null: false
+    t.text     "headline"
+    t.text     "description"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "phone_number"
+    t.boolean  "have_dogs"
+    t.boolean  "have_children"
+    t.string   "property_type"
+    t.string   "yard_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

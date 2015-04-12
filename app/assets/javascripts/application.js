@@ -1,37 +1,36 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require gmaps
 //= require_tree .
 
 $(document).foundation();
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
-    var map = new GMaps({
-          div: '#map-canvas',
-          lat: 42.360083,
-          lng: -71.05888,
-          zoom: 12
-    });
-    $('#myform').submit(function(e){
-      debugger;
-        e.preventDefault();
-        GMaps.geocode({
-              address: $('#address').val().trim(),
-              callback: function(results, status){
-                    if(status=='OK'){
-                          var latlng = results[0].geometry.location;
-                          map.setCenter(latlng.lat(), latlng.lng());
-                          map.addMarker({
-                                lat: latlng.lat(),
-                                lng: latlng.lng()
-                          });
-                    }
-              }
-        });
-    });
-});
+//     var map = new GMaps({
+//           div: '#map-canvas',
+//           lat: 42.360083,
+//           lng: -71.05888,
+//           zoom: 12
+//     });
+//     $('#myform').submit(function(e){
+//       debugger;
+//         e.preventDefault();
+//         GMaps.geocode({
+//               address: $('#address').val().trim(),
+//               callback: function(results, status){
+//                     if(status=='OK'){
+//                           var latlng = results[0].geometry.location;
+//                           map.setCenter(latlng.lat(), latlng.lng());
+//                           map.addMarker({
+//                                 lat: latlng.lat(),
+//                                 lng: latlng.lng()
+//                           });
+//                     }
+//               }
+//         });
+//     });
+// });
 
 // var geocoder;
 // var map;

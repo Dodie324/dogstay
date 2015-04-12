@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.where(sitter: true)
+    @users = User.where(params[:id])
   end
 
   def show

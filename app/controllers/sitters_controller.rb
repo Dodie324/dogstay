@@ -5,5 +5,6 @@ class SittersController < ApplicationController
 
   def show
     @sitter = User.find(params[:id])
+    @review = Review.new
   end
 end

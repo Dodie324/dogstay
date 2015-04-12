@@ -22,71 +22,84 @@
     <%= f.text_field :last_name %>
   </div>
 
-  <div class="field">
-    <%= f.label :phone_number %>
-    <%= f.text_field :phone_number %>
-  </div>
-
-  <div class="field">
-    <%= f.label :address1 %>
-    <%= f.text_field :address1 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :address2 %>
-    <%= f.text_field :address2 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= f.label :state %>
-    <%= f.text_field :state %>
-  </div>
 
   <div class="field">
     <%= f.label :zipcode %>
     <%= f.text_field :zipcode %>
   </div>
 
-  <div class="field">
-    <%= f.label :headline %>
-    <%= f.text_field :headline %>
-  </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
-
-  <div class="field">
+  <div class="field" id="sitter">
     <%= f.label :sitter, "Would you like to house a dog?" %>
-    <%= f.select :sitter, [["Yes", true], ["No", false]] %>
+    <%= f.select :sitter, [["No", false],["Yes", true]], selected: false %>
   </div>
 
-   <div class="field">
-    <%= f.label :have_dogs, "Do you have any dogs?" %>
-    <%= f.select :have_dogs, [["Yes", true], ["No", false]] %>
-  </div>
+  <div id="sitter_profile">
+    <div class="field">
+      <%= f.label :headline %>
+      <%= f.text_field :headline, placeholder: "Tell dog owners what makes you and your home special" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :have_children, "Do you have any children?" %>
-    <%= f.select :have_children, [["Yes", true], ["No", false]]  %>
-  </div>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_field :description, placeholder: "Tell us about yourself" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :property_type, "Property type" %>
-    <%= f.select :property_type, User::PROPERTY %>
-  </div>
+    <div class="field">
+      <%= f.label :have_dogs, "Do you have any dogs?" %>
+      <%= f.select :have_dogs,
+           [["No", false], ["Yes", true]],
+           selected: false,
+           include_blank: "" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :yard_type, "Type of yard" %>
-    <%= f.select :yard_type, User::YARD %>
-  </div>
+    <div class="field">
+      <%= f.label :have_children, "Do you have any children?" %>
+      <%= f.select :have_children,
+           [["No", false], ["Yes", true]],
+           selected: false,
+           include_blank: ""  %>
+    </div>
 
+    <div class="field">
+      <%= f.label :property_type, "Property type" %>
+      <%= f.select :property_type,
+           User::PROPERTY,
+           include_blank: "" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :yard_type, "Type of yard" %>
+      <%= f.select :yard_type,
+          User::YARD,
+          include_blank: "" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone_number %>
+      <%= f.text_field :phone_number %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address1 %>
+      <%= f.text_field :address1 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address2 %>
+      <%= f.text_field :address2 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :city %>
+      <%= f.text_field :city %>
+    </div>
+
+    <div class="field">
+      <%= f.label :state %>
+      <%= f.text_field :state %>
+    </div>
+  </div>
   <div class="button radius" >
     <%= f.submit "SIGN UP" %>
   </div>

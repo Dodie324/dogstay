@@ -1,7 +1,5 @@
 class Dog < ActiveRecord::Base
   belongs_to :user
-  belongs_to :sitter
-  has_many :reviews
 
   validates :name, presence: true
   validates :age, presences: true

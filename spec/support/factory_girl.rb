@@ -20,4 +20,11 @@ FactoryGirl.define do
     property_type "House"
     yard_type "Fenced"
   end
+
+  factory :review do
+    Rating 5
+    Body "John was wonderful to our dog, Fritz! He sent us updates daily and\
+          even shared photos of Fritz playing with his dog. We definitely felt\
+          at ease knowing Fritz was in good hands."
+  end
 end
