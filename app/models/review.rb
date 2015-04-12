@@ -5,5 +5,5 @@ class Review < ActiveRecord::Base
   has_many :users, through: :user_reviews
 
   validates :rating, presence: true, inclusion: { in: 1..5 }
-  validates :body, presence: true
+  validates :body, presence: true, length: { minimum: 20 }
 end
