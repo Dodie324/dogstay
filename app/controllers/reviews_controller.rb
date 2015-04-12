@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
 
   def edit
     @sitter = User.find(params[:user_id])
-    @review = @siter.reviews.find(params[:id])
+    @review = @sitter.reviews.find(params[:id])
   end
 
   def create

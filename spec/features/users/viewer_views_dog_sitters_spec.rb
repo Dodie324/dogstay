@@ -49,12 +49,11 @@ feature "visitor views a list of dog sitters", %(
     expect(page).to have_content(sitter.city)
     expect(page).to have_content(sitter.state)
     expect(page).to have_content(sitter.zipcode)
-    expect(page).to have_content(sitter.headline)
     expect(page).to have_content(sitter.description)
-    expect(page).to have_content(sitter.have_dogs)
-    expect(page).to have_content(sitter.have_children)
     expect(page).to have_content(sitter.property_type)
     expect(page).to have_content(sitter.yard_type)
+    expect(page).to have_content("No")
+    expect(page).to have_content("No")
   end
 
   # scenario "visitor doesn't provide a search location"
