@@ -22,12 +22,15 @@
     <%= f.text_field :last_name %>
   </div>
 
+  <div class="field">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>
+  </div>
 
   <div class="field">
     <%= f.label :zipcode %>
     <%= f.text_field :zipcode %>
   </div>
-
 
   <div class="field" id="sitter">
     <%= f.label :sitter, "Would you like to house a dog?" %>
@@ -75,10 +78,6 @@
           include_blank: "" %>
     </div>
 
-    <div class="field">
-      <%= f.label :phone_number %>
-      <%= f.text_field :phone_number %>
-    </div>
 
     <div class="field">
       <%= f.label :address1 %>

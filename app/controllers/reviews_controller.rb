@@ -1,13 +1,18 @@
 class ReviewsController < ApplicationController
-  def create
-    @sitter = User.find(params[:id])
-    @review = Review.new(review_params)
-    # @review.rating ||= params["score"]
-    @review.sitter = @sitter
-    @review.user = current_user
+  before_action :authenticate_user!
 
-    if @review.save
-      # ReviewNotifier.new_review(@review).deliver_later
+  def edit
+    @sitter = User.find(params[:user_id])
+    @review = @siter.reviews.find(params[:id])
+  end
+
+  def create
+    @sitter = User.find(params[:sitter_id])
+    @review = Review.new(review_params)
+    @user_review = UserReview.new(review: @review, user: current_user)
+    @sitter_review = UserReview.new(review: @review, user: @sitter)
+
+    if (@review.save && @user_review.save && @sitter_review.save)
       flash[:notice] = "Review added successfully."
       redirect_to sitter_path(@sitter)
     else
