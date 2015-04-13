@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329222354) do
+ActiveRecord::Schema.define(version: 20150412161809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,16 +21,11 @@ ActiveRecord::Schema.define(version: 20150329222354) do
     t.integer  "age",              null: false
     t.string   "breed",            null: false
     t.string   "size",             null: false
+    t.string   "gender",           null: false
     t.boolean  "fixed",            null: false
     t.boolean  "health_condition", null: false
-    t.integer  "owner_id",         null: false
-    t.integer  "sitter_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "owners", force: :cascade do |t|
-    t.integer  "user_id",    null: false
+    t.string   "image",            null: false
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,13 +33,14 @@ ActiveRecord::Schema.define(version: 20150329222354) do
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating",     null: false
     t.text     "body",       null: false
-    t.integer  "sitter_id"
+    t.integer  "user_id"
     t.integer  "dog_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "sitters", force: :cascade do |t|
+  create_table "user_reviews", force: :cascade do |t|
+    t.integer  "review_id",  null: false
     t.integer  "user_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -63,25 +59,25 @@ ActiveRecord::Schema.define(version: 20150329222354) do
     t.inet     "last_sign_in_ip"
     t.string   "first_name",                          null: false
     t.string   "last_name",                           null: false
-    t.string   "phone_number",                        null: false
-    t.string   "address1",                            null: false
-    t.string   "address2"
-    t.string   "city",                                null: false
-    t.string   "state",                               null: false
     t.string   "zipcode",                             null: false
-    t.text     "headline",                            null: false
-    t.text     "description",                         null: false
-    t.boolean  "have_dogs",                           null: false
-    t.boolean  "have_children",                       null: false
-    t.string   "property_type",                       null: false
-    t.string   "yard_type",                           null: false
-    t.integer  "price",                               null: false
-    t.string   "availability",                        null: false
+    t.boolean  "sitter",                              null: false
+    t.text     "headline"
+    t.text     "description"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "phone_number"
+    t.boolean  "have_dogs"
+    t.boolean  "have_children"
+    t.string   "property_type"
+    t.string   "yard_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["phone_number"], name: "index_users_on_phone_number", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

@@ -1,0 +1,15 @@
+<div id="list_of_sitters">
+  <% @sitters.each do |sitter| %>
+    <div class="sitter panel">
+      <div class="s_name">
+        <%= link_to sitter.first_name, sitter_path(sitter) %>
+      </div>
+      <div class="s_headline">
+        <%= sitter.headline %>
+      </div>
+      <div class="s_address">
+        <%= sitter.city %>, <%= sitter.state %>  <%= sitter.zipcode %>
+      </div>
+    </div>
+  <% end %>
+</div>

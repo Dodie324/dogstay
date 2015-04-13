@@ -1,0 +1,9 @@
+<%= form_for [@sitter, @review], url: sitter_reviews_path(@sitter) do |f| %>
+  <%= f.label :rating %>
+  <%= f.select :rating, Review::RATING, include_blank: "Please Rate" %>
+
+  <%= f.label :body, "Review" %>
+  <%= f.text_area :body %>
+
+  <%= f.submit "Add Review", class: "button" %>
+<% end %>

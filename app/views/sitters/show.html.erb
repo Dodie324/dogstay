@@ -1,0 +1,31 @@
+<%= render 'shared/errors' if @errors %>
+
+<div class="sitter-profile panel">
+  <div class="profile-header">
+    <%= @sitter.first_name %> - <%= @sitter.headline %>
+  </div>
+  <div class="profile-location">
+    <%= @sitter.city %>, <%= @sitter.state %>  <%= @sitter.zipcode %>
+  </div>
+  <div class="profile-description">
+    <%= @sitter.description %>
+  </div>
+  <div class="profile-property-type">
+    <%= @sitter.property_type %>
+  </div>
+  <div class="profile-yard-type">
+    <%= @sitter.yard_type %>
+  </div>
+  <div class="profile-children">
+    <%= t @sitter.have_dogs.class %>
+  </div>
+  <div class="profile-children">
+    <%= t @sitter.have_children.class %>
+  </div>
+</div>
+
+<div class="small-12 columns" id="ratings_list">
+  <%= render "reviews/index" if @reviews %>
+  <%= render "reviews/new" %>
+</div>
+

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @user = User.where(sitter: true)
+    @users = User.where(params[:id])
   end
 
   def show
@@ -15,7 +15,6 @@ class UsersController < ApplicationController
   end
 
   def create
-
   end
 
   def update

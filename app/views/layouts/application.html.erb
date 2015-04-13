@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dogstay</title>
+
+  <%= javascript_include_tag "vendor/modernizr" %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -20,7 +23,6 @@
         <%- else -%>
           <li><%= link_to 'SIGN UP', new_user_registration_path %></li>
           <li><%= link_to 'LOG IN', new_user_session_path %></li>
-          <li><%= link_to 'HOUSE A DOG', new_sitter_registration_path %></li>
         <%- end -%>
       </ul>
   </nav>
@@ -34,6 +36,7 @@
   <%= yield %>
 
   <%= javascript_include_tag 'application' %>
+
   <%= content_for :extra_footer do %>
     <script type="text/javascript">
       var widget = new Something.Widget('foo');

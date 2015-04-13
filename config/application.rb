@@ -33,5 +33,6 @@ module Dogstay
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.precompile += %w( .woff .ttf .eot)
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
   end
 end
