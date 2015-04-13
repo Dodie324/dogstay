@@ -16,7 +16,6 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review added successfully."
       redirect_to sitter_path(@sitter)
     else
-      @errors = @review.errors.full_messages
       render "sitters/show"
     end
   end
@@ -29,7 +28,6 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review updated!"
       redirect_to sitter_path(@sitter)
     else
-      @errors = @review.errors.full_messages
       render :edit
     end
   end
