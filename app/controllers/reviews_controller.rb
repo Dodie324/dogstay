@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     @user_review = UserReview.new(review: @review, user: current_user)
     @sitter_review = UserReview.new(review: @review, user: @sitter)
 
-    if (@review.save && @user_review.save && @sitter_review.save)
+    if @review.save && @user_review.save && @sitter_review.save
       flash[:notice] = "Review added successfully."
       redirect_to sitter_path(@sitter)
     else
