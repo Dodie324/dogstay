@@ -32,6 +32,16 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @review = Review.find(params[:id])
+    @sitter = User.find(params[:sitter_id])
+    if @review.users.find(current_user).present? #|| current_user.admin?
+      @review.destroy
+      flash[:notice] = "Review deleted."
+      redirect_to sitter_path(@sitter)
+    end
+  end
+
   protected
 
   def review_params
