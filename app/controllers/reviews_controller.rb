@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
   def edit
-    @sitter = User.find(params[:user_id])
+    @sitter = User.find(params[:sitter_id])
     @review = @sitter.reviews.find(params[:id])
   end
 
@@ -18,6 +18,19 @@ class ReviewsController < ApplicationController
     else
       @errors = @review.errors.full_messages
       render "sitters/show"
+    end
+  end
+
+  def update
+    @sitter = User.find(params[:sitter_id])
+    @review = Review.find(params[:id])
+
+    if @review.update(review_params)
+      flash[:notice] = "Review updated!"
+      redirect_to sitter_path(@sitter)
+    else
+      @errors = @review.errors.full_messages
+      render :edit
     end
   end
 

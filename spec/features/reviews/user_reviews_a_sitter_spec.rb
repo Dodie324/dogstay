@@ -9,22 +9,20 @@ feature "user reviews a sitter", %(
   scenario "authenticated user successfully writes a review" do
     sitter = FactoryGirl.create(:user, sitter: true)
     user = FactoryGirl.create(:user, first_name: "Paul", sitter: false)
-    review_desc = "John was wonderful to our dog, Fritz! He sent us updates daily and\
-                  even shared photos of Fritz playing with his dog. We definitely felt\
-                  at ease knowing Fritz was in good hands."
+    review = FactoryGirl.create(:review)
 
     sign_in_as(user)
 
     visit sitter_path(sitter)
 
     select("5", from: "Rating")
-    fill_in "Review", with: review_desc
+    fill_in "Review", with: review.body
 
     click_on "Add Review"
 
     expect(page).to have_content("Review added successfully.")
-    expect(page).to have_content("5")
-    expect(page).to have_content(review_desc)
+    expect(page).to have_content(review.rating)
+    expect(page).to have_content(review.body)
   end
 
   scenario "authenticated user unsuccessfully writes a review" do
