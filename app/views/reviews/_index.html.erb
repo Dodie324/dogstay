@@ -4,8 +4,6 @@
     <%= review.body %>
     <% if current_user %>
       <li><%= link_to "Edit Review", edit_sitter_review_path(@sitter, review)  %></li>
-    <% end %>
-    <% if current_user %>
       <li><%= link_to "Delete Review", sitter_review_path(@sitter, review), method: :delete %></li>
     <% end %>
   <% end %>

@@ -52,30 +52,26 @@
       <%= f.label :have_dogs, "Do you have any dogs?" %>
       <%= f.select :have_dogs,
            [["No", false], ["Yes", true]],
-           selected: false,
-           include_blank: "" %>
+           selected: false %>
     </div>
 
     <div class="field">
       <%= f.label :have_children, "Do you have any children?" %>
       <%= f.select :have_children,
            [["No", false], ["Yes", true]],
-           selected: false,
-           include_blank: ""  %>
+           selected: false %>
     </div>
 
     <div class="field">
       <%= f.label :property_type, "Property type" %>
       <%= f.select :property_type,
-           User::PROPERTY,
-           include_blank: "" %>
+           User::PROPERTY %>
     </div>
 
     <div class="field">
       <%= f.label :yard_type, "Type of yard" %>
       <%= f.select :yard_type,
-          User::YARD,
-          include_blank: "" %>
+          User::YARD %>
     </div>
 
 

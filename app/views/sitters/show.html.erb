@@ -1,4 +1,8 @@
-<%= render 'shared/errors' if @errors %>
+<%- @review.errors.full_messages.each do |error| -%>
+  <ul>
+    <li><%= error %></li>
+  </ul>
+<%- end -%>
 
 <div class="sitter-profile panel">
   <div class="profile-header">

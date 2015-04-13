@@ -13,24 +13,17 @@ feature 'user registers', %Q{
   #   an error message
 
   scenario 'provide valid registration information as regular user' do
+    user = FactoryGirl.create(:user)
+
     visit new_user_registration_path
 
-    fill_in 'Email', with: 'john@example.com'
-    fill_in 'Password', with: 'password'
-    fill_in 'First name', with: 'John'
-    fill_in 'Last name', with: 'Doe'
-    fill_in 'Phone number', with: '5555555555'
-    fill_in 'Address1', with: '33 Harrison Ave'
-    fill_in 'City', with: 'Boston'
-    fill_in 'State', with: 'MA'
-    fill_in 'Zipcode', with: '02111'
-    fill_in 'Headline', with: 'I LOVE DOGS!'
-    fill_in 'Description', with: 'I hope to find dog lovers who can house my dog when I am away fro the weekend'
-    select 'No', from: 'Would you like to house a dog?'
-    select 'Yes', from: 'Do you have any dogs?'
-    select 'No', from: 'Do you have any children?'
-    select 'Apartment', from: 'Property type'
-    select 'None', from: 'Type of yard'
+    fill_in 'Email', with: "random@email.com"
+    fill_in 'Password', with: user.password
+    fill_in 'First name', with: user.first_name
+    fill_in 'Last name', with: user.last_name
+    fill_in 'Phone number', with: "3489991237"
+    fill_in 'Zipcode', with: user.zipcode
+    select 'No', from: "Would you like to house a dog?"
 
     click_button 'SIGN UP'
 
@@ -39,24 +32,26 @@ feature 'user registers', %Q{
   end
 
   scenario 'provide valid registration information as dog sitter' do
+    sitter = FactoryGirl.create(:sitter)
+
     visit new_user_registration_path
 
-    fill_in 'Email', with: 'john1@example.com'
-    fill_in 'Password', with: 'password'
-    fill_in 'First name', with: 'John'
-    fill_in 'Last name', with: 'Doe'
-    fill_in 'Phone number', with: '5555555555'
-    fill_in 'Address1', with: '33 Harrison Ave'
-    fill_in 'City', with: 'Boston'
-    fill_in 'State', with: 'MA'
-    fill_in 'Zipcode', with: '02111'
-    fill_in 'Headline', with: 'I LOVE DOGS!'
-    fill_in 'Description', with: 'I have been a dog owner for 20 years! I would be happy to house your dog!'
-    select 'Yes', from: 'Would you like to house a dog?'
-    select 'Yes', from: 'Do you have any dogs?'
-    select 'No', from: 'Do you have any children?'
-    select 'House', from: 'Property type'
-    select 'Fenced', from: 'Type of yard'
+    fill_in 'Email', with: "sitter@random.com"
+    fill_in 'Password', with: sitter.password
+    fill_in 'First name', with: sitter.first_name
+    fill_in 'Last name', with: sitter.last_name
+    fill_in 'Phone number', with: "2384883980"
+    fill_in 'Address1', with: sitter.address1
+    fill_in 'City', with: sitter.city
+    fill_in 'State', with: sitter.state
+    fill_in 'Zipcode', with: sitter.zipcode
+    fill_in 'Headline', with: sitter.headline
+    fill_in 'Description', with: sitter.description
+    select 'Yes', from: "Would you like to house a dog?"
+    select 'Yes', from: "Do you have any dogs?"
+    select 'No', from: "Do you have any children?"
+    select 'House', from: "Property type"
+    select 'Fenced', from: "Type of yard"
 
     click_button 'SIGN UP'
 
