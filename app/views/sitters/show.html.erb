@@ -24,9 +24,24 @@
       </div>
     </div>
   </div>
+  <hr>
+  <div class="small-12 large-12 columns" id="details-column">
+    <div class="about-header">
+      About This Sitter
+    </div>
+    <div class="panel-about">
+      <%= @sitter.description %>
+    </div>
+    <div class="image-carousel">
+      Photos
+    </div>
+    <div class="panel-images">
+      <%= image_tag "DMProfile.jpg" %>
+    </div>
 
-  <div class="small-12 columns" id="ratings_list">
-    <%= render "reviews/index" if @reviews %>
-    <%= render "reviews/new" %>
+    <div class="small-12 columns" id="ratings_list">
+      <%= render "reviews/index" if @reviews %>
+      <%= render "reviews/new" %>
+    </div>
   </div>
 </div>

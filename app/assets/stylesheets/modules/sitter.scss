@@ -1,17 +1,18 @@
 @import "variables";
 
 #sitter-container {
-  width: 90%;
+  font-family: $sitter-font-type;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
 
   .sitter-profile {
-    font-family: $sitter-font-type;
-    padding: 1.5em;
+    padding-top: 3em;
     margin: 0;
 
     .small-6 {
       padding: 0;
+      margin:0;
 
       img {
         border-radius: 20em;
@@ -29,7 +30,7 @@
     }
 
     .headline {
-      font-size: 1.4em;
+      font-size: 1.5em;
       font-weight: bold;
     }
 
@@ -39,6 +40,27 @@
 
     .addtl-info {
       padding-top: 2.6em;
+    }
+  }
+
+  #details-column {
+    padding-top: 2em;
+    padding-left: 2em;
+
+    .about-header {
+      font-size: $sitter-headline-font;
+      font-weight: $sitter-headline-weight
+    }
+
+    .panel-about {
+      margin: 0;
+      padding: 2em;
+      font-size: 0.9em;
+    }
+
+    .image-carousel {
+      font-size: $sitter-headline-font;
+      font-weight: $sitter-headline-weight
     }
   }
 }
