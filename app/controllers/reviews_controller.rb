@@ -2,8 +2,8 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
   def edit
-    @sitter = User.find(params[:sitter_id])
-    @review = @sitter.reviews.find(params[:id])
+      @sitter = User.find(params[:sitter_id])
+      @review = @sitter.reviews.find(params[:id])
   end
 
   def create
@@ -35,11 +35,11 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @sitter = User.find(params[:sitter_id])
-    if @review.users.find(current_user).present? #|| current_user.admin?
+    # if @review.users.find(current_user).present? #|| current_user.admin?
       @review.destroy
       flash[:notice] = "Review deleted."
       redirect_to sitter_path(@sitter)
-    end
+    # end
   end
 
   protected
