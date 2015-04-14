@@ -7,6 +7,10 @@
   margin-left: auto;
   margin-right: auto;
 
+  .hr {
+    opacity: 0.3;
+  }
+
   .sitter-profile {
     padding-top: 3em;
     margin: 0;
@@ -63,6 +67,10 @@
 
     .availability {
       @include sitter-details;
+    }
+
+    .hr {
+      opacity: 0.3;
     }
   }
 }
