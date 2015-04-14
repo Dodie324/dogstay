@@ -1,6 +1,9 @@
 <div class="small-12 large-12 columns" id="reviews-column">
   <div class="row rating">
-    <%= @reviews.count.to_s + " Reviews" %>
+    <% if @reviews.count >= 1 %>
+      <%= "1 Review" if @reviews.count == 1 %>
+      <%= @reviews.count.to_s + " Reviews" %>
+    <% end %>
   </div>
   <div class="panel reviews">
   <% @reviews.each do |review| %>

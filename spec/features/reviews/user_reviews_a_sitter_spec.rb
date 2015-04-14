@@ -21,8 +21,10 @@ feature "user reviews a sitter", %(
     click_on "Add Review"
 
     expect(page).to have_content("Review added successfully.")
+    expect(page).to have_content("1 Review")
     expect(page).to have_content(review.rating)
     expect(page).to have_content(review.body)
+    expect(page).to have_content(review.created_at.strftime("%d %b. %Y"))
   end
 
   scenario "authenticated user unsuccessfully writes a review" do

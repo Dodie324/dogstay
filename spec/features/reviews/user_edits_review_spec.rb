@@ -21,8 +21,10 @@ feature "user edits review", %(
     click_on "Add Review"
 
     expect(page).to have_content("Review added successfully.")
+    expect(page).to have_content("1 Review")
     expect(page).to have_content(review.rating)
     expect(page).to have_content(review.body)
+    expect(page).to have_content(review.created_at.strftime("%d %b. %Y"))
 
     click_on "Edit Review"
     select("2", from: "Rating")
@@ -30,6 +32,7 @@ feature "user edits review", %(
 
     click_on "Edit Review"
 
+    expect(page).to have_content("1 Review")
     within("#review-rating") do
       expect(page).to have_content("2")
       expect(page).to_not have_content(review.rating)
@@ -39,6 +42,7 @@ feature "user edits review", %(
       expect(page).to have_content("I did not have a pleasant experience with John.")
       expect(page).to_not have_content(review.body)
     end
+    expect(page).to have_content(review.created_at.strftime("%d %b. %Y"))
   end
 
   scenario "original reviewer unsuccessfully edits review" do
@@ -56,8 +60,10 @@ feature "user edits review", %(
     click_on "Add Review"
 
     expect(page).to have_content("Review added successfully.")
+    expect(page).to have_content("1 Review")
     expect(page).to have_content(review.rating)
     expect(page).to have_content(review.body)
+    expect(page).to have_content(review.created_at.strftime("%d %b. %Y"))
 
     click_on "Edit Review"
 
