@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 #sitter-container {
   font-family: $sitter-font-type;
@@ -61,6 +62,14 @@
     .image-carousel {
       font-size: $sitter-headline-font;
       font-weight: $sitter-headline-weight
+    }
+
+    .price {
+      @include sitter-details;
+    }
+
+    .availability {
+      @include sitter-details;
     }
   }
 }

@@ -33,12 +33,30 @@
       <%= @sitter.description %>
     </div>
     <div class="image-carousel">
-      Photos
+      <div class="panel-images">
+      </div>
     </div>
-    <div class="panel-images">
-      <%= image_tag "DMProfile.jpg" %>
+    <hr>
+    <div class="row price">
+      <div class="small-3 columns">
+        Price
+      </div>
+      <div class="small-9 columns">
+        $35 per day
+      </div>
     </div>
-
+    <hr>
+    <div class="row availability">
+      <div class="small-3 columns">
+        Availability
+      </div>
+      <div class="small-9 columns">
+        Saturday, Sunday
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="small-12 large-12 columns" id="reviews-column">
     <div class="small-12 columns" id="ratings_list">
       <%= render "reviews/index" if @reviews %>
       <%= render "reviews/new" %>

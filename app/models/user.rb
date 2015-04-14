@@ -48,8 +48,4 @@ class User < ActiveRecord::Base
     inclusion: {
       in: YARD
     }
-
-    def first_initial
-      sitter.last_name
-    end
 end

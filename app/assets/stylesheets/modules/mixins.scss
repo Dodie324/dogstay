@@ -1,0 +1,13 @@
+@mixin sitter-details {
+  font-size: 0.9em;
+  padding-left: 2em;
+  padding-top: 0.5em;
+
+  .small-3 {
+    padding: 0;
+  }
+
+  .small-9 {
+    padding: 0;
+  }
+}
