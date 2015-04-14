@@ -2,38 +2,33 @@ require 'factory_girl'
 
 FactoryGirl.define do
   factory :user do
-    sequence(:email) {|n| "user#{n}@example.com" }
+    sequence(:email) { |n| "user#{n}#{n}@example.com" }
     password 'password'
     password_confirmation 'password'
     first_name "John"
     last_name "Doe"
-    sequence(:phone_number) {|n| "555#{n}#{n}#{n}#{n}222"}
-    address1 "33 Harrison Ave"
-    city "Boston"
-    state "MA"
+    sequence(:phone_number) { |n| "555#{n}#{n}#{n}#{n}#{n}22" }
     zipcode "02111"
-    headline "I love dogs!"
-    description "I have been a dog owner for many years, and would love to house a dog for you!"
-    sitter "No"
-    have_dogs "Yes"
+    sitter false
+    have_dogs "No"
     have_children "No"
-    property_type "House"
-    yard_type "Fenced"
+    property_type ""
+    yard_type ""
 
     factory :sitter do
-      sequence(:email) {|n| "user#{n}@example#{n}.com" }
+      sequence(:email) { |n| "user#{n}@example#{n}.com" }
       password 'password'
       password_confirmation 'password'
       first_name "Terry"
       last_name "Moore"
-      sequence(:phone_number) {|n| "55#{n}#{n}#{n}#{n}#{n}222"}
+      sequence(:phone_number) { |n| "55#{n}#{n}#{n}#{n}#{n}#{n}22" }
       address1 "33 Harrison Ave"
       city "Boston"
       state "MA"
       zipcode "02111"
       headline "I love dogs!"
       description "I have been a dog owner for many years, and would love to house a dog for you!"
-      sitter "Yes"
+      sitter true
       have_dogs "Yes"
       have_children "No"
       property_type "House"

@@ -16,7 +16,6 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review added successfully."
       redirect_to sitter_path(@sitter)
     else
-      @errors = @review.errors.full_messages
       render "sitters/show"
     end
   end
@@ -29,12 +28,21 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review updated!"
       redirect_to sitter_path(@sitter)
     else
-      @errors = @review.errors.full_messages
       render :edit
     end
   end
 
-  protected
+  def destroy
+    @review = Review.find(params[:id])
+    @sitter = User.find(params[:sitter_id])
+
+    if @review.destroy
+      flash[:notice] = "Review deleted."
+      redirect_to sitter_path(@sitter)
+    end
+  end
+
+  private
 
   def review_params
     params.require(:review).permit(:rating, :body)

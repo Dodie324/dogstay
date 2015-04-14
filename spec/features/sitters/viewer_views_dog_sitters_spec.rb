@@ -8,7 +8,7 @@ feature "visitor views a list of dog sitters", %(
 ) do
 
   scenario "visitor sees all available sitters in their city" do
-    sitter = FactoryGirl.create(:user, sitter: true)
+    sitter = FactoryGirl.create(:sitter)
 
     visit root_path
 
@@ -26,7 +26,7 @@ feature "visitor views a list of dog sitters", %(
   end
 
   scenario "visitor views sitter's details" do
-    sitter = FactoryGirl.create(:user, sitter: true)
+    sitter = FactoryGirl.create(:sitter)
 
     visit root_path
 
