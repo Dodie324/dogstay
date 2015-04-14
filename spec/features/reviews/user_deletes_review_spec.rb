@@ -30,9 +30,8 @@ feature "user deletes their review", %(
   end
 
   scenario "sitter cannot delete review" do
-    user = FactoryGirl.create(:user)
     sitter = FactoryGirl.create(:sitter)
-    review = FactoryGirl.create(:review)
+    FactoryGirl.create(:review)
 
     sign_in_as(sitter)
 
@@ -43,7 +42,7 @@ feature "user deletes their review", %(
 
   scenario "viewer cannot edit review" do
     sitter = FactoryGirl.create(:sitter)
-    review = FactoryGirl.create(:review)
+    FactoryGirl.create(:review)
 
     visit sitter_path(sitter)
 

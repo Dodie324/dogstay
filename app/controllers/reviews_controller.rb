@@ -2,8 +2,8 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
   def edit
-      @sitter = User.find(params[:sitter_id])
-      @review = @sitter.reviews.find(params[:id])
+    @sitter = User.find(params[:sitter_id])
+    @review = @sitter.reviews.find(params[:id])
   end
 
   def create
