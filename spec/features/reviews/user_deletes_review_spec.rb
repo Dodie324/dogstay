@@ -37,7 +37,7 @@ feature "user deletes their review", %(
 
     visit sitter_path(sitter)
 
-    expect(page).to_not have_content("Delete Review")
+    expect(page).to_not have_content("Delete")
   end
 
   scenario "viewer cannot delete review" do
@@ -46,6 +46,6 @@ feature "user deletes their review", %(
 
     visit sitter_path(sitter)
 
-    expect(page).to_not have_content("Delete Review")
+    expect(page).to_not have_content("Delete")
   end
 end
