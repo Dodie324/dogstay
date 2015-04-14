@@ -24,7 +24,9 @@
       </div>
     </div>
   </div>
+
   <hr>
+
   <div class="small-12 large-12 columns" id="details-column">
     <div class="about-header">
       About This Sitter
@@ -54,12 +56,12 @@
         Saturday, Sunday
       </div>
     </div>
+
     <hr>
+
   </div>
-  <div class="small-12 large-12 columns" id="reviews-column">
-    <div class="small-12 columns" id="ratings_list">
-      <%= render "reviews/index" if @reviews %>
-      <%= render "reviews/new" %>
-    </div>
-  </div>
+
+  <%= render "reviews/index" if @reviews %>
+  <%= render "reviews/new" %>
+
 </div>

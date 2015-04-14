@@ -30,12 +30,12 @@ feature "user edits review", %(
 
     click_on "Edit Review"
 
-    within(".rating") do
+    within("#review-rating") do
       expect(page).to have_content("2")
       expect(page).to_not have_content(review.rating)
     end
 
-    within(".rating") do
+    within("#review-desc") do
       expect(page).to have_content("I did not have a pleasant experience with John.")
       expect(page).to_not have_content(review.body)
     end

@@ -10,4 +10,16 @@ class Review < ActiveRecord::Base
   def editable_by?(user)
     users.where(sitter: false).first == user
   end
+
+  def name
+    "#{first_name} #{last_name}"
+  end
+
+  def first_name
+    users.where(sitter: false).first.first_name
+  end
+
+  def last_name
+    users.where(sitter: false).first.last_name[0] + "."
+  end
 end

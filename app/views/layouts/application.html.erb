@@ -27,7 +27,9 @@
         <%- end -%>
       </ul>
   </nav>
-
+  <script type="text/javascript">
+    var centerPos = { lat: -34.397, lng: 150.644};
+  </script>
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
       <%= value %>

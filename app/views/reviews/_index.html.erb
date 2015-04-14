@@ -1,12 +1,37 @@
-<div class="rating">
+<div class="small-12 large-12 columns" id="reviews-column">
+  <div class="row rating">
+    200 Reviews
+  </div>
+  <div class="panel reviews">
   <% @reviews.each do |review| %>
-    <%= review.rating %>
-    <%= review.body %>
-      <% if review.editable_by?(current_user) %>
-      <li><%= link_to "Edit Review", edit_sitter_review_path(@sitter, review)  %></li>
-      <li>
-        <%= link_to "Delete Review", sitter_review_path(@sitter, review), method: :delete, data: { confirm: 'Are you sure?' } %>
-      </li>
-    <% end %>
+    <div class="sitter-reviews">
+      <div class="row review">
+        <div class="small-6 large-3 columns">
+          <%= image_tag "DMProfile.jpg" %>
+            <div class="row-name">
+              <%= review.name %>
+            </div>
+        </div>
+        <div class="small-6 large-9 columns">
+          <div class="row headline" id="review-rating">
+            <%= review.rating %>
+          </div>
+          <div class="row headline" id="review-desc">
+            <%= review.body %>
+          </div>
+          <div class="row date" id="review-date">
+            <%= review.created_at.strftime("%d %b. %Y") %>
+          </div>
+          <hr class="hr">
+        </div>
+      </div>
+          <% if review.editable_by?(current_user) %>
+            <li><%= link_to "Edit Review", edit_sitter_review_path(@sitter, review)  %></li>
+            <li><%= link_to "Delete Review", sitter_review_path(@sitter, review), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </li>
+          <% end %>
+    </div>
   <% end %>
+  </div>
 </div>
+

@@ -16,13 +16,7 @@
       margin:0;
 
       img {
-        border-radius: 20em;
-        height: 6em;
-        width: 6em;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0.5em;
+        @include image-style;
       }
 
       .row-name {
@@ -45,8 +39,7 @@
   }
 
   #details-column {
-    padding-top: 2em;
-    padding-left: 2em;
+    @include padding;
 
     .about-header {
       font-size: $sitter-headline-font;
