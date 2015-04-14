@@ -28,4 +28,25 @@ feature "user deletes their review", %(
 
     expect(page).to have_content("Review deleted.")
   end
+
+  scenario "sitter cannot delete review" do
+    user = FactoryGirl.create(:user)
+    sitter = FactoryGirl.create(:sitter)
+    review = FactoryGirl.create(:review)
+
+    sign_in_as(sitter)
+
+    visit sitter_path(sitter)
+
+    expect(page).to_not have_content("Delete Review")
+  end
+
+  scenario "viewer cannot edit review" do
+    sitter = FactoryGirl.create(:sitter)
+    review = FactoryGirl.create(:review)
+
+    visit sitter_path(sitter)
+
+    expect(page).to_not have_content("Delete Review")
+  end
 end

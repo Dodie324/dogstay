@@ -2,7 +2,7 @@
   <% @reviews.each do |review| %>
     <%= review.rating %>
     <%= review.body %>
-      <% if review.users.where(sitter: false)[0] == current_user %>
+      <% if review.editable_by?(current_user) %>
       <li><%= link_to "Edit Review", edit_sitter_review_path(@sitter, review)  %></li>
       <li>
         <%= link_to "Delete Review", sitter_review_path(@sitter, review), method: :delete, data: { confirm: 'Are you sure?' } %>

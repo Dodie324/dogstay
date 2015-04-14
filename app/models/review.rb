@@ -6,4 +6,8 @@ class Review < ActiveRecord::Base
 
   validates :rating, presence: true, inclusion: { in: 1..5 }
   validates :body, presence: true, length: { minimum: 20 }
+
+  def editable_by?(user)
+    users.where(sitter: false).first == user
+  end
 end
