@@ -1,6 +1,6 @@
 <div class="small-12 large-12 columns" id="reviews-column">
   <div class="row rating">
-    200 Reviews
+    <%= @reviews.count.to_s + " Reviews" %>
   </div>
   <div class="panel reviews">
   <% @reviews.each do |review| %>

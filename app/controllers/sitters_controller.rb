@@ -11,5 +11,6 @@ class SittersController < ApplicationController
     @sitter = User.find(params[:id])
     @reviews = @sitter.reviews
     @review = Review.new
+    total_reviews = @reviews.count
   end
 end
