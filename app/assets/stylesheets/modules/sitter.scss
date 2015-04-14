@@ -1,7 +1,44 @@
 @import "variables";
 
-.small-6 img {
-  border-radius: 20em;
-  height: 6em;
-  width: 6em;
+#sitter-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  .sitter-profile {
+    font-family: $sitter-font-type;
+    padding: 1.5em;
+    margin: 0;
+
+    .small-6 {
+      padding: 0;
+
+      img {
+        border-radius: 20em;
+        height: 6em;
+        width: 6em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0.5em;
+      }
+
+      .row-name {
+        text-align: center;
+      }
+    }
+
+    .headline {
+      font-size: 1.4em;
+      font-weight: bold;
+    }
+
+    .address {
+      font-size: 0.8em;
+    }
+
+    .addtl-info {
+      padding-top: 2.6em;
+    }
+  }
 }
