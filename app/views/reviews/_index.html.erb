@@ -19,8 +19,12 @@
           <div class="row headline" id="review-rating">
             <% if review.editable_by?(current_user) %>
               <div class="row-2 ed">
-                <%= link_to "Edit", edit_sitter_review_path(@sitter, review)  %>
-                <%= link_to "Delete", sitter_review_path(@sitter, review), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to edit_sitter_review_path(@sitter, review) do %>
+                  <i class="fi-pencil"></i>
+                <% end %>
+                <%= link_to sitter_review_path(@sitter, review), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <i class="fi-x"></i>
+                <% end %>
               </div>
             <% end %>
             <%= review.rating %>
