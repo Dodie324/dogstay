@@ -11,11 +11,11 @@ body.home-page {
     padding-left: 2em;
 
     a {
-      font-family: "Poiret One";
+      border-bottom: 2px solid transparent;
       color: #ffffff;
+      font-family: "Poiret One";
       font-size: 0.9em;
       margin-right: 1.5em;
-      border-bottom: 2px solid transparent;
       padding-bottom: 0.3em;
 
       &:hover {
@@ -26,12 +26,12 @@ body.home-page {
   }
 
   p {
-    text-align: center;
-    padding-top: 13%;
-    margin: 0;
+    color: #ffffff;
     font-family: "Poiret One";
     font-size: 12em;
-    color: #ffffff;
+    margin: 0;
+    padding-top: 13%;
+    text-align: center;
   }
 
   .search {
