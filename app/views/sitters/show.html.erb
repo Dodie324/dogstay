@@ -4,49 +4,64 @@
   </ul>
 <%- end -%>
 
-<div class="row sitter_profile">
-  <div class="small-6 large-3 columns">
-    <%= image_tag "DMProfile.jpg" %>
-  </div>
-  <div class="small-6 large-9 columns">
-    <div class="row headline" id="sitter_headline">
-      <%= @sitter.headline %>
+<div id="sitter-container">
+  <div class="row sitter-profile">
+    <div class="small-6 large-3 columns">
+      <%= image_tag "DMProfile.jpg" %>
+        <div class="row-name">
+            <%= @sitter.first_name %> <%= @sitter.last_name[0] + "." %>
+        </div>
     </div>
-    <div class="row address" id="sitter_address">
-      <%= @sitter.city %>, <%= @sitter.state %> <%= @sitter.zipcode %>
+    <div class="small-6 large-9 columns">
+      <div class="row headline" id="sitter_headline">
+        <%= @sitter.headline %>
+      </div>
+      <div class="row address" id="sitter_address">
+        <%= @sitter.city %>, <%= @sitter.state %> <%= @sitter.zipcode %>
+      </div>
+      <div class="row addtl-info">
+        <%= @sitter.property_type %> | <%= @sitter.yard_type %> | <%= t @sitter.have_dogs.class %> | <%= t @sitter.have_children.class %>
+      </div>
     </div>
   </div>
-  <div class="small-6 large-3 columns">
-    <%= @sitter.first_name %>
-  </div>
-</div>
 
-</div>
-  <div class="sitter-profile panel">
-    <div class="profile-header">
-      <%= @sitter.first_name %> - <%= @sitter.headline %>
+  <hr class="hr">
+
+  <div class="small-12 large-12 columns" id="details-column">
+    <div class="about-header">
+      About This Sitter
     </div>
-    <div class="profile-location">
-    </div>
-    <div class="profile-description">
+    <div class="panel-about">
       <%= @sitter.description %>
     </div>
-    <div class="profile-property-type">
-      <%= @sitter.property_type %>
+    <div class="image-carousel">
+      <div class="panel-images">
+      </div>
     </div>
-    <div class="profile-yard-type">
-      <%= @sitter.yard_type %>
+    <hr class="hr">
+    <div class="row price">
+      <div class="small-3 columns">
+        Price
+      </div>
+      <div class="small-9 columns">
+        $35 per day
+      </div>
     </div>
-    <div class="profile-children">
-      <%= t @sitter.have_dogs.class %>
+    <hr class="hr">
+    <div class="row availability">
+      <div class="small-3 columns">
+        Availability
+      </div>
+      <div class="small-9 columns">
+        Saturday, Sunday
+      </div>
     </div>
-    <div class="profile-children">
-      <%= t @sitter.have_children.class %>
-    </div>
+
+    <hr class="hr">
+
   </div>
 
-  <div class="small-12 columns" id="ratings_list">
-    <%= render "reviews/index" if @reviews %>
-    <%= render "reviews/new" %>
-  </div>
+  <%= render "reviews/index" if @reviews %>
+  <%= render "reviews/new" %>
+
 </div>

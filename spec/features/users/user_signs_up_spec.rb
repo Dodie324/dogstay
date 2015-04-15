@@ -25,10 +25,10 @@ feature 'user registers', %Q{
     fill_in 'Zipcode', with: user.zipcode
     select 'No', from: "Would you like to house a dog?"
 
-    click_button 'SIGN UP'
+    click_button 'Sign Up'
 
     expect(page).to have_content('Welcome! You have signed up successfully.')
-    expect(page).to have_content('SIGN OUT')
+    expect(page).to have_content('Sign Out')
   end
 
   scenario 'provide valid registration information as dog sitter' do
@@ -53,17 +53,17 @@ feature 'user registers', %Q{
     select 'House', from: "Property type"
     select 'Fenced', from: "Type of yard"
 
-    click_button 'SIGN UP'
+    click_button 'Sign Up'
 
     expect(page).to have_content('Welcome! You have signed up successfully.')
-    expect(page).to have_content('SIGN OUT')
+    expect(page).to have_content('Sign Out')
   end
 
   scenario 'provide invalid registration information' do
     visit new_user_registration_path
 
-    click_button 'SIGN UP'
+    click_button 'Sign Up'
     expect(page).to have_content("can't be blank")
-    expect(page).to_not have_content('SIGN OUT')
+    expect(page).to_not have_content('Sign Out')
   end
 end

@@ -9,6 +9,10 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'foundation-rails', github: 'zurb/foundation-rails'
 gem 'humanize_boolean'
+gem "jquery-slick-rails"
+gem 'foundation-icons-sass-rails'
+gem 'dotenv-rails'
+
 
 group :development, :test do
   gem 'pry-rails'

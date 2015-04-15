@@ -1,0 +1,29 @@
+@mixin image-style {
+  border-radius: 20em;
+  height: 6em;
+  width: 6em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5em;
+}
+
+@mixin sitter-details {
+  font-size: 0.9em;
+  padding-left: 2em;
+  padding-top: 0.5em;
+
+  .small-3 {
+    padding: 0;
+  }
+
+  .small-9 {
+    padding: 0;
+  }
+}
+
+@mixin padding {
+  padding-top: 2em;
+  padding-left: 3em;
+  padding-right: 3em;
+}

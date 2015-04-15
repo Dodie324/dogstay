@@ -1,7 +1,76 @@
 @import "variables";
+@import "mixins";
 
-.small-6 img {
-  border-radius: 20em;
-  height: 6em;
-  width: 6em;
+#sitter-container {
+  font-family: $sitter-font-type;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+  .hr {
+    opacity: 0.3;
+  }
+
+  .sitter-profile {
+    padding-top: 3em;
+    margin: 0;
+
+    .small-6 {
+      padding: 0;
+      margin:0;
+
+      img {
+        @include image-style;
+      }
+
+      .row-name {
+        text-align: center;
+      }
+    }
+
+    .headline {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .address {
+      font-size: 0.8em;
+    }
+
+    .addtl-info {
+      padding-top: 2.6em;
+    }
+  }
+
+  #details-column {
+    @include padding;
+
+    .about-header {
+      font-size: $sitter-headline-font;
+      font-weight: $sitter-headline-weight
+    }
+
+    .panel-about {
+      margin: 0;
+      padding: 2em;
+      font-size: 0.9em;
+    }
+
+    .image-carousel {
+      font-size: $sitter-headline-font;
+      font-weight: $sitter-headline-weight
+    }
+
+    .price {
+      @include sitter-details;
+    }
+
+    .availability {
+      @include sitter-details;
+    }
+
+    .hr {
+      opacity: 0.3;
+    }
+  }
 }
