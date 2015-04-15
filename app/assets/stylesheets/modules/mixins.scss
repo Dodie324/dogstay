@@ -27,3 +27,14 @@
   padding-left: 3em;
   padding-right: 3em;
 }
+
+@mixin link-border {
+  border-bottom: 2px solid transparent;
+  color: #ffffff;
+  font-family: $dogstay-font-theme;
+}
+
+@mixin hover {
+  border-color: #008080;
+  color: #008080;
+}

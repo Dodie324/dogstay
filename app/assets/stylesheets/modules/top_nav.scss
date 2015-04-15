@@ -1,3 +1,29 @@
 @import "variables";
 @import "mixins";
 
+.top-bar {
+  h1 a {
+    font-family: $dogstay-font-theme;
+    font-size: 1.5em;
+
+    &:hover {
+      @include hover;
+    }
+  }
+
+  .right {
+    padding-left: 2em;
+    padding-top: 0.9em;
+
+    a {
+      @include link-border;
+      font-size: 0.9em;
+      margin-right: 1.5em;
+      padding-bottom: 0.3em;
+
+      &:hover {
+        @include hover;
+      }
+    }
+  }
+}
