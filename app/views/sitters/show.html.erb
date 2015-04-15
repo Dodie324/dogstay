@@ -1,8 +1,10 @@
+<div class="errors">
 <%- @review.errors.full_messages.each do |error| -%>
   <ul>
     <li><%= error %></li>
   </ul>
 <%- end -%>
+</div>
 
 <div id="sitter-container">
   <div class="row sitter-profile">

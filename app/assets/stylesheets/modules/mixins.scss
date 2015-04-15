@@ -38,3 +38,17 @@
   border-color: #008080;
   color: #008080;
 }
+
+@mixin flash {
+  padding: 1em;
+  font-size: 1.2em;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #fff;
+  background: #9ACD34;
+  shadow: (0, 1px, 2px, rgba(0,0,0,.5));
+  border-radius: 0 0 1em 1em;
+}
