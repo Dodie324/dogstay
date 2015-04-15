@@ -12,6 +12,7 @@ gem 'humanize_boolean'
 gem "jquery-slick-rails"
 gem 'foundation-icons-sass-rails'
 gem 'dotenv-rails'
+gem 'rails_12factor'
 
 
 group :development, :test do
