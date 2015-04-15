@@ -19,8 +19,8 @@ body.home-page {
       padding-bottom: 0.3em;
 
       &:hover {
-        border-color: teal;
-        color: teal;
+        border-color: #008080;
+        color: #008080;
       }
     }
   }
@@ -31,7 +31,7 @@ body.home-page {
     margin: 0;
     font-family: "Poiret One";
     font-size: 12em;
-    color: #fff;
+    color: #ffffff;
   }
 
   .search {
@@ -39,6 +39,6 @@ body.home-page {
   }
 
   .postfix {
-    background-color: teal;
+    background-color: #008080;
   }
 }
