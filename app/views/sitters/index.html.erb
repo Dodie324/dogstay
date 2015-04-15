@@ -1,16 +1,29 @@
-<div class="search-results">
-  <div class="search-results-container">
+<div class="small-12 large-12 columns" id="search-sitter-container">
+  <div class="small-6 large-6 columns" id="list-of-sitters">
   <% @sitters.each do |sitter| %>
-    <div class="sitter panel">
-      <div class="s_name">
-        <%= link_to sitter.first_name, sitter_path(sitter) %>
-      </div>
-      <div class="s_headline">
+  <div class="row sitter-profile">
+    <div class="small-6 large-3 columns">
+      <%= image_tag "DMProfile.jpg" %>
+        <div class="row-name">
+            <%= link_to "#{sitter.first_name} #{sitter.last_name[0]}.", sitter_path(sitter) %>
+        </div>
+    </div>
+    <div class="small-6 large-9 columns" id="sitter-info">
+      <div class="row headline" id="sitter_headline">
         <%= sitter.headline %>
       </div>
-      <div class="s_address">
-        <%= sitter.city %>, <%= sitter.state %>  <%= sitter.zipcode %>
+      <div class="row address" id="sitter_address">
+        <%= sitter.city %>, <%= sitter.state %>
+        <% if sitter.reviews.count >= 1 %>
+          <%= " | " %><%= "1 Review" if sitter.reviews.count == 1 %>
+          <%= sitter.reviews.count.to_s + " Reviews" %>
+        <% end %>
+      </div>
+      <div class="row addtl-info">
+        <%= sitter.property_type %> | <%= sitter.yard_type %> | <%= t sitter.have_dogs.class %> | <%= t sitter.have_children.class %>
       </div>
     </div>
-  <% end %>
+  </div>
+<% end %>
+</div>
 </div>
