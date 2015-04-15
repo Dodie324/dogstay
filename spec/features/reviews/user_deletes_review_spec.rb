@@ -24,7 +24,7 @@ feature "user deletes their review", %(
     expect(page).to have_content(review.rating)
     expect(page).to have_content(review.body)
 
-    click_on "Delete"
+    page.first("#review-rating .fi-x").click
 
     expect(page).to have_content("Review deleted.")
   end

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dogstay</title>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyD8Yu5RmOzfLGJxdI7BhkMGTLUDblJt1qY"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body class="home-page">
+  <div class="top-nav">
+    <ul class="right">
+      <%- if current_user -%>
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+      <%- else -%>
+        <%= link_to 'Sign Up', new_user_registration_path %>
+        <%= link_to 'Log In', new_user_session_path %>
+      <%- end -%>
+    </ul>
+  </div>
+  <p>Find your sitter</p>
+  <div class="row search">
+    <div class="large-12 columns">
+      <div class="row collapse">
+        <div class="small-11 columns">
+          <%= form_tag sitters_path, method: :get do %>
+            <%= text_field_tag(
+                :address,
+                nil,
+                placeholder: "Enter your city",
+                id: "address"
+              ) %>
+        </div>
+        <div class="small-1 columns">
+            <%= button_tag(type: "submit", class: "button postfix") do %>
+              <i class="fi-magnifying-glass"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= javascript_include_tag 'application' %>
+  <%= content_for :extra_footer do %>
+    <script type="text/javascript">
+      var widget = new Something.Widget('foo');
+    </script>
+  <% end %>
+</body>
+</html>
+

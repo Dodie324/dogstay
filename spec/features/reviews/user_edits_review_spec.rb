@@ -26,11 +26,11 @@ feature "user edits review", %(
     expect(page).to have_content(review.body)
     expect(page).to have_content(review.created_at.strftime("%d %b. %Y"))
 
-    click_on "Edit"
+    page.first("#review-rating .fi-pencil").click
+
     select("2", from: "Rating")
     fill_in "Review", with: "I did not have a pleasant experience with John."
-
-    click_on "Edit"
+    click_on "Edit Review"
 
     expect(page).to have_content("1 Review")
     within("#review-rating") do
@@ -65,11 +65,11 @@ feature "user edits review", %(
     expect(page).to have_content(review.body)
     expect(page).to have_content(review.created_at.strftime("%d %b. %Y"))
 
-    click_on "Edit"
+    page.find(".ed a .fi-pencil").click
 
     select("2", from: "Rating")
     fill_in "Review", with: ""
-    click_on "Edit"
+    click_on "Edit Review"
 
     expect(page).to have_content("Body can't be blank")
     expect(page).to have_content("Body is too short (minimum is 20 characters)")

@@ -1,0 +1,32 @@
+@import "variables";
+@import "mixins";
+
+body.home-page {
+  background: url(dog.png) no-repeat;
+  background-size: 100%;
+  opacity: .9;
+
+  .right {
+    padding: 1em;
+    padding-left: 2em;
+
+    a {
+      font-family: "Arapey";
+      color: #fff;
+      font-size: 0.9em;
+    }
+  }
+
+  p {
+    text-align: center;
+    padding-top: 0.9em;
+    margin: 0;
+    font-family: "Arapey";
+    font-size: 10em;
+    color: #fff;
+  }
+
+  .search {
+    width: 50%
+  }
+}
