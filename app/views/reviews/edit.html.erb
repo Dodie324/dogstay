@@ -1,8 +1,10 @@
-<%- @review.errors.full_messages.each do |error| -%>
-  <ul>
-    <li><%= error %></li>
-  </ul>
-<%- end -%>
+<div class="errors">
+  <%- @review.errors.full_messages.each do |error| -%>
+    <ul>
+      <li><%= error %></li>
+    </ul>
+  <%- end -%>
+</div>
 
 <%= form_for [@sitter, @review], url: sitter_review_path(@sitter, @review) do |f| %>
   <%= f.label :rating %>
