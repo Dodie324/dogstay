@@ -2,5 +2,5 @@
 @import "variables";
 
 .flash, .errors {
-  @include flash
+  @include flash;
 }
