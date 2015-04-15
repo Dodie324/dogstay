@@ -10,6 +10,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="home-page">
+  <%- flash.each do |key, value| -%>
+    <div class="flash flash-<%= key %>">
+      <%= value %>
+    </div>
+  <%- end -%>
   <div class="top-nav">
     <ul class="right">
       <%- if current_user -%>
@@ -34,9 +39,7 @@
               ) %>
         </div>
         <div class="small-1 columns">
-            <%= button_tag(type: "submit", class: "button postfix") do %>
-              <i class="fi-magnifying-glass"></i>
-            <% end %>
+        <%= submit_tag "Go", class: "button postfix" %>
           <% end %>
         </div>
       </div>
