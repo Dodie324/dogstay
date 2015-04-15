@@ -7,27 +7,24 @@ body.home-page {
   opacity: 0.9;
 
   .right {
-    padding: 1em;
+    padding-top: 0.9em;
     padding-left: 2em;
 
     a {
-      border-bottom: 2px solid transparent;
-      color: #ffffff;
-      font-family: "Poiret One";
+      @include link-border;
       font-size: 0.9em;
       margin-right: 1.5em;
       padding-bottom: 0.3em;
 
       &:hover {
-        border-color: #008080;
-        color: #008080;
+        @include hover
       }
     }
   }
 
   p {
     color: #ffffff;
-    font-family: "Poiret One";
+    font-family: $dogstay-font-theme;
     font-size: 12em;
     margin: 0;
     padding-top: 13%;
