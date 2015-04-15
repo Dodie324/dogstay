@@ -11,22 +11,34 @@ body.home-page {
     padding-left: 2em;
 
     a {
-      font-family: "Arapey";
+      font-family: "Poiret One";
       color: #fff;
       font-size: 0.9em;
+      margin-right: 1.5em;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.3em;
+
+      &:hover {
+        border-color: teal;
+        color: teal;
+      }
     }
   }
 
   p {
     text-align: center;
-    padding-top: 0.9em;
+    padding-top: 0.6em;
     margin: 0;
-    font-family: "Arapey";
-    font-size: 10em;
+    font-family: "Poiret One";
+    font-size: 12em;
     color: #fff;
   }
 
   .search {
-    width: 50%
+    width: 50%;
+  }
+
+  .postfix {
+    background-color: teal;
   }
 }
