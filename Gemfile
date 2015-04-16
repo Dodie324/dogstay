@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.1'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -14,6 +13,8 @@ gem 'foundation-icons-sass-rails'
 gem 'materialize-sass'
 gem 'dotenv-rails'
 gem 'rails_12factor'
+gem 'carrierwave'
+gem 'fog'
 
 
 group :development, :test do

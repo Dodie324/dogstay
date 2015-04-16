@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :have_children
     devise_parameter_sanitizer.for(:sign_up) << :property_type
     devise_parameter_sanitizer.for(:sign_up) << :yard_type
+    devise_parameter_sanitizer.for(:sign_up) << :image
   end
 
   protect_from_forgery with: :exception
