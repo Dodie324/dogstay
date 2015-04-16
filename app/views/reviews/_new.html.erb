@@ -1,9 +1,13 @@
-<%= form_for [@sitter, @review], url: sitter_reviews_path(@sitter) do |f| %>
-  <%= f.label :rating %>
-  <%= f.select :rating, Review::RATING, include_blank: "Please Rate" %>
+<div class="row submit-review">
+  <%= form_for [@sitter, @review], url: sitter_reviews_path(@sitter) do |f| %>
+    <%= f.label :rating, id: "rating" %>
+    <% Review::RATING.each do |rating| %>
+      <%= f.radio_button(:rating, rating) %>
+      <%= f.label("rating_#{rating}", rating) %>
+    <% end %>
 
-  <%= f.label :body, "Review" %>
-  <%= f.text_area :body %>
+    <%= f.text_area :body, placeholder: "Write a review (minimum 40 characters)", id: "text-area" %>
 
-  <%= f.submit "Add Review", class: "button" %>
-<% end %>
+    <%= f.submit "Add Review", class: "button postfix" %>
+  <% end %>
+</div>

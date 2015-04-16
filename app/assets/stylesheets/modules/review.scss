@@ -4,6 +4,10 @@
 #reviews-column {
   @include padding;
 
+  .rating a {
+    float: right;
+  }
+
   .reviews {
     background-color: #ffffff;
     border: none;
@@ -35,6 +39,10 @@
       float: right;
     }
 
+    .has-tip {
+      display: inline-block;
+    }
+
     #review-desc {
       font-size: 0.9em;
       padding-left: 5em;
@@ -53,4 +61,8 @@
       opacity: 0.3
     }
   }
+}
+
+.submit-review {
+  display: none;
 }

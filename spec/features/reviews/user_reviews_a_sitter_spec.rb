@@ -15,8 +15,9 @@ feature "user reviews a sitter", %(
 
     visit sitter_path(sitter)
 
-    select("5", from: "Rating")
-    fill_in "Review", with: review.body
+    click_on "Add a review"
+    page.choose(5)
+    fill_in "text-area", with: review.body
 
     click_on "Add Review"
 
@@ -35,11 +36,11 @@ feature "user reviews a sitter", %(
 
     visit sitter_path(sitter)
 
+    click_on "Add a review"
+
     click_on "Add Review"
 
-    expect(page).to have_content("Rating can't be blank")
-    expect(page).to have_content("Rating is not included in the list")
-    expect(page).to have_content("Body can't be blank")
+    expect(page).to have_content("Review not added.")
   end
 
   scenario "authenticated user doesn't submit valid review body" do
@@ -50,12 +51,14 @@ feature "user reviews a sitter", %(
 
     visit sitter_path(sitter)
 
-    select("5", from: "Rating")
-    fill_in "Review", with: "The best"
+    click_on "Add a review"
+
+    page.choose(5)
+    fill_in "text-area", with: "The best"
 
     click_on "Add Review"
 
-    expect(page).to have_content("Body is too short (minimum is 20 characters)")
+    expect(page).to have_content("Review not added.")
   end
 
   scenario "a viewer attempts to review a sitter" do
@@ -66,12 +69,7 @@ feature "user reviews a sitter", %(
 
     visit sitter_path(sitter)
 
-    select("5", from: "Rating")
-    fill_in "Review", with: review_desc
-
-    click_on "Add Review"
-
-    expect(page).to have_content("You need to sign in or sign up before continuing.")
+    expect(page).to_not have_content("Add a review")
   end
 
 end

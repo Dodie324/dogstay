@@ -106,6 +106,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    materialize-sass (0.96.1)
+      sass (~> 3.3)
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.2)
@@ -243,6 +245,7 @@ DEPENDENCIES
   jquery-rails
   jquery-slick-rails
   launchy
+  materialize-sass
   pg
   pry-rails
   rails (= 4.2.1)

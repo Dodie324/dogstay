@@ -11,6 +11,7 @@ gem 'foundation-rails', github: 'zurb/foundation-rails'
 gem 'humanize_boolean'
 gem "jquery-slick-rails"
 gem 'foundation-icons-sass-rails'
+gem 'materialize-sass'
 gem 'dotenv-rails'
 gem 'rails_12factor'
 

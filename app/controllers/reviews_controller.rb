@@ -16,7 +16,8 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review added successfully."
       redirect_to sitter_path(@sitter)
     else
-      render "sitters/show"
+      flash[:note] = "Review not added."
+      redirect_to sitter_path(@sitter)
     end
   end
 
