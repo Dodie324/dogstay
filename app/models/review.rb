@@ -4,7 +4,7 @@ class Review < ActiveRecord::Base
   has_many :user_reviews
   has_many :users, through: :user_reviews
 
-  validates :rating, presence: true, inclusion: { in: 1..5 }
+  validates :rating, presence: true, inclusion: { in: RATING }
   validates :body, presence: true, length: { minimum: 20 }
 
   def editable_by?(user)

@@ -1,9 +1,17 @@
-<%= form_for [@sitter, @review], url: sitter_reviews_path(@sitter) do |f| %>
-  <%= f.label :rating %>
-  <%= f.select :rating, Review::RATING, include_blank: "Please Rate" %>
+<% if current_user %>
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <div class="row submit-review">
+    <%= form_for [@sitter, @review], url: sitter_reviews_path(@sitter) do |f| %>
+      <%= f.label :rating %>
+      <% Review::RATING.each do |rating| %>
+        <%= f.radio_button(:rating, rating) %>
+        <%= f.label("rating_#{rating}", rating) %>
+      <% end %>
 
-  <%= f.label :body, "Review" %>
-  <%= f.text_area :body %>
+      <%= f.text_area :body, placeholder: "Write a review" %>
 
-  <%= f.submit "Add Review", class: "button" %>
+      <%= f.submit "Add Review", class: "button postfix" %>
+    <% end %>
+  </div>
+</div>
 <% end %>

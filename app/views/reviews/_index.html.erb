@@ -4,6 +4,7 @@
       <%= "1 Review" if @reviews.count == 1 %>
       <%= @reviews.count.to_s + " Reviews" %>
     <% end %>
+    <%= link_to "Add a review", "#", :"data-reveal-id" => "myModal" %>
   </div>
   <div class="panel reviews">
   <% @reviews.each do |review| %>
@@ -19,12 +20,12 @@
           <div class="row headline" id="review-rating">
             <% if review.editable_by?(current_user) %>
               <div class="row-2 ed">
-                <%= link_to edit_sitter_review_path(@sitter, review) do %>
+                <div data-tooltip aria-haspopup="true" class="has-tip" title="Edit"><%= link_to edit_sitter_review_path(@sitter, review) do %>
                   <i class="fi-pencil"></i>
-                <% end %>
-                <%= link_to sitter_review_path(@sitter, review), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <% end %></div>
+                <div data-tooltip aria-haspopup="true" class="has-tip" title="Delete"><%= link_to sitter_review_path(@sitter, review), method: :delete, data: { confirm: 'Are you sure?' } do %>
                   <i class="fi-x"></i>
-                <% end %>
+                <% end %></div>
               </div>
             <% end %>
             <%= review.rating %>
