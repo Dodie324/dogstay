@@ -32,6 +32,11 @@
     <%= f.text_field :zipcode %>
   </div>
 
+   <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
   <div class="field" id="sitter">
     <%= f.label :sitter, "Would you like to house a dog?" %>
     <%= f.select :sitter, [["No", false],["Yes", true]], selected: false %>
