@@ -23,6 +23,8 @@ feature 'user registers', %Q{
     fill_in 'Last name', with: user.last_name
     fill_in 'Phone number', with: "3489991237"
     fill_in 'Zipcode', with: user.zipcode
+    attach_file("user_image",
+      "#{Rails.root}/spec/fixtures/fritz.jpg")
     select 'No', from: "Would you like to house a dog?"
 
     click_button 'Sign Up'
@@ -45,9 +47,11 @@ feature 'user registers', %Q{
     fill_in 'City', with: sitter.city
     fill_in 'State', with: sitter.state
     fill_in 'Zipcode', with: sitter.zipcode
+    attach_file("user_image",
+      "#{Rails.root}/spec/fixtures/fritz.jpg")
+    select 'Yes', from: "Would you like to house a dog?"
     fill_in 'Headline', with: sitter.headline
     fill_in 'Description', with: sitter.description
-    select 'Yes', from: "Would you like to house a dog?"
     select 'Yes', from: "Do you have any dogs?"
     select 'No', from: "Do you have any children?"
     select 'House', from: "Property type"

@@ -15,6 +15,13 @@
     padding-left: 2em;
     padding-top: 0.9em;
 
+    img {
+      border-radius: 20em;
+      height: 1.5em;
+      width: 1.5em;
+      margin-right: 1.5em;
+    }
+
     a {
       @include link-border;
       font-size: 0.9em;
