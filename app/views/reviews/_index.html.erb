@@ -4,7 +4,9 @@
       <%= "1 Review" if @reviews.count == 1 %>
       <%= @reviews.count.to_s + " Reviews" %>
     <% end %>
+    <% if current_user %>
     <%= link_to "Add a review", "#", :"data-reveal-id" => "myModal" %>
+    <% end %>
   </div>
   <div class="panel reviews">
   <% @reviews.each do |review| %>

@@ -15,6 +15,8 @@ feature "user reviews a sitter", %(
 
     visit sitter_path(sitter)
 
+    click_on "Add a review"
+
     select("5", from: "Rating")
     fill_in "Review", with: review.body
 
@@ -35,6 +37,8 @@ feature "user reviews a sitter", %(
 
     visit sitter_path(sitter)
 
+    click_on "Add a review"
+
     click_on "Add Review"
 
     expect(page).to have_content("Rating can't be blank")
@@ -49,6 +53,8 @@ feature "user reviews a sitter", %(
     sign_in_as(user)
 
     visit sitter_path(sitter)
+
+    click_on "Add a review"
 
     select("5", from: "Rating")
     fill_in "Review", with: "The best"
@@ -66,12 +72,7 @@ feature "user reviews a sitter", %(
 
     visit sitter_path(sitter)
 
-    select("5", from: "Rating")
-    fill_in "Review", with: review_desc
-
-    click_on "Add Review"
-
-    expect(page).to have_content("You need to sign in or sign up before continuing.")
+    expect(page).to_not have_content("Add a review")
   end
 
 end
