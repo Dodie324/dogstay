@@ -7,7 +7,7 @@ FactoryGirl.define do
     password_confirmation 'password'
     first_name "John"
     last_name "Doe"
-    sequence(:phone_number) { |n| "555#{n}#{n}#{n}#{n}#{n}22" }
+    sequence(:phone_number) { |n| "5558273862" }
     zipcode "02111"
     sitter false
     have_dogs "No"
