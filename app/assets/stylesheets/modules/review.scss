@@ -63,18 +63,6 @@
   }
 }
 
-#myModal {
-  width:50%;
-  height: 50%;
-
-  .new_review {
-    padding-top: 2em;
-
-    input.postfix {
-      width: 30%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-
+.submit-review {
+  display: none;
 }

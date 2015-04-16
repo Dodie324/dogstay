@@ -5,7 +5,7 @@
       <%= @reviews.count.to_s + " Reviews" %>
     <% end %>
     <% if current_user %>
-    <%= link_to "Add a review", "#", :"data-reveal-id" => "myModal" %>
+    <%= link_to "Add a review", "#", id: "reviewForm" %>
     <% end %>
   </div>
   <div class="panel reviews">
