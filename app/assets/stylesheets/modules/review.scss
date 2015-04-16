@@ -66,3 +66,20 @@
 .submit-review {
   display: none;
 }
+
+  form#new_review.new_review {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .postfix {
+      width: 40%;
+      margin-left: auto;
+      margin-right: auto;
+      background: #008080;
+      border-radius: 20em;
+    }
+  }
+
+
+

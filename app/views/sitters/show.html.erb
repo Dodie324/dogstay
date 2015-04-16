@@ -1,11 +1,11 @@
 <% if @errors %>
-<div class="errors">
-  <%- @review.errors.full_messages.each do |error| -%>
-      <ul>
-        <li><%= error %></li>
-      </ul>
-  <%- end -%>
-</div>
+  <div class="errors">
+    <%- @review.errors.full_messages.each do |error| -%>
+        <ul>
+          <li><%= error %></li>
+        </ul>
+    <%- end -%>
+  </div>
 <% end %>
 
 <div id="sitter-container">

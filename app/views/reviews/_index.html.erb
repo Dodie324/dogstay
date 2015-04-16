@@ -1,11 +1,14 @@
 <div class="small-12 large-12 columns" id="reviews-column">
   <div class="row rating">
     <% if @reviews.count >= 1 %>
-      <%= "1 Review" if @reviews.count == 1 %>
-      <%= @reviews.count.to_s + " Reviews" %>
+      <% if @reviews.count == 1 %>
+        <%= "1 Review" %>
+      <% else %>
+        <%= @reviews.count.to_s + " Reviews" %>
+      <% end %>
     <% end %>
-    <% if current_user != User.where(sitter: true) %>
-    <%= link_to "Add a review", "#", id: "reviewForm" %>
+    <% if current_user %>
+     <%= link_to "Add a review", "#", id: "reviewForm" %>
     <% end %>
   </div>
   <div class="panel reviews">
