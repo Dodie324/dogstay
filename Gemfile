@@ -15,6 +15,7 @@ gem 'dotenv-rails'
 gem 'rails_12factor'
 gem 'carrierwave'
 gem 'fog'
+gem 'geocoder'
 
 
 group :development, :test do

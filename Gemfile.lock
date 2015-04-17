@@ -184,6 +184,7 @@ GEM
     foundation-icons-sass-rails (3.0.0)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
+    geocoder (1.2.8)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -347,6 +348,7 @@ DEPENDENCIES
   fog
   foundation-icons-sass-rails
   foundation-rails!
+  geocoder
   humanize_boolean
   jquery-rails
   jquery-slick-rails
