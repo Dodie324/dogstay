@@ -85,14 +85,10 @@
     </div>
 
     <div class="field">
-      <%= f.label :availability, "Days available" %>
-      <% User::AVAILABILITY.each do |day| %>
-        <%= f.check_box(:availability, { multiple: true }, day) %>
-        <% binding.pry %>
-        <%= f.label("availability_#{day}", day) %>
-      <% end %>
+      <%= f.label :availability, "Time available" %>
+      <%= f.select :availability,
+          User::AVAILABILITY %>
     </div>
-
     <div class="field">
       <%= f.label :address1 %>
       <%= f.text_field :address1 %>

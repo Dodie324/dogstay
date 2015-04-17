@@ -1,7 +1,7 @@
 class SittersController < ApplicationController
   def index
-    if params[:address].present?
-      @sitters = User.where(sitter: true, city: params[:address])
+    if params[:location].present?
+      @sitters = User.where(sitter: true, city: params[:location])
     else
       @sitters = User.where(sitter: true)
     end

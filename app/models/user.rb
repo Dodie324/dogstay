@@ -21,13 +21,10 @@ class User < ActiveRecord::Base
   ]
 
   AVAILABILITY = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
+    "",
+    "Weekends",
+    "Weekdays",
+    "Any day of the week"
   ]
 
   devise :database_authenticatable,

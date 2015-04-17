@@ -27,19 +27,19 @@
   </div>
   <p>Find your sitter</p>
   <div class="row search">
-    <div class="large-12 columns">
-      <div class="row collapse">
-        <div class="small-11 columns">
+    <div class="small-12 columns">
+      <div class="row collapse postfix-round">
+        <div class="small-10 columns">
           <%= form_tag sitters_path, method: :get do %>
             <%= text_field_tag(
-                :address,
+                :location,
                 nil,
                 placeholder: "Enter your city",
-                id: "address"
+                id: "location"
               ) %>
         </div>
-        <div class="small-1 columns">
-        <%= submit_tag "Go", class: "button postfix" %>
+        <div class="small-2 columns">
+          <%= submit_tag "Go", class: "button postfix" %>
           <% end %>
         </div>
       </div>
@@ -53,4 +53,6 @@
   <% end %>
 </body>
 </html>
+
+
 
