@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
     class_name: "Review", foreign_key: :sitter_id
   has_many :reviews_written,
     class_name: "Review", foreign_key: :user_id
+  belongs_to :location
   mount_uploader :image, AvatarUploader
 
   PROPERTY = [
@@ -63,4 +64,12 @@ class User < ActiveRecord::Base
     inclusion: {
       in: AVAILABILITY
     }
+
+  def self.search(search)
+    if search
+      where(["name ILIKE ?", "%#{location}%"])
+    else
+      all
+    end
+  end
 end
