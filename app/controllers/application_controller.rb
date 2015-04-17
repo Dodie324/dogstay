@@ -6,22 +6,26 @@ class ApplicationController < ActionController::Base
   protected
 
   def devise_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :first_name
-    devise_parameter_sanitizer.for(:sign_up) << :last_name
-    devise_parameter_sanitizer.for(:sign_up) << :phone_number
-    devise_parameter_sanitizer.for(:sign_up) << :address1
-    devise_parameter_sanitizer.for(:sign_up) << :address2
-    devise_parameter_sanitizer.for(:sign_up) << :city
-    devise_parameter_sanitizer.for(:sign_up) << :state
-    devise_parameter_sanitizer.for(:sign_up) << :zipcode
-    devise_parameter_sanitizer.for(:sign_up) << :headline
-    devise_parameter_sanitizer.for(:sign_up) << :description
-    devise_parameter_sanitizer.for(:sign_up) << :sitter
-    devise_parameter_sanitizer.for(:sign_up) << :have_dogs
-    devise_parameter_sanitizer.for(:sign_up) << :have_children
-    devise_parameter_sanitizer.for(:sign_up) << :property_type
-    devise_parameter_sanitizer.for(:sign_up) << :yard_type
-    devise_parameter_sanitizer.for(:sign_up) << :image
+    devise_parameter_sanitizer.for(:sign_up) << [
+      :first_name,
+      :last_name,
+      :phone_number,
+      :address1,
+      :address2,
+      :city,
+      :state,
+      :zipcode,
+      :headline,
+      :description,
+      :sitter,
+      :have_dogs,
+      :have_children,
+      :property_type,
+      :yard_type,
+      :image,
+      :price,
+      :availability
+    ]
   end
 
   protect_from_forgery with: :exception

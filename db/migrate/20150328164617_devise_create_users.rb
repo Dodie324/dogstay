@@ -34,6 +34,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.boolean :have_children
       t.string  :property_type
       t.string  :yard_type
+      t.string  :price
+      t.string  :availability
 
 
       t.timestamps

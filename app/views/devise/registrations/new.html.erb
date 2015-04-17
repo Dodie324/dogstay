@@ -80,6 +80,17 @@
     </div>
 
     <div class="field">
+      <%= f.label :price %>
+      <%= f.text_field :price, placeholder: "Price per day (USD)" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :availability, "Time available" %>
+      <%= f.select :availability,
+          User::AVAILABILITY %>
+    </div>
+
+    <div class="field">
       <%= f.label :address1 %>
       <%= f.text_field :address1 %>
     </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416160351) do
+ActiveRecord::Schema.define(version: 20150417032654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,18 +30,17 @@ ActiveRecord::Schema.define(version: 20150416160351) do
     t.datetime "updated_at"
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.float  "latitude"
+    t.float  "longitude"
+    t.string "location"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating",     null: false
     t.text     "body",       null: false
+    t.integer  "sitter_id"
     t.integer  "user_id"
-    t.integer  "dog_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "user_reviews", force: :cascade do |t|
-    t.integer  "review_id",  null: false
-    t.integer  "user_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -72,6 +71,8 @@ ActiveRecord::Schema.define(version: 20150416160351) do
     t.boolean  "have_children"
     t.string   "property_type"
     t.string   "yard_type"
+    t.string   "price"
+    t.string   "availability"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"

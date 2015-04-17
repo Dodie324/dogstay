@@ -12,7 +12,7 @@ feature "visitor views a list of dog sitters", %(
 
   #   visit root_path
 
-  #   fill_in "address", with: "Boston"
+  #   fill_in :location, with: "Boston"
   #   click_on "Go"
 
   #   expect(page).to have_content(sitter.first_name)

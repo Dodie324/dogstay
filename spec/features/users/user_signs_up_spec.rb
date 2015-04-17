@@ -56,6 +56,8 @@ feature 'user registers', %Q{
     select 'No', from: "Do you have any children?"
     select 'House', from: "Property type"
     select 'Fenced', from: "Type of yard"
+    fill_in 'Price', with: sitter.price
+    select 'Weekends', from: "Time available"
 
     click_button 'Sign Up'
 
