@@ -3,21 +3,22 @@ class ReviewsController < ApplicationController
 
   def edit
     @sitter = User.find(params[:sitter_id])
-    @review = @sitter.reviews.find(params[:id])
+    @review = @sitter.reviews_received.find(params[:id])
   end
 
   def create
-    @sitter = User.find(params[:sitter_id])
+    # @sitter = User.find(params[:sitter_id])
+    # @reviewee = @sitter.reviews_received[:user_id]
     @review = Review.new(review_params)
-    @user_review = UserReview.new(review: @review, user: current_user)
-    @sitter_review = UserReview.new(review: @review, user: @sitter)
+    @review.user = current_user
+    @review.sitter = User.find(params[:sitter_id])
 
-    if @review.save && @user_review.save && @sitter_review.save
+    if @review.save
       flash[:notice] = "Review added successfully."
-      redirect_to sitter_path(@sitter)
+      redirect_to sitter_path(@review.sitter)
     else
       flash[:note] = "Review not added."
-      redirect_to sitter_path(@sitter)
+      redirect_to sitter_path(@review.sitter)
     end
   end
 

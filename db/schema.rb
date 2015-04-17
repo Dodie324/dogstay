@@ -33,15 +33,8 @@ ActiveRecord::Schema.define(version: 20150416160351) do
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating",     null: false
     t.text     "body",       null: false
+    t.integer  "sitter_id"
     t.integer  "user_id"
-    t.integer  "dog_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "user_reviews", force: :cascade do |t|
-    t.integer  "review_id",  null: false
-    t.integer  "user_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -72,6 +65,8 @@ ActiveRecord::Schema.define(version: 20150416160351) do
     t.boolean  "have_children"
     t.string   "property_type"
     t.string   "yard_type"
+    t.string   "price"
+    t.string   "availability"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"

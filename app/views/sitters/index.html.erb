@@ -14,9 +14,9 @@
         </div>
         <div class="row address" id="sitter_address">
           <%= sitter.city %>, <%= sitter.state %>
-          <% if sitter.reviews.count >= 1 %>
-            <%= " | " %><%= "1 Review" if sitter.reviews.count == 1 %>
-            <%= sitter.reviews.count.to_s + " Reviews" %>
+          <% if sitter.reviews_received.count >= 1 %>
+            <%= " | " %><%= "1 Review" if sitter.reviews_received.count == 1 %>
+            <%= sitter.reviews_received.count.to_s + " Reviews" %>
           <% end %>
         </div>
         <div class="row addtl-info">

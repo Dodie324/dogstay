@@ -3,4 +3,6 @@
 
 .flash, .errors {
   @include flash;
+  position: absolute;
+  width: 100%;
 }

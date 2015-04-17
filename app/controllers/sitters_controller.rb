@@ -9,7 +9,7 @@ class SittersController < ApplicationController
 
   def show
     @sitter = User.find(params[:id])
-    @reviews = @sitter.reviews
+    @reviews = @sitter.reviews_received
     @review = Review.new
   end
 end

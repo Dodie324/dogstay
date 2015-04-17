@@ -48,7 +48,11 @@
         Price
       </div>
       <div class="small-9 columns">
-        $35 per day
+        <% if @sitter.price == nil %>
+          <%= "N/A - Please contact " %><%= @sitter.first_name %><%= " for more information" %>
+        <% else %>
+          <%= "$ "+@sitter.price + "per day" %>
+        <% end %>
       </div>
     </div>
     <hr class="hr">
@@ -57,7 +61,8 @@
         Availability
       </div>
       <div class="small-9 columns">
-        Saturday, Sunday
+        <%= @sitter.availability %>
+        <% binding.pry %>
       </div>
     </div>
 

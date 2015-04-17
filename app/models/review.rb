@@ -1,25 +1,14 @@
 class Review < ActiveRecord::Base
   RATING = [1, 2, 3, 4, 5]
 
-  has_many :user_reviews
-  has_many :users, through: :user_reviews
+  belongs_to :sitter, class_name: "User"
+  belongs_to :user
 
   validates :rating, presence: true, inclusion: { in: RATING }
   validates :body, presence: true, length: { minimum: 20 }
+  validates :user, presence: true
 
-  def editable_by?(user)
-    users.where(sitter: false).first == user
-  end
-
-  def name
-    "#{first_name} #{last_name}"
-  end
-
-  def first_name
-    users.where(sitter: false).first.first_name
-  end
-
-  def last_name
-    users.where(sitter: false).first.last_name[0] + "."
+  def sitter?
+    user.find_by(sitter: true)
   end
 end

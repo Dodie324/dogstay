@@ -80,6 +80,21 @@
     </div>
 
     <div class="field">
+      <%= f.label :price %>
+      <%= f.text_field :price, placeholder: "Price per day (USD)" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :availability, "Days available" %>
+      <% User::AVAILABILITY.each do |day| %>
+        <%= f.check_box(:availability, { multiple: true }, day) %>
+        <% binding.pry %>
+        <%= f.label("availability_#{day}", day) %>
+      <% end %>
+    </div>
+
+
+    <div class="field">
       <%= f.label :address1 %>
       <%= f.text_field :address1 %>
     </div>

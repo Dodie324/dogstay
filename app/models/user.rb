@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-  has_many :user_reviews
-  has_many :reviews, through: :user_reviews
-
+  has_many :reviews_received,
+    class_name: "Review", foreign_key: :sitter_id
+  has_many :reviews_written,
+    class_name: "Review", foreign_key: :user_id
   mount_uploader :image, AvatarUploader
 
   PROPERTY = [
@@ -17,6 +18,16 @@ class User < ActiveRecord::Base
     "None",
     "Fenced",
     "Open"
+  ]
+
+  AVAILABILITY = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
   ]
 
   devise :database_authenticatable,
@@ -49,5 +60,10 @@ class User < ActiveRecord::Base
   validates :yard_type,
     inclusion: {
       in: YARD
+    }
+
+  validates :availability,
+    inclusion: {
+      in: AVAILABILITY
     }
 end
