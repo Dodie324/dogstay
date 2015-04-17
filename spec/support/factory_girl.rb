@@ -7,13 +7,14 @@ FactoryGirl.define do
     password_confirmation 'password'
     first_name "John"
     last_name "Doe"
-    sequence(:phone_number) { |n| "5558273862" }
+    sequence(:phone_number) { |n| "55582743#{n}#{n}" }
     zipcode "02111"
     sitter false
     have_dogs "No"
     have_children "No"
     property_type ""
     yard_type ""
+    availability ""
 
     factory :sitter do
       sequence(:email) { |n| "user#{n}@example#{n}.com" }
@@ -33,6 +34,8 @@ FactoryGirl.define do
       have_children "No"
       property_type "House"
       yard_type "Fenced"
+      price "40"
+      availability "Weekends"
     end
   end
 
@@ -41,5 +44,7 @@ FactoryGirl.define do
     body "John was wonderful to our dog, Fritz! He sent us updates daily and\
           even shared photos of Fritz playing with his dog. We definitely felt\
           at ease knowing Fritz was in good hands."
+    user
+    sitter
   end
 end
