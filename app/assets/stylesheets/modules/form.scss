@@ -6,15 +6,15 @@
   margin-left: auto;
   margin-right: auto;
 
-  .legend{
-    font-family:$dogstay-font-theme;
+  .legend {
+    font-family: $dogstay-font-theme;
     font-size: 2em;
   }
 
   .postfix {
-    width:30%;
+    background: #008080;
     margin-left: auto;
     margin-right: auto;
-    background: teal;
+    width: 30%;
   }
 }
