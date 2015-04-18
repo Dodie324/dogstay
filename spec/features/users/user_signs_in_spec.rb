@@ -8,15 +8,11 @@ feature 'user signs in', %Q{
   scenario 'specify valid credentials' do
     user = FactoryGirl.create(:user)
 
-    visit new_user_session_path
-
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-
-    click_button 'Log In'
+    sign_in_as(user)
 
     expect(page).to have_content('Signed in successfully')
     expect(page).to have_content('Sign Out')
+    expect(page).to have_content('Edit Profile')
   end
 
   scenario 'specify invalid credentials' do
@@ -25,5 +21,6 @@ feature 'user signs in', %Q{
     click_button 'Log In'
     expect(page).to have_content('Invalid email or password')
     expect(page).to_not have_content('Sign Out')
+    expect(page).to_not have_content('Edit Profile')
   end
 end

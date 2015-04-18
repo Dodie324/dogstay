@@ -30,6 +30,7 @@ feature 'user registers', %Q{
     click_button 'Sign Up'
 
     expect(page).to have_content('Welcome! You have signed up successfully.')
+    expect(page).to have_content('Edit Profile')
     expect(page).to have_content('Sign Out')
   end
 
@@ -62,6 +63,7 @@ feature 'user registers', %Q{
     click_button 'Sign Up'
 
     expect(page).to have_content('Welcome! You have signed up successfully.')
+    expect(page).to have_content('Edit Profile')
     expect(page).to have_content('Sign Out')
   end
 
@@ -71,5 +73,6 @@ feature 'user registers', %Q{
     click_button 'Sign Up'
     expect(page).to have_content("can't be blank")
     expect(page).to_not have_content('Sign Out')
+    expect(page).to_not have_content('Edit Profile')
   end
 end

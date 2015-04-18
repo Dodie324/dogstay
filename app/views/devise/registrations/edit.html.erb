@@ -1,10 +1,11 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edit Profile</h2>
 
+<fieldset class="form-layout">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
   </div>
 
@@ -27,11 +28,110 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zipcode %>
+    <%= f.text_field :zipcode %>
+  </div>
+
+   <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field" id="sitter">
+    <%= f.label :sitter, "Would you like to house a dog?" %>
+    <%= f.select :sitter, [["No", false],["Yes", true]], selected: false %>
+  </div>
+
+  <div id="sitter_profile">
+    <div class="field">
+      <%= f.label :headline %>
+      <%= f.text_field :headline, placeholder: "Tell dog owners what makes you and your home special" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_field :description, placeholder: "Tell us about yourself" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :have_dogs, "Do you have any dogs?" %>
+      <%= f.select :have_dogs,
+           [["No", false], ["Yes", true]],
+           selected: false %>
+    </div>
+
+    <div class="field">
+      <%= f.label :have_children, "Do you have any children?" %>
+      <%= f.select :have_children,
+           [["No", false], ["Yes", true]],
+           selected: false %>
+    </div>
+
+    <div class="field">
+      <%= f.label :property_type, "Property type" %>
+      <%= f.select :property_type,
+           User::PROPERTY %>
+    </div>
+
+    <div class="field">
+      <%= f.label :yard_type, "Type of yard" %>
+      <%= f.select :yard_type,
+          User::YARD %>
+    </div>
+
+    <div class="field">
+      <%= f.label :price %>
+      <%= f.text_field :price, placeholder: "Price per day (USD)" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :availability, "Time available" %>
+      <%= f.select :availability,
+          User::AVAILABILITY %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address1 %>
+      <%= f.text_field :address1 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address2 %>
+      <%= f.text_field :address2 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :city %>
+      <%= f.text_field :city %>
+    </div>
+
+    <div class="field">
+      <%= f.label :state %>
+      <%= f.text_field :state %>
+    </div>
+  </div>
+
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class: "button postfix" %>
   </div>
 <% end %>
-
+</fieldset>
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
