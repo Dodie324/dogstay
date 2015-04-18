@@ -2,20 +2,31 @@
 @import "mixins";
 
 //SEARCH
+.all {
+  max-width: 80%;
+
+  #map-canvas {
+    height: 1000px;
+    width: 500px;
+    margin-top: 3em;
+    margin-right: 3em;
+    max-width: inherit;
+    z-index: 1;
+    position: absolute;
+    left: 55%;
+    float: right;
+    align: right;
+  }
+
 #search-sitter-container {
   font-family: $sitter-font-type;
-  margin-left: auto;
   margin-right: auto;
-
-  #list-of-sitters {
-    margin-left: 9.3em;
-  }
 
   .sitter-profile {
     padding-top: 3em;
-    margin: 0;
+    height: 250px;
 
-    .small-6 {
+    .small-4 {
       padding: 0;
       margin:0;
 
@@ -29,7 +40,6 @@
     }
 
     #sitter-info {
-      padding-left: 3.1em;
 
       .headline {
         font-size: 1.5em;
@@ -46,7 +56,7 @@
     }
   }
 }
-
+}
 //SINGLE
 #sitter-container {
   font-family: $sitter-font-type;
