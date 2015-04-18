@@ -1,118 +1,261 @@
+<div class="row sign-up">
 <fieldset>
+<legend class="legend">Sign Up</legend>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :email, class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password, "Password (8 characters minimum)" %>
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :password, class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.password_field :password, placeholder: "Minimum 8 characters long" %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :first_name, class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.text_field :first_name %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :last_name, class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.text_field :last_name %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :phone_number %>
-    <%= f.text_field :phone_number %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :phone_number, class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.text_field :phone_number %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :zipcode %>
-    <%= f.text_field :zipcode %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :zipcode, class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.text_field :zipcode %>
+        </div>
+      </div>
+    </div>
   </div>
-
-   <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :image, class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.file_field :image %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field" id="sitter">
-    <%= f.label :sitter, "Would you like to house a dog?" %>
-    <%= f.select :sitter, [["No", false],["Yes", true]], selected: false %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :sitter, "Would you like to house a dog?", class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.select :sitter, [["No", false],["Yes", true]], selected: false %>
+        </div>
+      </div>
+    </div>
   </div>
-
   <div id="sitter_profile">
-    <div class="field">
-      <%= f.label :headline %>
-      <%= f.text_field :headline, placeholder: "Tell dog owners what makes you and your home special" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :description %>
-      <%= f.text_field :description, placeholder: "Tell us about yourself" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :have_dogs, "Do you have any dogs?" %>
-      <%= f.select :have_dogs,
-           [["No", false], ["Yes", true]],
-           selected: false %>
-    </div>
-
-    <div class="field">
-      <%= f.label :have_children, "Do you have any children?" %>
-      <%= f.select :have_children,
-           [["No", false], ["Yes", true]],
-           selected: false %>
-    </div>
-
-    <div class="field">
-      <%= f.label :property_type, "Property type" %>
-      <%= f.select :property_type,
-           User::PROPERTY %>
-    </div>
-
-    <div class="field">
-      <%= f.label :yard_type, "Type of yard" %>
-      <%= f.select :yard_type,
-          User::YARD %>
-    </div>
-
-    <div class="field">
-      <%= f.label :price %>
-      <%= f.text_field :price, placeholder: "Price per day (USD)" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :availability, "Time available" %>
-      <%= f.select :availability,
-          User::AVAILABILITY, selected: "" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :address1 %>
-      <%= f.text_field :address1 %>
-    </div>
-
-    <div class="field">
-      <%= f.label :address2 %>
-      <%= f.text_field :address2 %>
-    </div>
-
-    <div class="field">
-      <%= f.label :city %>
-      <%= f.text_field :city %>
-    </div>
-
-    <div class="field">
-      <%= f.label :state %>
-      <%= f.text_field :state %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :headline, class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.text_field :headline, placeholder: "Tell dog owners what makes you and your home special" %>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="button radius" >
-    <%= f.submit "Sign Up" %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :description, class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.text_area :description, placeholder: "Tell us about yourself" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :have_dogs, "Do you have any dogs?", class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.select :have_dogs,
+            [["No", false], ["Yes", true]],
+            selected: false %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :have_children, "Do you have any children?", class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.select :have_children,
+            [["No", false], ["Yes", true]],
+            selected: false %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :property_type, "Property type", class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.select :property_type,
+            User::PROPERTY %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :yard_type, "Type of yard", class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.select :yard_type,
+            User::YARD %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :price, class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.text_field :price, placeholder: "Price per day (USD)" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :availability, "Time available", class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.select :availability,
+            User::AVAILABILITY %>
+        </div>
+      </div>
+    </div>
+  </div>
+   <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :address1, class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.text_field :address1 %>
+        </div>
+      </div>
+    </div>
+  </div>
+   <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :address2, class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.text_field :address2 %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :city, class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.text_field :city %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :state, class: "center inline" %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.text_field :state %>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="actions" >
+    <%= f.submit "Sign Up", class: "button postfix" %>
   </div>
 <% end %>
 </fieldset>
-
+  </div>
+</div>

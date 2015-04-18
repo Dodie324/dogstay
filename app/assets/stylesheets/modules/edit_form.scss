@@ -1,0 +1,40 @@
+@import "variables";
+@import "mixins";
+
+.form {
+
+  .legend{
+    font-family:$dogstay-font-theme;
+    font-size: 2em;
+  }
+
+  img {
+    @include image-style;
+    margin-top: 3em;
+    margin-left: 0;
+    margin-right: 0;
+    height: 15em;
+    width: 15em;
+  }
+
+  ul {
+    font-family: $sitter-font-type;
+    padding-left:2.2em;
+  }
+
+  .postfix {
+    width:30%;
+    margin-left: auto;
+    margin-right: auto;
+    background: teal;
+  }
+
+  .form-layout {
+    margin-top: 3em;
+  }
+
+  h4 {
+    font-family: $sitter-font-type;
+    text-align: center;
+  }
+}
