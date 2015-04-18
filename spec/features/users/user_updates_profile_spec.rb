@@ -1,6 +1,5 @@
 require "rails_helper"
 
-
 feature "sitter eidts profile", %(
   As a sitter
   I want to update my profle
