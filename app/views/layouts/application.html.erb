@@ -9,6 +9,7 @@
   <!-- <link href='//fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'> -->
   <!-- <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyD8Yu5RmOzfLGJxdI7BhkMGTLUDblJt1qY"></script> -->
   <%= csrf_meta_tags %>
+ <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 </head>
 <body>
   <nav class="top-bar">
@@ -29,9 +30,6 @@
       </ul>
     </div>
   </nav>
-  <script type="text/javascript">
-    var centerPos = { lat: -34.397, lng: 150.644};
-  </script>
 
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
@@ -42,11 +40,5 @@
   <%= yield %>
 
   <%= javascript_include_tag 'application' %>
-
-  <%= content_for :extra_footer do %>
-    <script type="text/javascript">
-      var widget = new Something.Widget('foo');
-    </script>
-  <% end %>
 </body>
 </html>

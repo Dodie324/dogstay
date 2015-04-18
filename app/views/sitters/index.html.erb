@@ -1,32 +1,37 @@
-<div class="small-12 large-12 columns" id="search-sitter-container">
-  <div class="small-6 large-6 columns" id="list-of-sitters">
+<div class="row all">
+  <div class="small-7 large-7 columns" id="search-sitter-container">
     <% @sitters.each do |sitter| %>
-    <div class="row sitter-profile">
-      <div class="small-6 large-3 columns">
-        <%= image_tag sitter.image_url.to_s %>
-          <div class="row-name">
-            <%= link_to "#{sitter.first_name} #{sitter.last_name[0]}.", sitter_path(sitter) %>
+      <div class="row sitter-profile">
+        <div class="small-4 large-4 columns">
+          <%= image_tag sitter.image_url.to_s %>
+            <div class="row-name">
+              <%= link_to "#{sitter.first_name} #{sitter.last_name[0]}.", sitter_path(sitter) %>
+            </div>
+        </div>
+        <div class="small-7 large-7 columns" id="sitter-info">
+          <div class="row headline" id="sitter_headline">
+            <%= sitter.headline %>
           </div>
-      </div>
-      <div class="small-6 large-9 columns" id="sitter-info">
-        <div class="row headline" id="sitter_headline">
-          <%= sitter.headline %>
-        </div>
-        <div class="row address" id="sitter_address">
-          <%= sitter.city %>, <%= sitter.state %>
-          <% if sitter.reviews_received.count >= 1 %>
-            <%= " | " %><% if sitter.reviews_received.count == 1 %>
-              <%= "1 Review" %>
-            <% else %>
-              <%= sitter.reviews_received.count.to_s + " Reviews" %>
+          <div class="row address" id="sitter_address">
+            <%= sitter.city %>, <%= sitter.state %>
+              <% if sitter.reviews_received.count >= 1 %>
+                <%= " | " %><% if sitter.reviews_received.count == 1 %>
+                  <%= "1 Review" %>
+              <% else %>
+                <%= sitter.reviews_received.count.to_s + " Reviews" %>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
-        <div class="row addtl-info">
-          <%= sitter.property_type %> | <%= sitter.yard_type %> | <%= t sitter.have_dogs.class %> | <%= t sitter.have_children.class %>
+          </div>
+          <div class="row addtl-info">
+            <%= sitter.property_type %> | <%= sitter.yard_type %> | <%= t sitter.have_dogs.class %> | <%= t sitter.have_children.class %>
+          </div>
         </div>
       </div>
-    </div>
     <% end %>
   </div>
+  <div class="small-5 large-5 columns" id="map-canvas"></div>
 </div>
+<script type="text/javascript">
+  var centerLocation = <%= @location.to_json.html_safe %>
+</script>
+

@@ -37,6 +37,8 @@
                 placeholder: "Enter your city",
                 id: "location"
               )%>
+              <%= hidden_field_tag 'longitude' %>
+              <%= hidden_field_tag 'latitude' %>
         </div>
         <div class="small-2 columns">
           <%= submit_tag "Go", class: "button postfix" %>
