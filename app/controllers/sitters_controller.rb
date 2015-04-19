@@ -11,7 +11,7 @@ class SittersController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render json: @location }
+      format.json { render json: { location: @location, sitter: @sitters }}
     end
   end
 
