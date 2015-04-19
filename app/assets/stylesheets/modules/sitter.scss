@@ -5,9 +5,40 @@
 .all {
   max-width: 80%;
 
-#search-sitter-container {
+#sitter-profile-box {
   font-family: $sitter-font-type;
   margin-right: auto;
+  position: relative;
+  float: left;
+
+  .price {
+    font-size: 3em;
+    color: #fff;
+    position: absolute;
+    top: 1%;
+    width: 100%;
+    text-align: right;
+    padding-right: 0.3em;
+  }
+
+  .headline {
+    font-family: $dogstay-font-theme;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    padding-left: 0.2em;
+    bottom: 10%;
+    text-align: center;
+  }
+
+  .sitter-name {
+    font-family: $dogstay-font-theme;
+    color: #fff;
+    position: absolute;
+    padding-left: 0.2em;
+    bottom: 2%;
+  }
 
   .sitter-profile {
     padding-top: 3em;
