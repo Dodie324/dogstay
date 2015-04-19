@@ -6,6 +6,7 @@
   <%= javascript_include_tag "vendor/modernizr" %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body class="home-page">
   <%- flash.each do |key, value| -%>
@@ -26,23 +27,21 @@
   </div>
   <p>Find your sitter</p>
   <div class="row search">
-    <div class="small-12 columns">
-      <div class="row collapse postfix-round">
-        <div class="small-10 columns">
-          <%= form_tag sitters_path, method: :get do %>
-            <%= text_field_tag(
-                :location,
-                nil,
-                placeholder: "Enter your city",
-                id: "location"
-              )%>
-              <%= hidden_field_tag 'longitude' %>
-              <%= hidden_field_tag 'latitude' %>
-        </div>
-        <div class="small-2 columns">
-          <%= submit_tag "Go", class: "button postfix" %>
+    <div class="box">
+      <div class="container-4">
+        <%= form_tag sitters_path, method: :get do %>
+          <%= text_field_tag(
+            :location,
+            nil,
+            placeholder: "Enter your city",
+            id: "location"
+          )%>
+          <%= hidden_field_tag 'longitude' %>
+          <%= hidden_field_tag 'latitude' %>
+          <%= button_to sitters_path, class: "icon" do %>
+            <i class="fa fa-search"></i>
           <% end %>
-        </div>
+        <%end%>
       </div>
     </div>
   </div>
