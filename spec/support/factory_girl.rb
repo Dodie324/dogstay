@@ -2,12 +2,12 @@ require 'factory_girl'
 
 FactoryGirl.define do
   factory :user do
-    sequence(:email) { |n| "user#{n}#{n}#{n}@example.com" }
+    sequence(:email) { |n| "user#{n}#{n}#{n}@example#{n}.com" }
     password 'password'
     password_confirmation 'password'
     first_name "John"
     last_name "Doe"
-    sequence(:phone_number) { |n| "#{n}55-82#{n}-43#{n}#{n}" }
+    sequence(:phone_number) { |n| "#{n}5#{n}-82#{n}-43#{n}#{n}" }
     zipcode "02111"
     sitter false
     have_dogs "No"
