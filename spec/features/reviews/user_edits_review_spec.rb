@@ -75,24 +75,24 @@ feature "user edits review", %(
   #   expect(page).to have_content("Body is too short (minimum is 20 characters)")
   # end
 
-  scenario "sitter cannot edit review" do
-    user = FactoryGirl.create(:user)
-    sitter = FactoryGirl.create(:sitter)
-    review = FactoryGirl.create(:review)
+  # scenario "sitter cannot edit review" do
+  #   user = FactoryGirl.create(:user)
+  #   sitter = FactoryGirl.create(:sitter)
+  #   review = FactoryGirl.create(:review)
 
-    sign_in_as(sitter)
+  #   sign_in_as(sitter)
 
-    visit sitter_path(sitter)
+  #   visit sitter_path(sitter)
 
-    expect(page).to_not have_content("Edit")
-  end
+  #   expect(page).to_not have_content("Edit")
+  # end
 
-  scenario "viewer cannot edit review" do
-    sitter = FactoryGirl.create(:sitter)
-    review = FactoryGirl.create(:review)
+  # scenario "viewer cannot edit review" do
+  #   sitter = FactoryGirl.create(:sitter)
+  #   review = FactoryGirl.create(:review)
 
-    visit sitter_path(sitter)
+  #   visit sitter_path(sitter)
 
-    expect(page).to_not have_content("Edit")
-  end
+  #   expect(page).to_not have_content("Edit")
+  # end
 end

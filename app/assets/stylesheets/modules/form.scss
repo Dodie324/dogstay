@@ -1,0 +1,20 @@
+@import "variables";
+@import "mixins";
+
+.sign-up {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+  .legend {
+    font-family: $dogstay-font-theme;
+    font-size: 2em;
+  }
+
+  .postfix {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    background: #008080;
+  }
+}

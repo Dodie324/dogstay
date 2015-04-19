@@ -35,6 +35,27 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable
 
+  validates :email,
+    presence: true,
+    uniqueness: true,
+    format: {
+      with: /\A[a-z0-9_.+\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-.]+\z/
+    }
+
+  validates :phone_number,
+    presence: true,
+    format: {
+      with: /\d[0-9]\)*\z/,
+      message: "bad format"
+    }
+
+  validates :zipcode,
+    presence: true,
+    format: {
+      with: /\A\d{5}-\d{4}|\A\d{5}\z/,
+      message: "should be in the form 12345 or 12345-1234"
+    }
+
   validates :sitter,
     inclusion: {
       in: [true, false]
