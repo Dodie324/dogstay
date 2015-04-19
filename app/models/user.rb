@@ -42,25 +42,17 @@ class User < ActiveRecord::Base
       with: /\A[a-z0-9_.+\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-.]+\z/
     }
 
-  validates :password,
-    presence: true,
-    length: {
-      minimum: 8
-    }
-
   validates :phone_number,
-    numericality: {
-      only_integer: true
-    },
+    presence: true,
     format: {
-      with: /\d{3}-\d{3}-\d{4}/,
+      with: /\d[0-9]\)*\z/,
       message: "bad format"
     }
 
   validates :zipcode,
     presence: true,
     format: {
-      with: /A\d{5}(-\d{4})/,
+      with: /\A\d{5}-\d{4}|\A\d{5}\z/,
       message: "should be in the form 12345 or 12345-1234"
     }
 
