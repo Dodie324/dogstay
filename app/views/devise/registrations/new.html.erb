@@ -75,6 +75,8 @@
       </div>
     </div>
   </div>
+  <%= hidden_field_tag 'longitude' %>
+  <%= hidden_field_tag 'latitude' %>
   <div class="row">
     <div class="small-12 columns">
       <div class="row">
@@ -246,7 +248,8 @@
           <%= f.label :state, class: "center inline" %>
         </div>
         <div class="small-9 columns">
-          <%= f.text_field :state %>
+          <%= f.select :state,
+            User::STATE %>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "sitter eidts profile", %(
+feature "sitter edits profile", %(
   As a sitter
   I want to update my profle
   So I can make new changes.

@@ -46,7 +46,9 @@
                 <%= f.label :zipcode %>
                 <%= f.text_field :zipcode %>
               </div>
-               <div class="field">
+              <%= hidden_field_tag 'longitude' %>
+              <%= hidden_field_tag 'latitude' %>
+              <div class="field">
                 <%= f.label :image %>
                 <%= f.file_field :image %>
               </div>
@@ -109,7 +111,9 @@
                 </div>
                 <div class="field">
                   <%= f.label :state %>
-                  <%= f.text_field :state %>
+                  <%= f.select :state,
+                      User::STATE,
+                      :allow_nil => true %>
                 </div>
               </div>
               <div class="actions">

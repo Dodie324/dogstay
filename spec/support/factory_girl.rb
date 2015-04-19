@@ -15,6 +15,7 @@ FactoryGirl.define do
     property_type ""
     yard_type ""
     availability ""
+    state ""
 
     factory :sitter do
       sequence(:email) { |n| "user#{n}@example#{n}.com" }

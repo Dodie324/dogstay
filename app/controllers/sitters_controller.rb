@@ -4,7 +4,7 @@ class SittersController < ApplicationController
   def index
     @location = coordinates_for(params[:location])
     if @location.present?
-      @sitters = User.where(sitter: true, city: params[:location])
+      @sitters = User.where(sitter: true).near(@location, 50)
     else
       @sitters = User.where(sitter: true)
     end
@@ -22,6 +22,7 @@ class SittersController < ApplicationController
   end
 
   def coordinates_for(location)
+    location = location.downcase.gsub(/\W/, "")
     coordinates = Location.find_by(location: location)
     if coordinates
       coordinates

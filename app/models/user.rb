@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
   belongs_to :location
   mount_uploader :image, AvatarUploader
 
+  geocoded_by :address
+  after_validation :geocode
+
   PROPERTY = [
     "",
     "Apartment",
@@ -26,6 +29,65 @@ class User < ActiveRecord::Base
     "Weekends",
     "Weekdays",
     "Any day of the week"
+  ]
+
+  STATE = [
+    "",
+    "AK",
+    "AL",
+    "AR",
+    "AS",
+    "AZ",
+    "CA",
+    "CO",
+    "CT",
+    "DC",
+    "DE",
+    "FL",
+    "GA",
+    "GU",
+    "HI",
+    "IA",
+    "ID",
+    "IL",
+    "IN",
+    "KS",
+    "KY",
+    "LA",
+    "MA",
+    "MD",
+    "ME",
+    "MI",
+    "MN",
+    "MO",
+    "MS",
+    "MT",
+    "NC",
+    "ND",
+    "NE",
+    "NH",
+    "NJ",
+    "NM",
+    "NV",
+    "NY",
+    "OH",
+    "OK",
+    "OR",
+    "PA",
+    "PR",
+    "RI",
+    "SC",
+    "SD",
+    "TN",
+    "TX",
+    "UT",
+    "VA",
+    "VI",
+    "VT",
+    "WA",
+    "WI",
+    "WV",
+    "WY"
   ]
 
   devise :database_authenticatable,
@@ -86,11 +148,12 @@ class User < ActiveRecord::Base
       in: AVAILABILITY
     }
 
-  def self.search(search)
-    if search
-      where(["name ILIKE ?", "%#{location}%"])
-    else
-      all
-    end
+  validates :state,
+    inclusion: {
+      in: STATE
+    }
+
+  def address
+    [address1, address2, city, state].compact.join(', ')
   end
 end
