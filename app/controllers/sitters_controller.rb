@@ -3,7 +3,6 @@ class SittersController < ApplicationController
 
   def index
     @location = coordinates_for(params[:location])
-    @sitters =
     if @location.present?
       @sitters = User.where(sitter: true, city: params[:location])
     else
