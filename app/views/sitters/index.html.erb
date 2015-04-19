@@ -1,3 +1,9 @@
+  <div class="row map">
+    <div class="large-12 columns">
+      <div id="map-canvas"></div>
+      <hr>
+    </div>
+  </div>
 <div class="row all">
   <div class="small-7 large-7 columns" id="search-sitter-container">
     <% @sitters.each do |sitter| %>
@@ -29,7 +35,6 @@
       </div>
     <% end %>
   </div>
-  <div class="small-5 large-5 columns" id="map-canvas"></div>
 </div>
 <script type="text/javascript">
   var centerLocation = <%= @location.to_json.html_safe %>

@@ -5,19 +5,6 @@
 .all {
   max-width: 80%;
 
-  #map-canvas {
-    align: right;
-    float: right;
-    height: 1000px;
-    left: 55%;
-    margin-right: 3em;
-    margin-top: 3em;
-    max-width: inherit;
-    position: absolute;
-    width: 500px;
-    z-index: 1;
-  }
-
 #search-sitter-container {
   font-family: $sitter-font-type;
   margin-right: auto;
