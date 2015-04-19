@@ -3,78 +3,69 @@
 
 //SEARCH
 .all {
-  max-width: 80%;
+  max-width: 100%;
+  background: #fff;
+  border: 1px solid #f9f9f9;
+}
+  .container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 
-#sitter-profile-box {
-  font-family: $sitter-font-type;
-  margin-right: auto;
-  position: relative;
-  float: left;
+  #sitter-profile-box {
+    margin-right: auto;
+    position: relative;
+    float: left;
+    display: inline-block;
+    margin-top: 1em;
+    margin-bottom: 1em;
 
-  .price {
-    font-size: 3em;
-    color: #fff;
-    position: absolute;
-    top: 1%;
-    width: 100%;
-    text-align: right;
-    padding-right: 0.3em;
-  }
-
-  .headline {
-    font-family: $dogstay-font-theme;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #fff;
-    position: absolute;
-    padding-left: 0.2em;
-    bottom: 10%;
-    text-align: center;
-  }
-
-  .sitter-name {
-    font-family: $dogstay-font-theme;
-    color: #fff;
-    position: absolute;
-    padding-left: 0.2em;
-    bottom: 2%;
-  }
-
-  .sitter-profile {
-    padding-top: 3em;
-    height: 250px;
-
-    .small-4 {
-      padding: 0;
-      margin:0;
-
-      img {
-        @include image-style;
-      }
-
-      .row-name {
-        text-align: center;
-      }
+    img {
+      width: 320px;
+      height: 275px;
     }
 
-    #sitter-info {
+    .price {
+      font-family: $sitter-font-type;
+      font-size: 3em;
+      color: #fff;
+      position: absolute;
+      top: 1%;
+      width: 100%;
+      text-align: right;
+      padding-right: 0.3em;
+    }
 
-      .headline {
-        font-size: 1.5em;
-        font-weight: bold;
-      }
+    .headline {
+      font-family: $sitter-font-type;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #fff;
+      position: absolute;
+      padding-left: 0.2em;
+      bottom: 10%;
+      width: 100%;
+      text-align: center;
+      text-shadow: 1px black;
+    }
 
-      .address {
-        font-size: 0.8em;
-      }
+    .sitter-name {
+      font-family: $dogstay-font-theme;
+      color: #fff;
+      position: absolute;
+      padding-left: 0.2em;
+      width: 100%;
+      bottom: 2%;
+      text-align: center;
 
-      .addtl-info {
-        padding-top: 2.6em;
+        a {
+          color: #fff;
+          font-weight: bold;
+        }
       }
     }
   }
-}
-}
+
 //SINGLE
 #sitter-container {
   font-family: $sitter-font-type;

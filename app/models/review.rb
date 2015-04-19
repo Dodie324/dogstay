@@ -8,7 +8,7 @@ class Review < ActiveRecord::Base
   validates :body, presence: true, length: { minimum: 20 }
   validates :user, presence: true
 
-  def sitter?
-    user.find_by(sitter: true)
+  def sitter?(user)
+    user.find_by(sitter: true) == user
   end
 end
