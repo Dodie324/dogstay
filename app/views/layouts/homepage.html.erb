@@ -29,7 +29,7 @@
   <div class="row search">
     <div class="box">
       <div class="container-4">
-        <%= form_tag sitters_path, method: :get do %>
+        <%= form_tag sitters_path, method: :get, class: "search-form" do %>
           <%= text_field_tag(
             :location,
             nil,

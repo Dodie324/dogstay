@@ -2,16 +2,17 @@ class SittersController < ApplicationController
   respond_to :json, :html
 
   def index
-    @location = coordinates_for(params[:location])
-    if @location.present?
-      @sitters = User.where(sitter: true).near(@location, 50)
+    if params[:location].empty?
+      flash[:notice] = "Please set a location"
+      redirect_to root_path
     else
-      @sitters = User.where(sitter: true)
-    end
+      @location = coordinates_for(params[:location])
+      @sitters = User.where(sitter: true).near(@location, 50)
 
-    respond_to do |format|
-      format.html
-      format.json { render json: { location: @location, sitter: @sitters }}
+      respond_to do |format|
+        format.html
+        format.json { render json: { location: @location, sitter: @sitters }}
+      end
     end
   end
 

@@ -16,7 +16,7 @@ gem 'rails_12factor'
 gem 'carrierwave'
 gem 'fog'
 gem 'geocoder'
-
+gem 'mongoid'
 
 group :development, :test do
   gem 'pry-rails'
