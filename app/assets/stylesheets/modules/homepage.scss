@@ -41,19 +41,19 @@ body.home-page {
 }
 
 //SEARCH FORM
-.box{
+.box {
   width: 100%;
   height: 50px;
 }
 
-.container-4{
+.container-4 {
   overflow: hidden;
   width: 100%;
   vertical-align: middle;
   white-space: nowrap;
 }
 
-.container-4 #location{
+.container-4 #location {
   width: 100%;
   height: 50px;
   background: #ffffff;
@@ -68,19 +68,19 @@ body.home-page {
 }
 
 .container-4 #location::-webkit-input-placeholder {
-   color: #65737e;
+  color: #65737e;
 }
 
 .container-4 #location:-moz-placeholder { /* Firefox 18- */
-   color: #65737e;
+  color: #65737e;
 }
 
 .container-4 #location::-moz-placeholder {  /* Firefox 19+ */
-   color: #65737e;
+  color: #65737e;
 }
 
 .container-4 #location:-ms-input-placeholder {
-   color: #65737e;
+  color: #65737e;
 }
 
 .container-4 .icon {
@@ -110,12 +110,12 @@ body.home-page {
   margin-right: 50px;
 }
 
-.container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
-    outline: none;
-    opacity: 1;
-    margin-left: -63px;
-  }
+.container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon {
+  outline: none;
+  opacity: 1;
+  margin-left: -63px;
+}
 
-  .container-4:hover button.icon:hover{
-    background: #008080;
-  }
+.container-4:hover button.icon:hover {
+  background: #008080;
+}
