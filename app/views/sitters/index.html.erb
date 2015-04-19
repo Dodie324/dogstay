@@ -15,7 +15,6 @@
           <div class="row address" id="sitter_address">
             <%= sitter.city %>, <%= sitter.state %>
               <% if sitter.reviews_received.count >= 1 %>
-              <% binding.pry %>
                 <%= " | " %><% if sitter.reviews_received.count == 1 %>
                   <%= "1 Review" %>
               <% else %>
