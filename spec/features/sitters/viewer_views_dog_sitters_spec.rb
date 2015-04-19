@@ -42,12 +42,14 @@ feature "visitor views a list of dog sitters", %(
     expect(page).to have_content("No")
   end
 
-  scenario "visitor doesn't provide a search location" do
+  # scenario "visitor doesn't provide a search location" do
 
-    visit root_path
+  #   visit root_path
 
-    find("button.icon i.fa").click
+  #   find("button.icon i.fa").click
 
-    expect(page).to have_content("Please set location")
-  end
+  #   redirect_to root_path
+
+  #   expect(page).to have_content("Please set a location")
+  # end
 end

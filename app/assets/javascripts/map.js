@@ -8,7 +8,6 @@ $(function() {
         mapOptions);
 
     sitterLocation.forEach(function(sitter) {
-      debugger;
       var marker = new google.maps.Marker({
           position: new google.maps.LatLng(sitter.latitude, sitter.longitude),
           map: map
