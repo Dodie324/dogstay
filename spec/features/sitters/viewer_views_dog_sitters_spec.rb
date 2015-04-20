@@ -11,7 +11,6 @@ feature "visitor views a list of dog sitters", %(
     sitter = FactoryGirl.create(:sitter)
 
     visit '/sitters?location=Boston'
-
     expect(page).to have_content(sitter.first_name)
     expect(page).to have_content(sitter.headline)
     expect(page).to have_content(sitter.city)
