@@ -7,8 +7,6 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    # @sitter = User.find(params[:sitter_id])
-    # @reviewee = @sitter.reviews_received[:user_id]
     @review = Review.new(review_params)
     @review.user = current_user
     @review.sitter = User.find(params[:sitter_id])

@@ -33,7 +33,11 @@
                 <% end %></div>
               </div>
             <% end %>
-            <%= review.rating %>
+            <ul class="inline-list">
+              <% review.rating.times do %>
+                <li><i class="fa fa-paw"></i></li>
+              <% end %>
+            </ul>
           </div>
           <div class="row headline" id="review-desc">
             <%= review.body %>
