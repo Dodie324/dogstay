@@ -17,6 +17,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'geocoder'
 gem 'font-awesome-rails'
+gem "jquery-slick-rails"
 
 group :development, :test do
   gem 'pry-rails'
