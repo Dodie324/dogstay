@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
     class_name: "Review", foreign_key: :sitter_id
   has_many :reviews_written,
     class_name: "Review", foreign_key: :user_id
+  has_many :image_uploads,
+    class_name: "Image", foreign_key: :user_id
   belongs_to :location
   mount_uploader :image, AvatarUploader
 

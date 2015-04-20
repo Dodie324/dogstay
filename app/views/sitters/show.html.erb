@@ -38,6 +38,10 @@
     <div class="panel-about">
       <%= @sitter.description %>
     </div>
+        <% if current_user.sitter? %>
+          <%= link_to "Share photos!", "#", id: "share-images" %>
+        <% end %>
+        <%= render "images/new" %>
     <div class="image-carousel">
       <div class="panel-images">
       </div>

@@ -75,4 +75,36 @@ feature 'user registers', %Q{
     expect(page).to_not have_content('Sign Out')
     expect(page).to_not have_content('Edit Profile')
   end
+
+  scenario 'provide invalid image file type' do
+    sitter = FactoryGirl.create(:sitter)
+
+    visit new_user_registration_path
+
+    fill_in 'Email', with: "sitter@random.com"
+    fill_in 'Password', with: sitter.password
+    fill_in 'First name', with: sitter.first_name
+    fill_in 'Last name', with: sitter.last_name
+    fill_in 'Phone number', with: "2384883980"
+    fill_in 'Zipcode', with: sitter.zipcode
+    attach_file("user_image",
+      "#{Rails.root}/spec/fixtures/test.txt")
+    select 'Yes', from: "Would you like to house a dog?"
+    fill_in 'Headline', with: sitter.headline
+    fill_in 'Description', with: sitter.description
+    select 'Yes', from: "Do you have any dogs?"
+    select 'No', from: "Do you have any children?"
+    select 'House', from: "Property type"
+    select 'Fenced', from: "Type of yard"
+    fill_in 'Price', with: sitter.price
+    select 'Weekends', from: "Time available"
+    fill_in 'Address1', with: sitter.address1
+    fill_in 'City', with: sitter.city
+    select 'MA', from: "State"
+
+    click_button 'Sign Up'
+    expect(page).to have_content("allowed types: jpg, jpeg, gif, png")
+    expect(page).to_not have_content('Sign Out')
+    expect(page).to_not have_content('Edit Profile')
+  end
 end

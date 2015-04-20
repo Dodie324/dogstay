@@ -1,0 +1,17 @@
+@import "variables";
+
+form {
+
+  ul li {
+    display: inline-block;
+    width: 20%;
+    font-size: 0.5em;
+
+    .postfix {
+      margin: 0;
+      width: 50%;
+      height: 10%;
+      background: #008080;
+    }
+  }
+}

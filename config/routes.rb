@@ -7,4 +7,8 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
+  resources :sitters do
+    resources :images
+  end
+
 end
