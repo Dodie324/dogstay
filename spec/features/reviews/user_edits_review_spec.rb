@@ -15,8 +15,8 @@ feature "user edits review", %(
 
   #   visit sitter_path(sitter)
 
-  #   select("5", from: "Rating")
-  #   fill_in "Review", with: review.body
+  #   find(:xpath, "//input[@id='review_rating']").set "5"
+  #   fill_in "text-area", with: review.body
 
   #   click_on "Add Review"
 
@@ -26,8 +26,8 @@ feature "user edits review", %(
   #   expect(page).to have_content(review.body)
   #   expect(page).to have_content(review.created_at.strftime("%d %b. %Y"))
 
-  #   page.find("#review-rating a .fi-pencil").click
-
+  #   find(:xpath, ".//a/i[@class='fi-pencil']").click
+  #   save_and_open_page
   #   select("2", from: "Rating")
   #   fill_in "Review", with: "I did not have a pleasant experience with John."
   #   click_on "Edit Review"

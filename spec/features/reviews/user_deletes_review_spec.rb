@@ -6,28 +6,28 @@ feature "user deletes their review", %(
   So that it no longer exists.
 ) do
 
-  # scenario "user successfully deletes their review" do
-  #   sitter = FactoryGirl.create(:sitter)
-  #   user = FactoryGirl.create(:user)
-  #   review = FactoryGirl.create(:review)
+  scenario "user successfully deletes their review" do
+    sitter = FactoryGirl.create(:sitter)
+    user = FactoryGirl.create(:user)
+    review = FactoryGirl.create(:review)
 
-  #   sign_in_as(user)
+    sign_in_as(user)
 
-  #   visit sitter_path(sitter)
+    visit sitter_path(sitter)
 
-  #   select("5", from: "Rating")
-  #   fill_in "Review", with: review.body
+    click_on "Add a review"
 
-  #   click_on "Add Review"
+    find(:xpath, "//input[@id='review_rating']").set "5"
+    fill_in "text-area", with: review.body
 
-  #   expect(page).to have_content("Review added successfully.")
-  #   expect(page).to have_content(review.rating)
-  #   expect(page).to have_content(review.body)
+    click_on "Add Review"
 
-  #   page.first("#review-rating .fi-x").click
+    expect(page).to have_content("Review added successfully.")
+    expect(page).to have_content(review.rating)
+    expect(page).to have_content(review.body)
 
-  #   expect(page).to have_content("Review deleted.")
-  # end
+    find(:xpath, ".//a/i[@class='fi-x']").click
+  end
 
   scenario "sitter cannot delete review" do
     sitter = FactoryGirl.create(:sitter)
