@@ -44,9 +44,6 @@ feature 'user registers', %Q{
     fill_in 'First name', with: sitter.first_name
     fill_in 'Last name', with: sitter.last_name
     fill_in 'Phone number', with: "2384883980"
-    fill_in 'Address1', with: sitter.address1
-    fill_in 'City', with: sitter.city
-    fill_in 'State', with: sitter.state
     fill_in 'Zipcode', with: sitter.zipcode
     attach_file("user_image",
       "#{Rails.root}/spec/fixtures/fritz.jpg")
@@ -59,6 +56,9 @@ feature 'user registers', %Q{
     select 'Fenced', from: "Type of yard"
     fill_in 'Price', with: sitter.price
     select 'Weekends', from: "Time available"
+    fill_in 'Address1', with: sitter.address1
+    fill_in 'City', with: sitter.city
+    select 'MA', from: "State"
 
     click_button 'Sign Up'
 

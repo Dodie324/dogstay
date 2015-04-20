@@ -2,12 +2,12 @@ require 'factory_girl'
 
 FactoryGirl.define do
   factory :user do
-    sequence(:email) { |n| "user#{n}#{n}@example.com" }
+    sequence(:email) { |n| "user#{n}#{n}#{n}@example#{n}.com" }
     password 'password'
     password_confirmation 'password'
     first_name "John"
     last_name "Doe"
-    sequence(:phone_number) { |n| "555-827-43#{n}#{n}" }
+    sequence(:phone_number) { |n| "#{n}5#{n}-82#{n}-43#{n}#{n}" }
     zipcode "02111"
     sitter false
     have_dogs "No"
@@ -15,6 +15,7 @@ FactoryGirl.define do
     property_type ""
     yard_type ""
     availability ""
+    state ""
 
     factory :sitter do
       sequence(:email) { |n| "user#{n}@example#{n}.com" }
@@ -22,7 +23,7 @@ FactoryGirl.define do
       password_confirmation 'password'
       first_name "Terry"
       last_name "Moore"
-      sequence(:phone_number) { |n| "55#{n}-#{n}#{n}#{n}-#{n}#{n}22" }
+      sequence(:phone_number) { |n| "#{n}5#{n}-#{n}#{n}#{n}-#{n}#{n}22" }
       address1 "33 Harrison Ave"
       city "Boston"
       state "MA"
