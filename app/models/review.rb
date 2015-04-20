@@ -5,7 +5,7 @@ class Review < ActiveRecord::Base
   belongs_to :user
 
   validates :rating, presence: true, inclusion: { in: RATING }
-  validates :body, presence: true, length: { minimum: 20 }
+  validates :body, presence: true, length: { minimum: 40 }
   validates :user, presence: true
 
   def sitter?

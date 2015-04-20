@@ -16,7 +16,7 @@ feature "user reviews a sitter", %(
     visit sitter_path(sitter)
 
     click_on "Add a review"
-    page.choose(5)
+    find(:xpath, "//input[@id='review_rating']").set "5"
     fill_in "text-area", with: review.body
 
     click_on "Add Review"
@@ -53,7 +53,7 @@ feature "user reviews a sitter", %(
 
     click_on "Add a review"
 
-    page.choose(5)
+    find(:xpath, "//input[@id='review_rating']").set "5"
     fill_in "text-area", with: "The best"
 
     click_on "Add Review"

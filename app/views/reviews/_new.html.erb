@@ -1,13 +1,16 @@
 <div class="row submit-review">
   <%= form_for [@sitter, @review], url: sitter_reviews_path(@sitter) do |f| %>
     <%= f.label :rating, id: "rating" %>
-    <% Review::RATING.each do |rating| %>
-      <%= f.radio_button(:rating, rating) %>
-      <%= f.label("rating_#{rating}", rating) %>
-    <% end %>
+    <%= f.hidden_field :rating %>
+    <div id="star-ratings"></div>
 
     <%= f.text_area :body, placeholder: "Write a review (minimum 40 characters)", id: "text-area" %>
 
     <%= f.submit "Add Review", class: "button postfix" %>
+  <% end %>
+  <%= content_for :extra_footer do %>
+    <script type="text/javascript">
+      $('#review_rating').remove();
+    </script>
   <% end %>
 </div>
