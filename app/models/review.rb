@@ -11,4 +11,8 @@ class Review < ActiveRecord::Base
   def sitter?
     user.find_by(sitter: true)
   end
+
+  def editable_by?(user)
+    user == self.user
+  end
 end

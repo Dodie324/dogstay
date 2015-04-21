@@ -1,19 +1,19 @@
 class ImagesController < ApplicationController
 
   def create
-    if params[:image].nil?
+    if params[:image][:image_upload].nil?
       flash[:notice] = "You must upload an image."
-      redirect_to sitter_path(params[:user_id])
+      redirect_to sitter_path(current_user)
     else
-      @image = Image.new(image_params)
-      @image.user = current_user
+      @image_upload = Image.new(image_params)
+      @image_upload.user = current_user
 
-      if @image.save
+      if @image_upload.save
         flash[:notice] = "Image added successfully."
-        redirect_to sitter_path(@image.user)
+        redirect_to sitter_path(@image_upload.user)
       else
         flash[:note] = "Image not added."
-        redirect_to sitter_path(@image.user)
+        redirect_to sitter_path(@image_upload.user)
       end
     end
   end
@@ -24,6 +24,6 @@ class ImagesController < ApplicationController
   private
 
   def image_params
-    params.require(:image).permit(:image)
+    params.require(:image).permit(:image_upload)
   end
 end

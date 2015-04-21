@@ -21,7 +21,7 @@ class SittersController < ApplicationController
     @reviews = @sitter.reviews_received
     @images = @sitter.image_uploads
     @review = Review.new
-    @image = Image.new
+    @image_upload = Image.new
   end
 
   def coordinates_for(location)

@@ -1,8 +1,8 @@
 class Image < ActiveRecord::Base
-  belongs_to :user, class_name: "User"
-  mount_uploader :image, AvatarUploader
+  belongs_to :user
+  mount_uploader :image_upload, AvatarUploader
 
-  validates :image,
+  validates :image_upload,
     presence: true,
     format: {
       with: %r{\.(jpg|jpeg|gif|png)z}i,

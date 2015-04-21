@@ -23,7 +23,7 @@
         </div>
         <div class="small-6 large-9 columns">
           <div class="row headline" id="review-rating">
-            <% if current_user %>
+            <% if review.editable_by?(current_user) %>
               <div class="row-2 ed">
                 <div data-tooltip aria-haspopup="true" class="has-tip" title="Edit"><%= link_to edit_sitter_review_path(@sitter, review) do %>
                   <i class="fi-pencil"></i>
