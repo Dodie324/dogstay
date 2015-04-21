@@ -3,10 +3,10 @@ class Image < ActiveRecord::Base
   mount_uploader :image_upload, AvatarUploader
 
   validates :image_upload,
-    presence: true,
-    format: {
-      with: %r{\.(jpg|jpeg|gif|png)z}i,
-      message: "was not uploaded correctly"
-    }
+    presence: true
+  #   format: {
+  #     with: %r{\.(jpg|jpeg|gif|png)z}i,
+  #     message: "was not uploaded correctly"
+  #   }
 end
 

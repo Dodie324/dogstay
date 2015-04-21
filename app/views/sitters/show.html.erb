@@ -43,7 +43,7 @@
     <% end %>
     <div class="small-6 large-6 columns" id="sitter-uploads">
       <% @images.each do |image| %>
-        <%= image_tag image.image_url.to_s %>
+        <%= image_tag image.image_upload.url.to_s %>
       <% end %>
     </div>
   </div>
