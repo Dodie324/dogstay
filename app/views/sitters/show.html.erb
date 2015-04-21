@@ -37,7 +37,7 @@
       <div class="about-header">About This Sitter</div>
       <div class="panel-about"><%= @sitter.description %></div>
     </div>
-    <% if current_user.sitter? %>
+    <% if current_user.try(:sitter) %>
       <%= link_to "Share photos!", "#", id: "share-images" %>
     <%= render "images/new" %>
     <% end %>

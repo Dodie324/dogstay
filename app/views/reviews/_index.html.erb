@@ -7,7 +7,7 @@
         <%= @reviews.count.to_s + " Reviews" %>
       <% end %>
     <% end %>
-    <% if current_user && !current_user.sitter? %>
+    <% if current_user && !current_user.try(:sitter) %>
      <%= link_to "Add a review", "#", id: "reviewForm" %>
     <% end %>
   </div>
