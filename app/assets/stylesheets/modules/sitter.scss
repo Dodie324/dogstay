@@ -113,6 +113,7 @@
     height: 55vh;
 
     #sitter-uploads {
+      padding-right: 1.5em;
       padding-top: 0.8em;
       height: 50vh;
 
@@ -139,7 +140,8 @@
   }
 
   #details-column {
-    @include padding;
+    padding-left: 1.5em;
+    padding-top: 2.3em;
 
     .about-header {
       font-size: $sitter-headline-font;
@@ -157,16 +159,22 @@
       font-weight: $sitter-headline-weight
     }
 
-    .price {
-      @include sitter-details;
-    }
-
-    .availability {
-      @include sitter-details;
-    }
-
     .hr {
       opacity: 0.3;
     }
   }
+
+   .price {
+      .small-9{
+        @include sitter-details;
+        font-size: 0.9em;
+      }
+    }
+
+    .availability {
+      .small-9{
+        @include sitter-details;
+        font-size: 0.9em;
+      }
+    }
 }

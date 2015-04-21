@@ -7,8 +7,6 @@
     <%- end -%>
   </div>
 <% end %>
-
-<%= link_to "Contact this sitter!", new_sitter_message_path(@sitter) %>
 <div id="sitter-container">
   <div class="row sitter-profile">
     <div class="small-6 large-3 columns">
@@ -20,6 +18,7 @@
     <div class="small-6 large-9 columns">
       <div class="row headline" id="sitter_headline">
         <%= @sitter.headline %>
+        <%= link_to "Contact this sitter!", new_sitter_message_path(@sitter) %>
       </div>
       <div class="row address" id="sitter_address">
         <%= @sitter.city %>, <%= @sitter.state %> <%= @sitter.zipcode %>
@@ -29,9 +28,7 @@
       </div>
     </div>
   </div>
-
   <hr class="hr">
-
   <div class="row about-image">
     <div class="small-6 large-6 columns" id="details-column">
       <div class="about-header">About This Sitter</div>
@@ -50,38 +47,32 @@
         <% end %>
       <% end %>
       </ul>
-      </div>
     </div>
   </div>
-  </div>
-    <hr class="hr">
-    <div class="row price">
-      <div class="small-3 columns">
-        Price
-      </div>
-      <div class="small-9 columns">
-        <% if @sitter.price == nil %>
-          <%= "N/A - Please contact " %><%= @sitter.first_name %><%= " for more information" %>
-        <% else %>
-          <%= "$ "+ @sitter.price + " per day" %>
-        <% end %>
-      </div>
+  <hr class="hr">
+  <div class="row price">
+    <div class="small-3 columns">
+      Price
     </div>
-    <hr class="hr">
-    <div class="row availability">
-      <div class="small-3 columns">
-        Availability
-      </div>
-      <div class="small-9 columns">
-        <%= @sitter.availability %>
-      </div>
+    <div class="small-9 columns">
+      <% if @sitter.price == nil %>
+        <%= "N/A - Please contact " %><%= @sitter.first_name %><%= " for more information" %>
+      <% else %>
+        <%= "$ "+ @sitter.price + " per day" %>
+      <% end %>
     </div>
-
-    <hr class="hr">
-
   </div>
-
+  <hr class="hr">
+  <div class="row availability">
+    <div class="small-3 columns">
+      Availability
+    </div>
+    <div class="small-9 columns">
+      <%= @sitter.availability %>
+    </div>
+  </div>
+  <hr class="hr">
   <%= render "reviews/index" if @reviews %>
   <%= render "reviews/new" %>
-
 </div>
+
