@@ -72,6 +72,15 @@
     </div>
   </div>
   <hr class="hr">
+  <div class="row property_type">
+    <div class="small-3 columns">
+      Property Type
+    </div>
+    <div class="small-9 columns">
+      <%= @sitter.property_type %>
+    </div>
+  </div>
+  <hr class="hr">
   <%= render "reviews/index" if @reviews %>
   <%= render "reviews/new" %>
 </div>
