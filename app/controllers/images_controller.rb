@@ -1,7 +1,7 @@
 class ImagesController < ApplicationController
 
   def create
-    if params[:image][:image_upload].nil?
+    if params[:image].nil?
       flash[:notice] = "You must upload an image."
       redirect_to sitter_path(current_user)
     else

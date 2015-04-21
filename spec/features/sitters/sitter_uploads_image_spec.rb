@@ -13,7 +13,7 @@ feature "sitter uploads photos", %(
 
     visit sitter_path(sitter)
 
-    attach_file("image_image",
+    attach_file("image_image_upload",
      "#{Rails.root}/spec/fixtures/fritz.jpg")
 
     click_on "Upload"
@@ -27,6 +27,21 @@ feature "sitter uploads photos", %(
     sign_in_as(sitter)
 
     visit sitter_path(sitter)
+
+    click_on "Upload"
+
+    expect(page).to have_content("You must upload an image.")
+  end
+
+  scenario "sitter uploads a wrong image type" do
+    sitter = FactoryGirl.create(:sitter)
+
+    sign_in_as(sitter)
+
+    visit sitter_path(sitter)
+
+    attach_file("image_image_upload",
+     "#{Rails.root}/spec/fixtures/test.txt")
 
     click_on "Upload"
 
