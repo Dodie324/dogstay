@@ -22,4 +22,22 @@ feature 'user messages sitter', %Q{
 
     expect(page).to have_content("Message sent.")
   end
+
+  scenario 'user unsuccesfully messages sitter' do
+    user = FactoryGirl.create(:user)
+    sitter = FactoryGirl.create(:sitter)
+
+    sign_in_as(user)
+
+    visit sitter_path(sitter)
+
+    click_on "Contact this sitter!"
+
+    fill_in "Subject", with: ""
+    fill_in "Message", with: "I would like it if you could look after my dog."
+
+    click_on "Send"
+
+    expect(page).to have_content("Message could not send.")
+  end
 end
