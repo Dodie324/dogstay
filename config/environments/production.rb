@@ -8,6 +8,7 @@ Rails.application.configure do
   :authentication => :plain, # Mandrill supports 'plain' or 'login'
   :domain => 'heroku.com' # your domain to identify your server when connecting
 }
+
   config.cache_classes = true
 
   # Eager load code on boot. This eager loads most of Rails and
