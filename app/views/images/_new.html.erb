@@ -1,0 +1,8 @@
+<div id="image-upload">
+  <%= form_for [@sitter, @image_upload], url: sitter_images_path(@sitter) do |f| %>
+    <ul class"inline-list">
+      <li><%= f.file_field :image_upload %></li>
+      <li><%= f.submit "Upload", class: "button postfix" %></li>
+    </ul>
+  <% end %>
+</div>

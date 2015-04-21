@@ -7,7 +7,7 @@
         <%= @reviews.count.to_s + " Reviews" %>
       <% end %>
     <% end %>
-    <% if current_user && !current_user.sitter? %>
+    <% if current_user && !current_user.try(:sitter) %>
      <%= link_to "Add a review", "#", id: "reviewForm" %>
     <% end %>
   </div>
@@ -23,7 +23,7 @@
         </div>
         <div class="small-6 large-9 columns">
           <div class="row headline" id="review-rating">
-            <% if current_user %>
+            <% if review.editable_by?(current_user) %>
               <div class="row-2 ed">
                 <div data-tooltip aria-haspopup="true" class="has-tip" title="Edit"><%= link_to edit_sitter_review_path(@sitter, review) do %>
                   <i class="fi-pencil"></i>

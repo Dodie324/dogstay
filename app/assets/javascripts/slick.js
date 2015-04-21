@@ -1,0 +1,1 @@
+// $('#sitter-uploads').slick();

@@ -41,11 +41,11 @@
 
 @mixin flash {
   padding: 1em;
-  font-size: 1.2em;
+  font-size: 0.5em;
   font-weight: normal;
   text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: 3px;
+  line-height: 0.2;
+  letter-spacing: 1px;
   text-align: center;
   color: #fff;
   background: #008080;

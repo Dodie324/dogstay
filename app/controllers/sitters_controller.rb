@@ -19,7 +19,9 @@ class SittersController < ApplicationController
   def show
     @sitter = User.find(params[:id])
     @reviews = @sitter.reviews_received
+    @images = @sitter.image_uploads
     @review = Review.new
+    @image_upload = Image.new
   end
 
   def coordinates_for(location)

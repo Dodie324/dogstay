@@ -8,6 +8,7 @@
   </div>
 <% end %>
 
+<%= link_to "Contact this sitter!", new_sitter_message_path(@sitter) %>
 <div id="sitter-container">
   <div class="row sitter-profile">
     <div class="small-6 large-3 columns">
@@ -31,17 +32,22 @@
 
   <hr class="hr">
 
-  <div class="small-12 large-12 columns" id="details-column">
-    <div class="about-header">
-      About This Sitter
+  <div class="row about-image">
+    <div class="small-6 large-6 columns" id="details-column">
+      <div class="about-header">About This Sitter</div>
+      <div class="panel-about"><%= @sitter.description %></div>
     </div>
-    <div class="panel-about">
-      <%= @sitter.description %>
+    <% if current_user.try(:sitter) %>
+      <%= link_to "Share photos!", "#", id: "share-images" %>
+    <%= render "images/new" %>
+    <% end %>
+    <div class="small-6 large-6 columns" id="sitter-uploads">
+      <% @images.each do |image| %>
+        <%= image_tag image.image_upload.url.to_s %>
+      <% end %>
     </div>
-    <div class="image-carousel">
-      <div class="panel-images">
-      </div>
-    </div>
+  </div>
+  </div>
     <hr class="hr">
     <div class="row price">
       <div class="small-3 columns">

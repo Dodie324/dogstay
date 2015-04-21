@@ -5,13 +5,37 @@
       </ul>
   <%- end -%>
 </div>
-
-<%= form_for [@sitter, @review], url: sitter_review_path(@sitter, @review) do |f| %>
-  <%= f.label :rating %>
-  <%= f.select :rating, Review::RATING, include_blank: "Please Rate" %>
-
-  <%= f.label :body, "Review" %>
-  <%= f.text_area :body %>
-
-  <%= f.submit "Edit Review" %>
-<% end %>
+<div class="row sign-up">
+  <fieldset>
+    <legend class="legend">Edit Review</legend>
+    <%= form_for [@sitter, @review], url: sitter_review_path(@sitter, @review) do |f| %>
+      <div class="row">
+        <div class="small-12 columns">
+          <div class="row">
+            <div class="small-3 columns">
+              <%= f.label :rating, class: "center inline" %>
+            </div>
+            <div class="small-9 columns">
+              <%= f.select :rating, Review::RATING, include_blank: "Please Rate" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 columns">
+          <div class="row">
+            <div class="small-3 columns">
+              <%= f.label :body, "Review", class: "center inline" %>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_area :body %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <%= f.submit "Edit Review", class: "button postfix" %>
+      </div>
+    <% end %>
+  </fieldset>
+</div>

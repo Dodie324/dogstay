@@ -1,6 +1,5 @@
 require "rails_helper"
 
-
 feature "visitor views a list of dog sitters", %(
   As a viewer
   I want to view a list of dog sitters in my city

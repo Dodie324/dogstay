@@ -63,9 +63,6 @@ feature "user reviews a sitter", %(
 
   scenario "a viewer attempts to review a sitter" do
     sitter = FactoryGirl.create(:sitter)
-    review_desc = "John was wonderful to our dog, Fritz! He sent us updates daily and\
-              even shared photos of Fritz playing with his dog. We definitely felt\
-              at ease knowing Fritz was in good hands."
 
     visit sitter_path(sitter)
 
