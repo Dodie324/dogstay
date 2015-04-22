@@ -72,12 +72,39 @@
     </div>
   </div>
   <hr class="hr">
-  <div class="row property_type">
+  <div class="row property-type">
     <div class="small-3 columns">
       Property Type
     </div>
     <div class="small-9 columns">
       <%= @sitter.property_type %>
+    </div>
+  </div>
+  <hr class="hr">
+  <div class="row yard-type">
+    <div class="small-3 columns">
+      Yard Type
+    </div>
+    <div class="small-9 columns">
+      <%= @sitter.yard_type %>
+    </div>
+  </div>
+  <hr class="hr">
+  <div class="row have-dogs">
+    <div class="small-3 columns">
+      Has dogs?
+    </div>
+    <div class="small-9 columns">
+      <%= t @sitter.have_dogs.class %>
+    </div>
+  </div>
+  <hr class="hr">
+  <div class="row have-children">
+    <div class="small-3 columns">
+      Has children?
+    </div>
+    <div class="small-9 columns">
+      <%= t @sitter.have_children.class %>
     </div>
   </div>
   <hr class="hr">

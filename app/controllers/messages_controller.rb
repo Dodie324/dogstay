@@ -15,9 +15,8 @@ class MessagesController < ApplicationController
       ActionMailer::Base.mail(
         from: @message.user.email,
         to: @message.sitter.email,
-        subject: "Let's meet!" ,
-        body: "#{@message.user.first_name} would like to schedule a time to meet.\
-        You may contact them at #{@message.user.email} or #{@message.user.phone_number}."
+        subject: @message.subject,
+        body: @message.message
         ).deliver
       flash[:notice] = "Message sent."
       redirect_to sitter_path(@message.sitter)

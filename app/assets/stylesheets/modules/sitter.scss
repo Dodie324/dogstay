@@ -166,14 +166,36 @@
    .price {
       .small-9{
         @include sitter-details;
-        font-size: 0.9em;
       }
     }
 
     .availability {
-      .small-9{
+      .small-9 {
         @include sitter-details;
-        font-size: 0.9em;
+      }
+    }
+
+    .property-type {
+      .small-9 {
+        @include sitter-details;
+      }
+    }
+
+    .yard-type {
+      .small-9 {
+        @include sitter-details;
+      }
+    }
+
+    .have-dogs {
+      .small-9 {
+        @include sitter-details;
+      }
+    }
+
+    .have-children {
+      .small-9 {
+        @include sitter-details;
       }
     }
 }
