@@ -32,8 +32,9 @@ body.home-page {
     text-align: center;
     @media only screen and (max-width: 988px) and (min-width: 642px) { font-size: 7em; padding-top: 45%;}; //iPad portrait
     @media only screen and (max-width: 1824px) and (min-width: 989px){ font-size: 9em;  padding-top: 19%;}; //iPad landscape
-    @media only screen and (max-width: 40.063em) { font-size: 4em; padding-top: 15% };
-    @media only screen and (min-width: 40.063em) { font-size: 6em; padding-top: 12% };
+    @media only screen and (max-width: 40.063em) and (max-height: 90em) { font-size: 3em; padding-top: 60% };
+    @media only screen and (max-width: 40.063em) { font-size: 3em; padding-top: 15% };
+    @media only screen and (min-width: 40.063em) { font-size: 7em; padding-top: 12% };
     @media only screen and (min-width: 64.063em) { font-size: 10em; padding-top: 12% };
     @media only screen and (min-width: 120.063em) { font-size: 13em; padding-top: 10% };
   }
