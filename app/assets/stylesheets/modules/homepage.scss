@@ -2,8 +2,9 @@
 @import "mixins";
 
 body.home-page {
-  background: url(dog.png) no-repeat;
-  background-size: 100%;
+  background: url(dogstay.png) no-repeat fixed;
+  background-position:center;
+  background-size:cover;
   opacity: 0.9;
 
   .right {
@@ -29,17 +30,23 @@ body.home-page {
     margin: 0;
     padding-top: 8%;
     text-align: center;
+    @media only screen and (max-width: 988px) and (min-width: 642px) { font-size: 7em; padding-top: 45%;}; //iPad portrait
+    @media only screen and (max-width: 1824px) and (min-width: 989px){ font-size: 9em;  padding-top: 19%;}; //iPad landscape
+    @media only screen and (max-width: 40.063em) { font-size: 2.3em; padding-top: 15% };
+    @media only screen and (min-width: 40.063em) { font-size: 6.5em; padding-top: 12% };
+    @media only screen and (min-width: 64.063em) { font-size: 10em; padding-top: 7% };
+    @media only screen and (min-width: 120.063em) { font-size: 13em; padding-top: 8% };
   }
 
   .search {
-    width: 35%;
+    width: 20%;
+    @media only screen and (max-width: 40.063em) { width: 30% };
   }
 
   .postfix {
     background-color: #008080;
   }
 }
-
 //SEARCH FORM
 .box {
   width: 100%;

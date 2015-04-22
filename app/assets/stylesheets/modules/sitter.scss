@@ -163,17 +163,39 @@
     }
   }
 
-   .price {
-      .small-9{
-        @include sitter-details;
-        font-size: 0.9em;
-      }
+ .price {
+    .small-9 {
+      @include sitter-details;
     }
+  }
 
-    .availability {
-      .small-9{
-        @include sitter-details;
-        font-size: 0.9em;
-      }
+  .availability {
+    .small-9 {
+      @include sitter-details;
     }
+  }
+
+  .property-type {
+    .small-9 {
+      @include sitter-details;
+    }
+  }
+
+  .yard-type {
+    .small-9 {
+      @include sitter-details;
+    }
+  }
+
+  .have-dogs {
+    .small-9 {
+      @include sitter-details;
+    }
+  }
+
+  .have-children {
+    .small-9 {
+      @include sitter-details;
+    }
+  }
 }
