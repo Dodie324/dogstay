@@ -3,12 +3,14 @@
 
 body.home-page {
   background: url(dogstay.png)no-repeat fixed;
-  background-size:cover;
   background-position:center;
+  background-size:cover;
   opacity: 0.9;
+
   .right {
     padding-left: 2em;
     padding-top: 0.9em;
+
     a {
       @include link-border;
       font-size: 0.9em;
@@ -20,6 +22,7 @@ body.home-page {
       }
     }
   }
+
   p {
     color: #ffffff;
     font-family: $dogstay-font-theme;
@@ -34,10 +37,12 @@ body.home-page {
     @media only screen and (min-width: 64.063em) { font-size: 10em; padding-top: 12% }
     @media only screen and (min-width: 120.063em) { font-size: 13em; padding-top: 10% }
   }
+
   .search {
     width: 20%;
     @media only screen and (max-width: 40.063em) { width: 30% }
   }
+
   .postfix {
     background-color: #008080;
   }
@@ -122,34 +127,4 @@ body.home-page {
 
 .container-4:hover button.icon:hover {
   background: #008080;
-}
-
-
-/* Large screens ----------- */
-
-/* Styles */
-
-/* iPhone 6 ----------- */
-@media only screen and (min-device-width: 400px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2) {
-}
-
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
-}
-
-/* iPhone 6+ ----------- */
-@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-
-}
-
-@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
-}
-
-@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
-/* Styles */
-}
-
-@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
-/* Styles */
 }
