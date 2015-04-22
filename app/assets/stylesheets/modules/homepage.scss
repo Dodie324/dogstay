@@ -27,15 +27,16 @@ body.home-page {
     margin: 0;
     padding-top: 8%;
     text-align: center;
-    @media only screen and (max-width: 40.063em) { font-size: 3em; padding-top: 60%; };
-    @media only screen and (min-device-width: 400px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2) {}
     @media only screen and (max-width: 988px) and (min-width: 642px) { font-size: 7em; padding-top: 45%;} //iPad portrait
     @media only screen and (max-width: 1824px) and (min-width: 989px){ font-size: 9em;  padding-top: 19%;} //iPad landscape
-    @media only screen and (min-width : 1824px) { font-size: 13em; padding-top: 10%; }
+    @media only screen and (max-width: 40.063em) { font-size: 4em; padding-top: 15%; }
+    @media only screen and (min-width: 40.063em) { font-size: 6em; padding-top: 12% }
+    @media only screen and (min-width: 64.063em) { font-size: 10em; padding-top: 12% }
+    @media only screen and (min-width: 120.063em) { font-size: 13em; padding-top: 10% }
   }
   .search {
-    @media only screen and (max-width: 40.063em) { width: 65% }
-    width: 35%;
+    width: 20%;
+    @media only screen and (max-width: 40.063em) { width: 30% }
   }
   .postfix {
     background-color: #008080;
