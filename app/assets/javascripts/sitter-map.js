@@ -4,7 +4,7 @@ $(function() {
       center: { lat: oneLocation.latitude, lng: oneLocation.longitude },
       zoom: 15
     };
-    var map = new google.maps.Map(document.getElementById('map-canvas'),
+    var map = new google.maps.Map(document.getElementById('map-canvas1'),
         mapOptions);
 
     var marker = new google.maps.Marker({
