@@ -1,28 +1,19 @@
-<div class="row map">
-  <div class="container gmap">
-    <div class="small-12 large-12 columns">
-      <div id="map-canvas"></div>
-    </div>
+<div class="row main-head">
+  <div class="small-12 large-12 columns">
+    <%= "Check out the dog sitters of #{params[:location]}"  %>
   </div>
 </div>
 <div class="row all">
-  <div class="container sitter">
-  <% @sitters.each do |sitter| %>
-    <div class="large-4 columns" id="sitter-profile-box">
-      <div class="row price">
-        <div class="small-12 columns">
-          <%= "$" + sitter.price %>
-        </div>
-      </div>
-      <div class="row headline">
-        <div class="small-12 columns">
-          <%= sitter.headline %>
-        </div>
-      </div>
-      <div class="row sitter-name">
-        <div class="small-12 columns">
-          <%= link_to "#{sitter.first_name} #{sitter.last_name[0]}.", sitter_path(sitter) %><%= " - " %><%= sitter.city %>, <%= sitter.state %>
-          <% if sitter.reviews_received.count >= 1 %><%= " - " %>
+  <div class="small-7 large-7 columns all-sitters">
+    <% if @sitters.empty? %>
+      <%= "Sorry, your search returned no results" %>
+    <% end %>
+    <% @sitters.each do |sitter| %>
+      <div class="small-4 large-4 columns sitters-profiles">
+        <%= link_to image_tag(sitter.image_url.to_s), sitter_path(sitter) %>
+        <div class="row-name">
+          <%= sitter.first_name %> <%= sitter.last_name[0] + "." %><%= " - " %>
+          <% if sitter.reviews_received.count >= 1 %>
             <% if sitter.reviews_received.count == 1 %>
               <%= "1 Review" %>
             <% else %>
@@ -30,10 +21,33 @@
             <% end %>
           <% end %>
         </div>
+        <div class="row-address" id="sitter_address">
+          <%= sitter.city %>, <%= sitter.state %>
+        </div>
       </div>
-      <%= image_tag sitter.image_url.to_s %>
-    </div>
-  <% end %>
+      <div class="small-8 large-8 columns sitters-info">
+        <div class="row sitter-headline">
+          <%= sitter.headline %>
+          <div class="sitters-price"><%= "$" + sitter.price %></div>
+        </div>
+        <div class="row house-fence">
+          <ul class="inline-list icons">
+            <li><%= image_tag("home153.png") %><%= sitter.property_type %></li>
+            <li><%= image_tag("garden2.png") %><%= sitter.yard_type %></li>
+          </ul>
+        </div>
+        <div class="row dog-kid">
+          <ul class="inline-list icons">
+            <li><%= image_tag("dog56.png") %><%= t sitter.have_dogs.class %></li>
+            <li><%= image_tag("kids1.png") %><%= t sitter.have_children.class %></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="hr">
+    <% end %>
+  </div>
+  <div class="small-5 large-5 columns" id="map">
+    <div id="map-canvas"></div>
   </div>
 </div>
 <script type="text/javascript">

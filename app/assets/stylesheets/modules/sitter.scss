@@ -2,69 +2,74 @@
 @import "mixins";
 
 //SEARCH
-.all {
-  max-width: 100%;
-  background: #fff;
-  border: 1px solid #f9f9f9;
+.main-head {
+  font-family: $dogstay-font-theme;
+  font-size: 3em;
+  padding-bottom: 0.5em;
+  text-align: center;
+  @media only screen and (max-width: 40.063em) { font-size: 1em; };
 }
-  .container {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
 
-  #sitter-profile-box {
-    margin-right: auto;
-    position: relative;
-    float: left;
-    display: inline-block;
-    margin-top: 1em;
-    margin-bottom: 1em;
+.all {
+  background: #fff;
+  font-family: $dogstay-font-theme;
+  max-width: 100%;
+}
+
+.all-sitters {
+  padding-top: 1em;
+
+  .hr {
+    margin-left: 3em;
+    width: 85%;
+  }
+
+  .sitters-profiles {
+    padding-top: 0.5em;
+
 
     img {
-      width: 320px;
-      height: 275px;
+      @include image-style;
+      @media only screen and (max-width: 40.063em) { border-radius: 0; width: 4em; height: 4em; };
     }
 
-    .price {
-      font-family: $sitter-font-type;
-      font-size: 3em;
-      color: #fff;
-      position: absolute;
-      top: 1%;
-      width: 100%;
-      text-align: right;
-      padding-right: 0.3em;
+    .row-name {
+      text-align: center;
+      font-size: 0.9em;
+      @media only screen and (max-width: 40.063em) { font-size: 0.5em; };
     }
 
-    .headline {
+    .row-address {
+      text-align: center;
+      font-size: 0.9em;
+      @media only screen and (max-width: 40.063em) { font-size: 0.5em; };
+    }
+  }
+
+  .sitters-info {
+    padding-left: 2em;
+
+    .sitter-headline {
       font-family: $sitter-font-type;
-      font-size: 1.5em;
       font-weight: bold;
-      color: #fff;
-      position: absolute;
-      padding-left: 0.2em;
-      bottom: 10%;
-      width: 100%;
-      text-align: center;
-      text-shadow: 1px black;
+      font-size: 1.5em;
+      @media only screen and (max-width: 40.063em) { font-size: 1em; };
+
+      div.sitters-price {
+        float: right;
+        padding-right: 3em;
+        @media only screen and (max-width: 40.063em) { font-size: 1em; };
+      }
     }
 
-    .sitter-name {
-      font-family: $dogstay-font-theme;
-      color: #fff;
-      position: absolute;
-      padding-left: 0.2em;
-      width: 100%;
-      bottom: 2%;
-      text-align: center;
-
-        a {
-          color: #fff;
-          font-weight: bold;
-        }
+    .icons {
+      @media only screen and (max-width: 560px) { display: none};
+      img {
+       padding-right: 1em;
       }
     }
   }
+}
 
 //SINGLE
 #sitter-container {
