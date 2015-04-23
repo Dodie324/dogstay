@@ -78,6 +78,7 @@
   width: 80%;
 
   .hr {
+    margin-top: 0;
   }
 
   .sitter-profile {
@@ -103,6 +104,8 @@
 
       a {
         float: right;
+        width: 32%;
+        font-size: 1em;
       }
     }
 
@@ -117,7 +120,7 @@
 
   .about-image {
     width: 100%;
-    height: 55vh;
+    height: 45vh;
 
     #sitter-uploads {
       padding-right: 1.5em;
@@ -131,17 +134,27 @@
 
       .image-div {
         width: 15em;
+        height: 15em;
+
+        li {
+          background: #000;
+        }
 
         img {
-          height: 15em;
-          background-size: 100%;
-          background-color: #fff;
+          background-position:center;
+          background-size:cover;
+          height: 200px;
+          width: auto;
         }
       }
 
       .orbit-bullets {
         margin-top: -0.5em;
         margin-bottom: 1em;
+      }
+
+      .orbit-container {
+        height: 40vh;
       }
     }
   }
@@ -163,10 +176,6 @@
     .image-carousel {
       font-size: $sitter-headline-font;
       font-weight: $sitter-headline-weight
-    }
-
-    .hr {
-      opacity: 0.3;
     }
   }
 
