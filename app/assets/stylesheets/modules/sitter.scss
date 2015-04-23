@@ -2,8 +2,16 @@
 @import "mixins";
 
 //SEARCH
+.main-head {
+  text-align: center;
+  font-family: $dogstay-font-theme;
+  font-size: 3em;
+  padding-bottom: 0.5em;
+  @media only screen and (max-width: 40.063em) { font-size: 1em; };
+}
+
 .all {
-  font-family: $sitter-font-type;
+  font-family: $dogstay-font-theme;
   max-width: 100%;
   background: #fff;
 }
@@ -12,7 +20,7 @@
   padding-top: 1em;
 
   .hr {
-    width: 80%;
+    width: 85%;
     margin-left: 3em;
   }
 
@@ -22,16 +30,19 @@
 
     img {
       @include image-style;
+      @media only screen and (max-width: 40.063em) { border-radius: 0; width: 4em; height: 4em; };
     }
 
     .row-name {
       text-align: center;
       font-size: 0.9em;
+      @media only screen and (max-width: 40.063em) { font-size: 0.5em; };
     }
 
     .row-address {
       text-align: center;
       font-size: 0.9em;
+      @media only screen and (max-width: 40.063em) { font-size: 0.5em; };
     }
   }
 
@@ -39,17 +50,20 @@
     padding-left: 2em;
 
     .sitter-headline {
-      font-family: $dogstay-font-theme;
+      font-family: $sitter-font-type;
       font-weight: bold;
-      font-size: 2em;
+      font-size: 1.5em;
+      @media only screen and (max-width: 40.063em) { font-size: 1em; };
 
       div.sitters-price {
         float: right;
-        padding-right: 5em;
+        padding-right: 3em;
+        @media only screen and (max-width: 40.063em) { font-size: 1em; };
       }
     }
 
     .icons {
+      @media only screen and (max-width: 560px) { display: none};
       img {
        padding-right: 1em;
       }

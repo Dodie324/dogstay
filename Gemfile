@@ -10,13 +10,13 @@ gem 'foundation-rails', github: 'zurb/foundation-rails'
 gem 'humanize_boolean'
 gem "jquery-slick-rails"
 gem 'foundation-icons-sass-rails'
-gem 'materialize-sass'
 gem 'dotenv-rails'
 gem 'rails_12factor'
 gem 'carrierwave'
 gem 'fog'
 gem 'geocoder'
 gem 'font-awesome-rails'
+gem 'sticky-rails', '~> 1.0.0'
 
 group :development, :test do
   gem 'pry-rails'
