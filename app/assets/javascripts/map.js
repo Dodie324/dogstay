@@ -28,5 +28,5 @@ $(function() {
 });
 
 $(document).ready(function(){
-   $("#map-canvas").sticky({topSpacing:0});
+   $('#map-canvas').sticky({topSpacing:0});
 });

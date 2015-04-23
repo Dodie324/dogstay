@@ -3,25 +3,25 @@
 
 //SEARCH
 .main-head {
-  text-align: center;
   font-family: $dogstay-font-theme;
   font-size: 3em;
   padding-bottom: 0.5em;
+  text-align: center;
   @media only screen and (max-width: 40.063em) { font-size: 1em; };
 }
 
 .all {
+  background: #fff;
   font-family: $dogstay-font-theme;
   max-width: 100%;
-  background: #fff;
 }
 
 .all-sitters {
   padding-top: 1em;
 
   .hr {
-    width: 85%;
     margin-left: 3em;
+    width: 85%;
   }
 
   .sitters-profiles {
@@ -68,7 +68,6 @@
        padding-right: 1em;
       }
     }
-
   }
 }
 
