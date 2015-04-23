@@ -27,7 +27,6 @@
   .sitters-profiles {
     padding-top: 0.5em;
 
-
     img {
       @include image-style;
       @media only screen and (max-width: 40.063em) { border-radius: 0; width: 4em; height: 4em; };
@@ -57,7 +56,7 @@
 
       div.sitters-price {
         float: right;
-        padding-right: 3em;
+        padding-right: 2em;
         @media only screen and (max-width: 40.063em) { font-size: 1em; };
       }
     }
@@ -79,7 +78,6 @@
   width: 80%;
 
   .hr {
-    opacity: 0.3;
   }
 
   .sitter-profile {
@@ -102,6 +100,10 @@
     .headline {
       font-size: 1.5em;
       font-weight: bold;
+
+      a {
+        float: right;
+      }
     }
 
     .address {

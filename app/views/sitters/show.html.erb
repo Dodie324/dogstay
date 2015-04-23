@@ -18,7 +18,7 @@
     <div class="small-6 large-9 columns">
       <div class="row headline" id="sitter_headline">
         <%= @sitter.headline %>
-        <%= link_to "Contact this sitter!", new_sitter_message_path(@sitter) %>
+        <%= button_to "Contact this sitter!", new_sitter_message_path(@sitter), class: "button postfix" %>
       </div>
       <div class="row address" id="sitter_address">
         <%= @sitter.city %>, <%= @sitter.state %> <%= @sitter.zipcode %>
