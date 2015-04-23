@@ -8,10 +8,17 @@
   padding: 0.5em;
 }
 
+@mixin category-details {
+  font-size: $sitter-headline-font;
+  font-weight: $sitter-headline-weight;
+  padding-bottom: 1em;
+}
+
 @mixin sitter-details {
   font-size: 0.9em;
   padding-left: 2em;
-  padding-top: 0.5em;
+  font-weight: normal;
+  padding-top: 0.4em;
 }
 
 @mixin padding {

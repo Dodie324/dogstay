@@ -12,6 +12,9 @@
     <% end %>
   </div>
   <div class="panel reviews">
+  <% if @reviews.empty? %>
+    <%= "No Reviews Yet" %>
+  <% else %>
   <% @reviews.each do |review| %>
     <div class="sitter-reviews">
       <div class="row review">
@@ -50,6 +53,7 @@
         </div>
       </div>
     </div>
+  <% end %>
   <% end %>
   </div>
 </div>
