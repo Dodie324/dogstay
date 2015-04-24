@@ -7,7 +7,15 @@ class SittersController < ApplicationController
       redirect_to root_path
     else
       @location = coordinates_for(params[:location])
-      @sitters = User.where(sitter: true).near(@location, 50)
+      @sitters = User.where(
+        sitter: true
+        ).near(
+        @location, 50
+        ).page(
+        params[:page]
+        ).per(
+        10
+        )
 
       respond_to do |format|
         format.html
