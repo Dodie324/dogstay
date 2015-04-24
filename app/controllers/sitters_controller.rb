@@ -37,6 +37,14 @@ class SittersController < ApplicationController
     end
   end
 
+  def destroy
+    @sitter = User.find(params[:id])
+    if @sitter.destroy
+      flash[:notice] = "Sorry to see you go!"
+      redirect_to root_path
+    end
+  end
+
   def coordinates_for(location)
     location = location.downcase.gsub(/\W/, "")
     coordinates = Location.find_by(location: location)

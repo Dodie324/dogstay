@@ -3,7 +3,9 @@
     <div class="row form">
       <div class="small-4 large-4 columns">
         <%= image_tag current_user.image_url.to_s %>
-        <ul><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></ul>
+        <% if current_user.try(:sitter) %>
+          <ul><%= link_to "Cancel my account", sitter_path(current_user), data: { confirm: "Are you sure?" }, method: :delete %></ul>
+        <% end %>
       </div>
       <div class="small-8 large-8 columns">
         <fieldset class="form-layout">
