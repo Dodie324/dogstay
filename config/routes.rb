@@ -2,10 +2,9 @@ Rails.application.routes.draw do
   root 'homes#index'
   devise_for :users
 
-  resources :dogs
-  resources :sitters do
-    resources :reviews
-    resources :messages
-    resources :images
+  resources :sitters, only: [:index, :show, :destroy] do
+    resources :reviews, only: [:edit, :create, :update, :destroy]
+    resources :messages, only: [:new, :create]
+    resources :images, only: [:create, :destroy]
   end
 end

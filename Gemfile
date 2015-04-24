@@ -17,6 +17,7 @@ gem 'fog'
 gem 'geocoder'
 gem 'font-awesome-rails'
 gem 'sticky-rails', '~> 1.0.0'
+gem 'kaminari'
 
 group :development, :test do
   gem 'pry-rails'

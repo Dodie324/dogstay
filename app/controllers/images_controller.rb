@@ -7,7 +7,6 @@ class ImagesController < ApplicationController
     else
       @image_upload = Image.new(image_params)
       @image_upload.user = current_user
-
       if @image_upload.save
         flash[:notice] = "Image added successfully."
         redirect_to sitter_path(@image_upload.user)
@@ -19,6 +18,12 @@ class ImagesController < ApplicationController
   end
 
   def destroy
+    @image_upload = Image.find(params[:id])
+    @image_upload.user = current_user
+    if @sitter.destroy
+      flash[:notice] = "Image removed."
+      redirect_to sitter_path(@image_upload.user)
+    end
   end
 
   private

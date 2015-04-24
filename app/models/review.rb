@@ -8,10 +8,6 @@ class Review < ActiveRecord::Base
   validates :body, presence: true, length: { minimum: 40 }
   validates :user, presence: true
 
-  def sitter?
-    user.find_by(sitter: true)
-  end
-
   def editable_by?(user)
     user == self.user
   end

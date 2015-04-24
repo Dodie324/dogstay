@@ -37,6 +37,6 @@ feature "user deletes their review", %(
 
     visit sitter_path(sitter)
 
-    expect(page).to_not have_content("Delete")
+    expect(page).to_not have_content(:xpath, ".//a/i[@class='fi-x']")
   end
 end

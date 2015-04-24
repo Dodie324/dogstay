@@ -7,7 +7,15 @@ class SittersController < ApplicationController
       redirect_to root_path
     else
       @location = coordinates_for(params[:location])
-      @sitters = User.where(sitter: true).near(@location, 50)
+      @sitters = User.where(
+          sitter: true
+        ).near(
+          @location, 50
+        ).page(
+          params[:page]
+        ).per(
+          10
+        )
 
       respond_to do |format|
         format.html
@@ -26,6 +34,14 @@ class SittersController < ApplicationController
     respond_to do |format|
         format.html
         format.json { render json: { sitter: @sitter } }
+    end
+  end
+
+  def destroy
+    @sitter = User.find(params[:id])
+    if @sitter.destroy
+      flash[:notice] = "Sorry to see you go!"
+      redirect_to root_path
     end
   end
 
