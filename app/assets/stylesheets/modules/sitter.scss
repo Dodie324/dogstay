@@ -63,6 +63,7 @@
 
     .icons {
       @media only screen and (max-width: 560px) { display: none};
+
       img {
        padding-right: 1em;
       }
@@ -154,6 +155,7 @@
       }
 
       #image-upload {
+
         ul li .postfix {
           width: 30%;
         }
@@ -205,9 +207,11 @@
       font-weight: $sitter-headline-weight
     }
   }
+
   .hr-1 {
     width: 100%;
   }
+
   .hr {
     width: 55%;
     opacity: 0.3;
@@ -220,54 +224,66 @@
 
   .price {
     padding-top: 3em;
+
     .small-3 {
       @include category-details
     }
+
     .small-9 {
       @include sitter-details;
     }
   }
 
   .availability {
+
     .small-3 {
       @include category-details
     }
+
     .small-9 {
       @include sitter-details;
     }
   }
 
   .property-type {
+
     .small-3 {
       @include category-details
     }
+
     .small-9 {
       @include sitter-details;
     }
   }
 
   .yard-type {
+
     .small-3 {
       @include category-details
     }
+
     .small-9 {
       @include sitter-details;
     }
   }
 
   .have-dogs {
+
     .small-3 {
       @include category-details
     }
+
     .small-9 {
       @include sitter-details;
     }
   }
 
   .have-children {
+
     .small-3 {
       @include category-details
     }
+
     .small-9 {
       @include sitter-details;
     }

@@ -11,7 +11,10 @@ $(function() {
         mapOptions);
 
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(oneLocation.latitude, oneLocation.longitude),
+        position: new google.maps.LatLng(
+          oneLocation.latitude,
+          oneLocation.longitude
+          ),
         map: map
     });
 
