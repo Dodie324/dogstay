@@ -2,9 +2,14 @@
 @import "mixins";
 
 .top-bar {
-  h1 a {
+  height: 3.2rem;
+  background: transparent;
+
+  .name h1 a {
     font-family: $dogstay-font-theme;
     font-size: 1.5em;
+    font-weight: bold;
+    color: black;
 
     &:hover {
       @include hover;
@@ -27,6 +32,8 @@
       font-size: 0.9em;
       margin-right: 1.5em;
       padding-bottom: 0.3em;
+      font-weight: bold;
+      color: black;
 
       &:hover {
         @include hover;
