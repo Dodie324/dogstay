@@ -8,13 +8,13 @@ class SittersController < ApplicationController
     else
       @location = coordinates_for(params[:location])
       @sitters = User.where(
-        sitter: true
+          sitter: true
         ).near(
-        @location, 50
+          @location, 50
         ).page(
-        params[:page]
+          params[:page]
         ).per(
-        10
+          10
         )
 
       respond_to do |format|
