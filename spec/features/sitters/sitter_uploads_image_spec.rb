@@ -13,6 +13,8 @@ feature "sitter uploads photos", %(
 
     visit sitter_path(sitter)
 
+    click_on "Share photos!"
+
     attach_file("image_image_upload",
      "#{Rails.root}/spec/fixtures/fritz.jpg")
 
@@ -28,6 +30,8 @@ feature "sitter uploads photos", %(
 
     visit sitter_path(sitter)
 
+    click_on "Share photos!"
+
     click_on "Upload"
 
     expect(page).to have_content("You must upload an image.")
@@ -40,6 +44,8 @@ feature "sitter uploads photos", %(
 
     visit sitter_path(sitter)
 
+    click_on "Share photos!"
+
     attach_file("image_image_upload",
      "#{Rails.root}/spec/fixtures/test.txt")
 
@@ -48,4 +54,20 @@ feature "sitter uploads photos", %(
     expect(page).to have_content("Image not added.")
   end
 
+  scenario "sitter cannot upload images on another sitter's page" do
+    sitter = FactoryGirl.create(:sitter)
+    sitter_2 = FactoryGirl.create(
+      :sitter,
+      email: "randomsitter@dogstay.com",
+      phone_number: "2329232421",
+      first_name: "David",
+      last_name: "Rodriguez"
+      )
+
+    sign_in_as(sitter)
+
+    visit sitter_path(sitter_2)
+
+    expect(page).not_to have_content("Share photos!")
+  end
 end
