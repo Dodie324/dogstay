@@ -1,3 +1,8 @@
+var centerLocation;
+var sitterMark;
+var google;
+var sitterLocation;
+
 $(function() {
   function initialize() {
     var mapOptions = {
@@ -20,8 +25,6 @@ $(function() {
         map.panTo(laLatLng);
         map.setZoom(15);
     });
-
-  sitterMark;
   }
 
   google.maps.event.addDomListener(window, 'load', initialize);
