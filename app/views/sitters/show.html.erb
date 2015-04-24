@@ -39,8 +39,9 @@
       <div class="about-header">About This Sitter</div>
       <div class="panel-about"><%= @sitter.description %></div></br>
         <% if current_user.try(:sitter) %>
-          <%= link_to "Share photos!", "#", id: "share-images" %>
-          <%= render "images/new" %>
+          <li><%= link_to "Share photos!", "#", id: "share-images" %>
+          <%= render "images/new" %></li>
+          <li><%= link_to "Delete image", sitter_image_path(@sitter, @images), data: { confirm: "Are you sure?" }, method: :delete %></li>
         <% end %>
     </div>
     <div class="small-6 large-6 columns" id="sitter-uploads">

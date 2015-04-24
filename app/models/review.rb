@@ -12,6 +12,10 @@ class Review < ActiveRecord::Base
     user.find_by(sitter: true)
   end
 
+  def current_sitter?(user)
+    user == self.user.reviews_received
+  end
+
   def editable_by?(user)
     user == self.user
   end
