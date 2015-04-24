@@ -5,20 +5,27 @@
   height: 3.2rem;
   background: transparent;
 
-  .name h1 a {
+  .name li h1 a {
     font-family: $dogstay-font-theme;
     font-size: 1.5em;
     font-weight: bold;
-    color: black;
+    color: #000000;
 
     &:hover {
       @include hover;
     }
   }
 
+  .name img {
+    margin-top: 0.5em;
+    margin-left: 1em;
+    width: 2em;
+    height: 2em;
+  }
+
   .right {
     padding-left: 2em;
-    padding-top: 0.9em;
+    padding-top: 1.1em;
 
     img {
       border-radius: 20em;
