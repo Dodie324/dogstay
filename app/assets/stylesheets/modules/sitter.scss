@@ -63,6 +63,7 @@
 
     .icons {
       @media only screen and (max-width: 560px) { display: none};
+
       img {
        padding-right: 1em;
       }
@@ -76,9 +77,6 @@
   margin-left: auto;
   margin-right: auto;
   width: 80%;
-
-  .hr {
-  }
 
   .sitter-profile {
     margin: 0;
@@ -100,9 +98,31 @@
     .headline {
       font-size: 1.5em;
       font-weight: bold;
+      padding-left: 0.5em;
 
       a {
         float: right;
+        font-size: 1em;
+        width: 32%;
+      }
+    }
+
+    .row-address {
+      text-align: left;
+    }
+
+    .icons {
+
+      li {
+        margin-top: 1em;
+        padding-right: 1.8em;
+      }
+
+      img {
+        border-radius: 0;
+        height: 2em;
+        padding: 0;
+        width: 2em;
       }
     }
 
@@ -116,8 +136,9 @@
   }
 
   .about-image {
+    height: 45vh;
+    padding-top: 2em;
     width: 100%;
-    height: 55vh;
 
     #sitter-uploads {
       padding-right: 1.5em;
@@ -129,19 +150,36 @@
         font-weight: $sitter-headline-weight;
       }
 
+      #image-upload {
+
+        ul li .postfix {
+          width: 30%;
+        }
+      }
+
       .image-div {
         width: 15em;
+        height: 15em;
+
+        li {
+          background: #000;
+        }
 
         img {
-          height: 15em;
-          background-size: 100%;
-          background-color: #fff;
+          background-position:center;
+          background-size:cover;
+          height: 200px;
+          width: auto;
         }
       }
 
       .orbit-bullets {
         margin-top: -0.5em;
         margin-bottom: 1em;
+      }
+
+      .orbit-container {
+        height: 40vh;
       }
     }
   }
@@ -164,45 +202,108 @@
       font-size: $sitter-headline-font;
       font-weight: $sitter-headline-weight
     }
-
-    .hr {
-      opacity: 0.3;
-    }
   }
 
- .price {
+  .hr-1 {
+    width: 100%;
+  }
+
+  .hr {
+    width: 55%;
+    opacity: 0.3;
+    margin-top: 0;
+  }
+
+  .categories {
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+  }
+
+  .price {
+    padding-top: 3em;
+
+    .small-3 {
+      @include category-details
+    }
+
     .small-9 {
       @include sitter-details;
     }
   }
 
   .availability {
+
+    .small-3 {
+      @include category-details
+    }
+
     .small-9 {
       @include sitter-details;
     }
   }
 
   .property-type {
+
+    .small-3 {
+      @include category-details
+    }
+
     .small-9 {
       @include sitter-details;
     }
   }
 
   .yard-type {
+
+    .small-3 {
+      @include category-details
+    }
+
     .small-9 {
       @include sitter-details;
     }
   }
 
   .have-dogs {
+
+    .small-3 {
+      @include category-details
+    }
+
     .small-9 {
       @include sitter-details;
     }
   }
 
   .have-children {
+
+    .small-3 {
+      @include category-details
+    }
+
     .small-9 {
       @include sitter-details;
     }
+  }
+}
+
+.map {
+  padding-right: 2em;
+}
+
+#map-canvas1 {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  height: 20em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  max-width: 100%;
+
+  label {
+    width: auto;
+    display:inline;
+  }
+
+  img {
+    max-width: none;
   }
 }

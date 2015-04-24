@@ -22,6 +22,11 @@ class SittersController < ApplicationController
     @images = @sitter.image_uploads
     @review = Review.new
     @image_upload = Image.new
+
+    respond_to do |format|
+        format.html
+        format.json { render json: { sitter: @sitter } }
+    end
   end
 
   def coordinates_for(location)

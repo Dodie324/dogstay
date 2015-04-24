@@ -18,43 +18,48 @@
     <div class="small-6 large-9 columns">
       <div class="row headline" id="sitter_headline">
         <%= @sitter.headline %>
-        <%= button_to "Contact this sitter!", new_sitter_message_path(@sitter), class: "button postfix" %>
+        <%= link_to "Send Message", new_sitter_message_path(@sitter) %>
       </div>
-      <div class="row address" id="sitter_address">
+      <div class="row-address">
         <%= @sitter.city %>, <%= @sitter.state %> <%= @sitter.zipcode %>
       </div>
-      <div class="row addtl-info">
-        <%= @sitter.property_type %> | <%= @sitter.yard_type %> | <%= t @sitter.have_dogs.class %> | <%= t @sitter.have_children.class %>
+      <div class="row house-fence">
+        <ul class="inline-list icons">
+          <li><%= image_tag("home153.png") %><%= @sitter.property_type %></li>
+          <li><%= image_tag("garden2.png") %><%= @sitter.yard_type %></li>
+          <li><%= image_tag("dog56.png") %><%= t @sitter.have_dogs.class %></li>
+          <li><%= image_tag("kids1.png") %><%= t @sitter.have_children.class %></li>
+        </ul>
       </div>
     </div>
   </div>
-  <hr class="hr">
+  <hr class="hr-1">
   <div class="row about-image">
     <div class="small-6 large-6 columns" id="details-column">
       <div class="about-header">About This Sitter</div>
-      <div class="panel-about"><%= @sitter.description %></div>
+      <div class="panel-about"><%= @sitter.description %></div></br>
+        <% if current_user.try(:sitter) %>
+          <%= link_to "Share photos!", "#", id: "share-images" %>
+          <%= render "images/new" %>
+        <% end %>
     </div>
-    <% if current_user.try(:sitter) %>
-      <%= link_to "Share photos!", "#", id: "share-images" %>
-    <%= render "images/new" %>
-    <% end %>
     <div class="small-6 large-6 columns" id="sitter-uploads">
-      <div class="about-header">What the dogs think!</div>
       <ul class="image-div" data-orbit>
       <% if !@images.empty? %>
         <% @images.each do |image| %>
-          <div id="image-div"><%= image_tag image.image_upload.url.to_s %></div>
+          <li><%= image_tag image.image_upload.url.to_s %></li>
         <% end %>
       <% end %>
       </ul>
     </div>
   </div>
-  <hr class="hr">
+  <hr class="hr-1">
+  <div class="small-7 large-7 columns categories">
   <div class="row price">
-    <div class="small-3 columns">
+    <div class="small-4 columns">
       Price
     </div>
-    <div class="small-9 columns">
+    <div class="small-8 columns">
       <% if @sitter.price == nil %>
         <%= "N/A - Please contact " %><%= @sitter.first_name %><%= " for more information" %>
       <% else %>
@@ -64,51 +69,58 @@
   </div>
   <hr class="hr">
   <div class="row availability">
-    <div class="small-3 columns">
+    <div class="small-4 columns">
       Availability
     </div>
-    <div class="small-9 columns">
+    <div class="small-8 columns">
       <%= @sitter.availability %>
     </div>
   </div>
   <hr class="hr">
   <div class="row property-type">
-    <div class="small-3 columns">
+    <div class="small-4 columns">
       Property Type
     </div>
-    <div class="small-9 columns">
+    <div class="small-8 columns">
       <%= @sitter.property_type %>
     </div>
   </div>
   <hr class="hr">
   <div class="row yard-type">
-    <div class="small-3 columns">
+    <div class="small-4 columns">
       Yard Type
     </div>
-    <div class="small-9 columns">
+    <div class="small-8 columns">
       <%= @sitter.yard_type %>
     </div>
   </div>
   <hr class="hr">
   <div class="row have-dogs">
-    <div class="small-3 columns">
+    <div class="small-4 columns">
       Has dogs?
     </div>
-    <div class="small-9 columns">
+    <div class="small-8 columns">
       <%= t @sitter.have_dogs.class %>
     </div>
   </div>
   <hr class="hr">
   <div class="row have-children">
-    <div class="small-3 columns">
+    <div class="small-4 columns">
       Has children?
     </div>
-    <div class="small-9 columns">
+    <div class="small-8 columns">
       <%= t @sitter.have_children.class %>
     </div>
   </div>
   <hr class="hr">
+  </div>
+  <div class="small-5 large-5 columns map">
+    <div id="map-canvas1"></div>
+  </div>
+  <hr class="hr-1">
   <%= render "reviews/index" if @reviews %>
   <%= render "reviews/new" %>
 </div>
-
+<script type="text/javascript">
+  var oneLocation = <%= @sitter.to_json.html_safe %>
+</script>

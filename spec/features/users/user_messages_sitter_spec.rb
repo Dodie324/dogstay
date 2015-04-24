@@ -13,7 +13,7 @@ feature 'user messages sitter', %Q{
 
     visit sitter_path(sitter)
 
-    click_on "Contact this sitter!"
+    click_on "Send Message"
 
     fill_in "Subject", with: "When are you available?"
     fill_in "Message", with: "I would like it if you could look after my dog."
@@ -31,7 +31,7 @@ feature 'user messages sitter', %Q{
 
     visit sitter_path(sitter)
 
-    click_on "Contact this sitter!"
+    click_on "Send Message"
 
     fill_in "Subject", with: ""
     fill_in "Message", with: "I would like it if you could look after my dog."
