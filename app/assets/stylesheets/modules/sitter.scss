@@ -5,7 +5,8 @@
 .main-head {
   font-family: $dogstay-font-theme;
   font-size: 3em;
-  padding-bottom: 0.5em;
+  padding-bottom: 1em;
+  padding-top: 0.5em;
   text-align: center;
   @media only screen and (max-width: 40.063em) { font-size: 1em; };
 }
