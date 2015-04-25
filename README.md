@@ -2,6 +2,8 @@
 
 # [Dogstay - Your dog deserves more than a "ruff" nights stay](http://dogstay.herokuapp.com/)
 
+![dogstay homepage](https://github.com/Dodie324/dogstay/tree/master/app/assets/images/readme.png?raw=true)
+
 Dogstay is an easy-to-use web application connecting dog owners with dog sitters. Dogstay is my capstone project for [LaunchAcademy](http://www.launchacademy.com).
 
 *"Dogs are not our whole life, but they make our lives whole." - Roger Caras*
