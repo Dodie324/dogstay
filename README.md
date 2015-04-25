@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/Dodie324/dogstay.svg?branch=master)](https://travis-ci.org/Dodie324/la_breakable) [![Code Climate](https://codeclimate.com/github/Dodie324/la_breakable.png)](https://codeclimate.com/github/Dodie324/la_breakable) [![Coverage Status](https://coveralls.io/repos/Dodie324/la_breakable/badge.png)](https://coveralls.io/r/Dodie324/la_breakable)
 
-# [Dogstay - Your dog deserves more than a "ruff" nights stay](http://dogstay.herokuapp.com/)
+# [Dogstay](http://dogstay.herokuapp.com/)
+## Your dog deserves more than a "ruff" nights stay
 
 ![dogstay homepage](//github.com/Dodie324/dogstay/tree/master/app/assets/images/readme.png)
 
