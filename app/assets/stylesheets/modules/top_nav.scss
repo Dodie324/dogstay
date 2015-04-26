@@ -1,8 +1,9 @@
 @import "variables";
 @import "mixins";
+@import "foundation";
 
 .top-bar {
-  background: transparent;
+  background: transparent !important;
   height: 3.2rem;
 
   .name li h1 a {
@@ -47,4 +48,8 @@
       }
     }
   }
+}
+
+@media #{$small-only} {
+.top-bar .name img { margin-left: 8em;};
 }

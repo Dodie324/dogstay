@@ -1,5 +1,6 @@
 @import "variables";
 @import "mixins";
+@import "foundation";
 
 .sign-up {
   margin-left: auto;
@@ -17,4 +18,8 @@
     width: 30%;
     background: #008080;
   }
+}
+
+@media #{$small-only} {
+  .sign-up { width: 90%; };
 }
