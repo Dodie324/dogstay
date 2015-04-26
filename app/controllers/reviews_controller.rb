@@ -37,7 +37,11 @@ class ReviewsController < ApplicationController
     else
       respond_to do |format|
         format.html { render :edit }
-        format.json { render json: { errors: @review.errors.full_messages }, status: 400 }
+        format.json { render json: {
+          errors: @review.errors.full_messages
+          },
+          status: 400
+        }
       end
     end
   end
