@@ -17,15 +17,6 @@ class ImagesController < ApplicationController
     end
   end
 
-  def destroy
-    @image_upload = Image.find(params[:id])
-    @image_upload.user = current_user
-    if @sitter.destroy
-      flash[:notice] = "Image removed."
-      redirect_to sitter_path(@image_upload.user)
-    end
-  end
-
   private
 
   def image_params

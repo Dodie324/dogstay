@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :sitters, only: [:index, :show, :destroy] do
     resources :reviews, only: [:edit, :create, :update, :destroy]
     resources :messages, only: [:new, :create]
-    resources :images, only: [:create, :destroy]
+    resources :images, only: [:create]
   end
 end
