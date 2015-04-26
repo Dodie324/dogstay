@@ -118,7 +118,7 @@ class User < ActiveRecord::Base
 
   validates :phone_number,
     presence: true,
-    uniqueness: true;
+    uniqueness: true,
     format: {
       with: /\d[0-9]\)*\z/,
       message: "bad format"
