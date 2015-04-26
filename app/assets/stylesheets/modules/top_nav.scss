@@ -1,6 +1,6 @@
 @import "variables";
 @import "mixins";
-@import "foundation";
+@import "media";
 
 .top-bar {
   background: transparent !important;
@@ -11,6 +11,7 @@
     font-size: 1.5em;
     font-weight: bold;
     color: #000000;
+    padding: 0;
 
     &:hover {
       @include hover;
@@ -50,6 +51,8 @@
   }
 }
 
-@media #{$small-only} {
-.top-bar .name img { margin-left: 8em;};
+@media #{$tiny-only} {
+ .top-bar .name img {
+    margin-left: 7.5em;
+  }
 }

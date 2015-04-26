@@ -1,5 +1,6 @@
 @import "variables";
 @import "mixins";
+@import "media";
 
 #map {
   margin-left: auto;
@@ -24,3 +25,9 @@
       max-width: none;
     }
   }
+
+@media #{$tiny-only} {
+  #map {
+    display: none;
+  }
+}

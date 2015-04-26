@@ -25,10 +25,20 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
 
     if @review.update(review_params)
-      flash[:notice] = "Review updated!"
-      redirect_to sitter_path(@sitter)
+      respond_to do |format|
+        format.html {
+          flash[:notice] = "Review updated!"
+          redirect_to sitter_path(@sitter)
+        }
+        format.json {
+          render json: @review
+        }
+      end
     else
-      render :edit
+      respond_to do |format|
+        format.html { render :edit }
+        format.json { render json: { errors: @review.errors.full_messages }, status: 400 }
+      end
     end
   end
 

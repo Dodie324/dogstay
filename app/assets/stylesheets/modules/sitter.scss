@@ -1,7 +1,8 @@
 @import "variables";
 @import "mixins";
+@import "media";
 
-//SEARCH
+//SEARCH-ALL-SITTERS
 .main-head {
   font-family: $dogstay-font-theme;
   font-size: 3em;
@@ -14,7 +15,7 @@
 .all {
   background: #fff;
   font-family: $dogstay-font-theme;
-  max-width: 100%;
+  max-width: 100% !important;
 }
 
 .all-sitters {
@@ -30,19 +31,16 @@
 
     img {
       @include image-style;
-      @media only screen and (max-width: 40.063em) { border-radius: 0; width: 4em; height: 4em; };
     }
 
     .row-name {
       text-align: center;
       font-size: 0.9em;
-      @media only screen and (max-width: 40.063em) { font-size: 0.5em; };
     }
 
     .row-address {
       text-align: center;
       font-size: 0.9em;
-      @media only screen and (max-width: 40.063em) { font-size: 0.5em; };
     }
   }
 
@@ -53,18 +51,14 @@
       font-family: $sitter-font-type;
       font-weight: bold;
       font-size: 1.5em;
-      @media only screen and (max-width: 40.063em) { font-size: 1em; };
 
       div.sitters-price {
         float: right;
         padding-right: 2em;
-        @media only screen and (max-width: 40.063em) { font-size: 1em; };
       }
     }
 
     .icons {
-      @media only screen and (max-width: 560px) { display: none};
-
       img {
        padding-right: 1em;
       }
@@ -72,7 +66,7 @@
   }
 }
 
-//SINGLE
+//SINGLE-SITTER
 #sitter-container {
   font-family: $sitter-font-type;
   margin-left: auto;
@@ -288,6 +282,7 @@
   }
 }
 
+//MAP
 .map {
   padding-right: 2em;
 }
@@ -306,5 +301,33 @@
 
   img {
     max-width: none;
+  }
+}
+
+//MEDIA
+@media #{$tiny-only} {
+  .icons {
+    display: none;
+  }
+
+  .all-sitters .sitters-profiles {
+    padding-top: 0.5em;
+    width: 100%;
+    margin-left: 5em;
+  }
+
+  .all-sitters .sitters-info {
+    padding-left: 2em;
+    text-align: center;
+    margin-left: 6.5em;
+  }
+
+  .all-sitters .sitters-info .sitter-headline div.sitters-price {
+    padding-right: 1.4em;
+  }
+
+  .all-sitters .hr {
+    margin-left: 5em;
+    width: 100%;
   }
 }

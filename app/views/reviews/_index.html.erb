@@ -29,25 +29,26 @@
             <% if review.editable_by?(current_user) %>
               <div class="row-2 ed">
                 <div data-tooltip aria-haspopup="true" class="has-tip" title="Edit"><%= link_to edit_sitter_review_path(@sitter, review) do %>
-                  <i class="fi-pencil"></i>
+                  <i class="fi-pencil" id="<%= review.id %>"></i>
                 <% end %></div>
                 <div data-tooltip aria-haspopup="true" class="has-tip" title="Delete"><%= link_to sitter_review_path(@sitter, review), method: :delete, data: { confirm: 'Are you sure?' } do %>
                   <i class="fi-x"></i>
                 <% end %></div>
               </div>
             <% end %>
-            <ul class="inline-list">
+            <ul class="inline-list" id="rating_section_<%= review.id %>">
               <% review.rating.times do %>
-                <li><i class="fa fa-paw"></i></li>
+                <li class="paws_<%= review.id %>"><i class="fa fa-paw"></i></li>
               <% end %>
             </ul>
           </div>
-          <div class="row headline" id="review-desc">
-            <%= review.body %>
+          <div class="row headline review-desc" id="text_<%= review.id %>" >
+            <p id="review_body_<%= review.id %>"><%= review.body %></p>
           </div>
-          <div class="row date" id="review-date">
-            <%= review.created_at.strftime("%d %b. %Y") %>
+          <div class="row date review-date" id="review_date_<%= review.id %>">
+            <p id="timestamp_<%= review.id %>"><%= review.updated_at.strftime("%-m/%d/%Y") %></p>
           </div>
+          <div class="edit_errors_<%= review.id %>"></div>
           <hr class="hr">
         </div>
       </div>

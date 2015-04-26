@@ -25,7 +25,7 @@ feature "user reviews a sitter", %(
     expect(page).to have_content("1 Review")
     expect(page).to have_content(review.rating)
     expect(page).to have_content(review.body)
-    expect(page).to have_content(review.created_at.strftime("%d %b. %Y"))
+    expect(page).to have_content(review.created_at.strftime("%-m/%d/%Y"))
   end
 
   scenario "authenticated user unsuccessfully writes a review" do

@@ -1,6 +1,6 @@
 @import "variables";
 @import "mixins";
-@import "foundation";
+@import "media";
 
 body.home-page {
   background: url(dogstay.png) no-repeat fixed;
@@ -31,19 +31,10 @@ body.home-page {
     margin: 0;
     padding-top: 8%;
     text-align: center;
-    @media only screen and (max-width: 988px) and (min-width: 642px) { font-size: 7em; padding-top: 45%;}; //iPad portrait
-    @media only screen and (max-width: 1824px) and (min-width: 989px){ font-size: 9em;  padding-top: 19%;}; //iPad landscape
-    @media only screen and (min-width: 40.063em) { font-size: 6.5em; padding-top: 12% };
-    @media only screen and (min-width: 64.063em) { font-size: 10em; padding-top: 7% };
-    @media only screen and (min-width: 120.063em) { font-size: 13em; padding-top: 8% };
-    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) { font-size: 2em; padding-top: 60%; };
-    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : landscape) { font-size: 2.3em; padding-top: 15% };
   }
-
 
   .search {
     width: 20%;
-    @media only screen and (max-width: 40.063em) { width: 30% };
   }
 
   .postfix {
@@ -130,9 +121,9 @@ body.home-page {
   background: #008080;
 }
 
-@media #{$small-only} {
+@media #{$tiny-only} {
  body.home-page p {
-    font-size: 3.5em; padding-top: 50%;
+    font-size: 3.5em; padding-top: 60%;
   }
 
  body.home-page .search {
@@ -140,23 +131,43 @@ body.home-page {
  }
 }
 
-@media #{$medium-up} {
+@media #{$small-only} {
  body.home-page p {
-    font-size: 12em; padding-top: 5%;
+    font-size: 4.7em; padding-top: 35%;
   }
 
  body.home-page .search {
-  width: 25%;
+  width: 40%;
+ }
+}
+
+@media #{$sm-med-only} {
+ body.home-page p {
+    font-size: 6.5em; padding-top: 25%;
+  }
+
+ body.home-page .search {
+  width: 35%;
  }
 }
 
 @media #{$medium-only} {
  body.home-page p {
-    font-size: 7em; padding-top: 16%;
+    font-size: 9.1em; padding-top: 18%;
   }
 
  body.home-page .search {
-  width: 35%;
+  width: 30%;
+ }
+}
+
+@media #{$large-only} {
+ body.home-page p {
+    font-size: 10.4em; padding-top: 13%;
+  }
+
+ body.home-page .search {
+  width: 30%;
  }
 }
 
