@@ -310,16 +310,30 @@
     display: none;
   }
 
+  .all-sitters {
+    padding-top: 1em;
+    float: none !important;
+    width: auto !important;
+  }
+
   .all-sitters .sitters-profiles {
     padding-top: 0.5em;
     width: 100%;
-    margin-left: 5em;
+    margin-left: 0;
+  }
+
+  .all-sitters .sitters-info .sitter-headline {
+    font-size: 1em;
+    padding-left: 2em;
+    text-align: left;
   }
 
   .all-sitters .sitters-info {
-    padding-left: 2em;
+    padding-left: 0;
     text-align: center;
-    margin-left: 6.5em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
   }
 
   .all-sitters .sitters-info .sitter-headline div.sitters-price {
@@ -327,7 +341,43 @@
   }
 
   .all-sitters .hr {
-    margin-left: 5em;
+    margin-left: 0;
     width: 100%;
+  }
+
+  #sitter-container .sitter-profile .headline a {
+    float: none;
+    font-size: 0.5em;
+    display: block;
+  }
+
+  #sitter-container .about-image {
+    height: 45vh;
+    padding-top: 2em;
+    width: 100%;
+  }
+
+  #sitter-container #details-column {
+    padding-left: 1.5em;
+    padding-top: 0.7em;
+    float: none !important;
+    width: auto;
+  }
+
+  #sitter-container .categories {
+    margin-bottom: 0em;
+    padding-bottom: 2em;
+    float: none !important;
+    width: auto;
+    font-size: 0.9em;
+    text-align: center;
+  }
+
+  #sitter-uploads {
+    display: none;
+  }
+
+  #map-canvas1 {
+    display: none;
   }
 }
