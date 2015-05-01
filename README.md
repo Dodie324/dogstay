@@ -5,7 +5,9 @@
 
 ![dogstay homepage](https://raw.githubusercontent.com/Dodie324/dogstay/master/app/assets/images/readme.png)
 
-Dogstay is an easy-to-use web application connecting dog owners with dog sitters. Dogstay is my capstone project for [LaunchAcademy](http://www.launchacademy.com). Search 'Boston' from the homepage to view sample content!
+Dogstay is an easy-to-use web application connecting dog owners with dog sitters. Dogstay is my capstone project for [LaunchAcademy](http://www.launchacademy.com).
+
+Search 'Boston' from the homepage to view sample content!
 
 *"Dogs are not our whole life, but they make our lives whole." - Roger Caras*
 
