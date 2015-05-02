@@ -6,11 +6,11 @@ class SittersController < ApplicationController
       flash[:notice] = "Please set a location"
       redirect_to root_path
     else
-      @location = coordinates_for(params[:location])
+      @coordinates = Location.new.coordinates_for(params[:location])
       @sitters = User.where(
           sitter: true
         ).near(
-          @location, 50
+          @coordinates, 50
         ).page(
           params[:page]
         ).per(
@@ -19,7 +19,7 @@ class SittersController < ApplicationController
 
       respond_to do |format|
         format.html
-        format.json { render json: { location: @location, sitter: @sitters } }
+        format.json { render json: { location: @coordinates, sitter: @sitters } }
       end
     end
   end
@@ -42,26 +42,6 @@ class SittersController < ApplicationController
     if @sitter.destroy
       flash[:notice] = "Sorry to see you go!"
       redirect_to root_path
-    end
-  end
-
-  def coordinates_for(location)
-    location = location.downcase.gsub(/\W/, "")
-    coordinates = Location.find_by(location: location)
-    if coordinates
-      coordinates
-    else
-      lat_lng = Geocoder.coordinates(location)
-      if lat_lng == nil
-        flash[:notice] = "Please submit a valid location"
-        return root_path
-      else
-        Location.create!(
-          location: location,
-          latitude: lat_lng[0],
-          longitude: lat_lng[1]
-        )
-      end
     end
   end
 end
