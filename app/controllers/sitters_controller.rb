@@ -25,11 +25,11 @@ class SittersController < ApplicationController
   end
 
   def show
+    @review = Review.new
+    @image_upload = Image.new
     @sitter = User.find(params[:id])
     @reviews = @sitter.reviews_received
     @images = @sitter.image_uploads
-    @review = Review.new
-    @image_upload = Image.new
 
     respond_to do |format|
         format.html
