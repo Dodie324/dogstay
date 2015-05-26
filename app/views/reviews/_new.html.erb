@@ -2,7 +2,7 @@
   <%= form_for [@sitter, @review], url: sitter_reviews_path(@sitter) do |f| %>
     <%= f.label :rating, id: "rating" %>
     <%= f.hidden_field :rating %>
-    <div id="star-ratings"></div>
+    <div id="paw-ratings"></div>
 
     <%= f.text_area :body, placeholder: "Write a review (minimum 40 characters)", id: "text-area" %>
 

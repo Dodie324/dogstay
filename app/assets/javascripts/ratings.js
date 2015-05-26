@@ -1,4 +1,4 @@
-function buildStarIcon(index){
+function buildPawIcon(index){
   var $icon = $("<i>").addClass("fa fa-paw");
 
   return $("<a>")
@@ -8,26 +8,26 @@ function buildStarIcon(index){
   .html($icon);
 }
 
-function buildStarList(starNum){
-  var starList = [];
+function buildPawList(pawNum){
+  var pawList = [];
 
-  for(var i = 0; i < starNum; i++){
-    starList.push(buildStarIcon(i));
+  for(var i = 0; i < pawNum; i++){
+    pawList.push(buildPawIcon(i));
   }
-  return starList;
+  return pawList;
 }
 
-function handleStarClick(event) {
+function handlePawClick(event) {
   event.preventDefault();
 
-  var $starClicked = $(event.currentTarget);
-  var rating = $starClicked.attr("data-rating");
+  var $pawClicked = $(event.currentTarget);
+  var rating = $pawClicked.attr("data-rating");
 
-  $starClicked.prevAll("a").andSelf().find("i")
+  $pawClicked.prevAll("a").andSelf().find("i")
     .removeClass("fa fa-paw-o")
     .addClass("fa fa-paw");
 
-  $starClicked.nextAll("a").find("i")
+  $pawClicked.nextAll("a").find("i")
     .removeClass("fa fa-paw")
     .addClass("fa fa-paw-o");
 
@@ -35,8 +35,7 @@ function handleStarClick(event) {
   $hidden.val(rating);
 }
 
-
 $(function(){
-  $("#star-ratings").append(buildStarList(5));
-  $("#star-ratings a").on("click", handleStarClick);
+  $("#paw-ratings").append(buildPawList(5));
+  $("#paw-ratings a").on("click", handlePawClick);
 });
